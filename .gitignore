@@ -1,0 +1,6 @@
+target
+nb-configuration.xml
+node
+node_modules
+log.txt
+.DS_Store
