@@ -175,7 +175,7 @@
                         <configuration>
                             <arguments>run build</arguments>
                             <environmentVariables>
-                                <DOCS_VERSION>${docs.version}</DOCS_VERSION>
+                                <DOCS_VERSION>latest</DOCS_VERSION>
                             </environmentVariables>
                         </configuration>
                     </execution>
@@ -186,7 +186,7 @@
                 <artifactId>maven-dependency-plugin</artifactId>
                 <executions>
                     <execution>
-                        <id>unpack-docs</id>
+                        <id>add-docs</id>
                         <phase>process-resources</phase>
                         <goals>
                             <goal>unpack</goal>
@@ -201,6 +201,26 @@
                                     <excludes>META-INF/**</excludes>
                                 </artifactItem>
                             </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.8</version>
+                <executions>
+                    <execution>
+                        <id>create-latest-link</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <symlink link="${site.output.dir}/docs/latest"
+                                         resource="./${docs.version}"/>
+                            </target>
                         </configuration>
                     </execution>
                 </executions>
@@ -256,16 +276,26 @@
                 </pluginRepository>
             </pluginRepositories>
         </profile>
+        <profile>
+            <id>ossrh-staging</id>
+            <repositories>
+                <repository>
+                    <id>ossrh-staging</id>
+                    <url>https://oss.sonatype.org/content/groups/staging/</url>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>ossrh-staging</id>
+                    <url>https://oss.sonatype.org/content/groups/staging/</url>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </pluginRepository>
+            </pluginRepositories>
+        </profile>
     </profiles>
-
-    <!-- temporary -->
-    <repositories>
-        <repository>
-            <id>ossrh-releases</id>
-            <url>https://oss.sonatype.org/content/repositories/releases/</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
 </project>

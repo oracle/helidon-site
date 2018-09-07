@@ -27,6 +27,43 @@ on_error(){
 }
 trap on_error ERR
 
+
+usage(){
+  cat <<EOF
+
+DESCRIPTION: Helidon Site Build Script
+
+USAGE:
+
+$(basename ${0}) [ --publish ]
+
+  --publish
+        Build and publishes the site to the 'gh-pages' branch.
+
+  --help
+        Prints the usage and exits.
+
+EOF
+}
+
+# parse command line args
+ARGS=( "${@}" )
+for ((i=0;i<${#ARGS[@]};i++))
+{
+  ARG=${ARGS[${i}]}
+  case ${ARG} in
+  "--publish")
+    readonly PUBLISH=true
+    ;;
+  "--help")
+    usage
+    exit 0
+    ;;
+  *)
+    ;;
+  esac
+}
+
 # Path to this script
 if [ -h "${0}" ] ; then
   readonly SCRIPT_PATH="$(readlink "${0}")"
@@ -49,4 +86,8 @@ if [ "${WERCKER}" = "true" ] ; then
   echo -e "\tUserKnownHostsFile /dev/null" >> ~/.ssh/config
 fi
 
-mvn -f ${WS_DIR}/pom.xml clean deploy -Ppublish,ossrh-releases
+if [ "${PUBLISH}" = "true" ] ; then
+    mvn -f ${WS_DIR}/pom.xml clean deploy -Ppublish,ossrh-releases
+else
+    mvn -f ${WS_DIR}/pom.xml clean install -Possrh-releases,ossrh-staging
+fi

@@ -21,6 +21,11 @@ copyright:
     - script:
         code: etc/scripts/copyright.sh
 
+publish:
+  steps:
+    - script:
+        code: etc/scripts/build.sh --publish
+
 build:
   steps:
     - script:
