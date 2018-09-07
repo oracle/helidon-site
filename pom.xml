@@ -277,7 +277,7 @@
             </pluginRepositories>
         </profile>
         <profile>
-            <id>ossrh-releases</id>
+            <id>ossrh-staging</id>
             <repositories>
                 <repository>
                     <id>ossrh-staging</id>
