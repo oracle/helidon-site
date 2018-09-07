@@ -84,6 +84,10 @@ if [ "${WERCKER}" = "true" ] ; then
   echo -e "Host *" >> ~/.ssh/config
   echo -e "\tStrictHostKeyChecking no" >> ~/.ssh/config
   echo -e "\tUserKnownHostsFile /dev/null" >> ~/.ssh/config
+
+  # Git user info
+  git config user.email || git config --global user.email "info@helidon.io"
+  git config user.name || git config --global user.name "Helidon Robot"
 fi
 
 if [ "${PUBLISH}" = "true" ] ; then
