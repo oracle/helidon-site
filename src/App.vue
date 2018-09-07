@@ -35,9 +35,9 @@
                  target="_blank"
                  rel="noopener"><v-icon>import_contacts</v-icon></v-btn>
           <v-btn flat
-                 href="https://gitlab-odx.oracledx.com/j4c"
+                 href="https://github.com/oracle/helidon"
                  target="_blank"
-                 rel="noopener"><i class="icon fab fa-gitlab"></i></v-btn>
+                 rel="noopener"><i class="icon fab fa-github"></i></v-btn>
         </v-toolbar-items>
       </v-toolbar>
       <v-content>
