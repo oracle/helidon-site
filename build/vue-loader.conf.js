@@ -11,7 +11,7 @@ module.exports = {
     sourceMap: sourceMapEnabled,
     extract: isProduction
   }),
-  cssSourceMap: sourceMapEnabled,
+  cssSourceMap: false,
   cacheBusting: config.dev.cacheBusting,
   transformToRequire: {
     video: ['src', 'poster'],

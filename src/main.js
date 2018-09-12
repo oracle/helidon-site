@@ -14,16 +14,20 @@
  * limitations under the License.
  */
 
-// The Vue build version to load with the `import` command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import VueScrollTo from 'vue-scrollto'
+import Vuex from 'vuex'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
-import VueScrollTo from 'vue-scrollto'
 
-Vue.use(VueScrollTo, { offset: -58 })
+Vue.use(VueScrollTo, {
+  container: '#parallax_wrapper',
+  duration: 500,
+  ease: 'ease',
+  offset: -58
+})
 
 Vue.use(Vuetify, { theme: {
   primary: '#ee44aa',
@@ -35,12 +39,25 @@ Vue.use(Vuetify, { theme: {
   warning: '#FFC107'
 }})
 
+Vue.use(Vuex)
+const store = new Vuex.Store({
+  state: {
+    isScrolling: false
+  },
+  mutations: {
+    'ISSCROLLING' (state, payload) {
+      state.isScrolling = payload
+    }
+  }
+})
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
