@@ -105,6 +105,7 @@
         <version.plugin.frontend>1.6</version.plugin.frontend>
         <version.plugin.scm-plugin>3.0.0</version.plugin.scm-plugin>
         <version.plugin.dependency-plugin>3.0.0</version.plugin.dependency-plugin>
+        <version.plugin.resources-plugin>3.1.0</version.plugin.resources-plugin>
     </properties>
 
     <build>
@@ -142,9 +143,35 @@
                     <artifactId>maven-scm-publish-plugin</artifactId>
                     <version>${version.plugin.scm-plugin}</version>
                 </plugin>
+                <plugin>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-resources-plugin</artifactId>
+                  <version>${version.plugin.resources-plugin}</version>
+                </plugin>
             </plugins>
         </pluginManagement>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-resources</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${site.output.dir}</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>src/main/resources</directory>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>com.github.eirslett</groupId>
                 <artifactId>frontend-maven-plugin</artifactId>
