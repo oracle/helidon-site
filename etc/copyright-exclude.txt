@@ -18,4 +18,5 @@
 .svg
 .DS_Store
 .vue
+.pdf
 CNAME
