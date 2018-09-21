@@ -18,3 +18,4 @@
 .svg
 .DS_Store
 .vue
+.gitkeep
