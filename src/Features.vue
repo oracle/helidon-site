@@ -15,13 +15,13 @@
           </div>
         </div>
       </v-flex>
-      <v-flex md4 sm12 class="simple-and-fast-graphic "/>
+      <v-flex md4 sm12 class="feature-graphic simple-and-fast-graphic "/>
       <v-flex md2 class="hidden-sm-and-down"/>
     </v-layout>
     <v-layout row wrap class="feature">
       <v-flex md12 class="hidden-sm-and-down vertical-spacer"/>
       <v-flex md2 class="hidden-sm-and-down"/>
-      <v-flex md4 sm12 class="microprofile-support-graphic hidden-sm-and-down"/>
+      <v-flex md4 sm12 class="feature-graphic microprofile-support-graphic hidden-sm-and-down"/>
       <v-flex md4 sm12 >
         <div class="section">
           <div>
@@ -32,7 +32,7 @@
         </div>
       </v-flex>
       <v-flex md2 class="hidden-sm-and-down"/>
-      <v-flex md4 sm12 class="microprofile-support-graphic hidden-md-and-up"/>
+      <v-flex md4 sm12 class="feature-graphic microprofile-support-graphic hidden-md-and-up"/>
     </v-layout>
     <v-layout row wrap class="feature">
       <v-flex md12 class="hidden-sm-and-down vertical-spacer"/>
@@ -47,13 +47,13 @@
           </div>
         </div>
       </v-flex>
-      <v-flex md4 sm12 class="reactive-web-server-graphic"/>
+      <v-flex md4 sm12 class="feature-graphic reactive-web-server-graphic"/>
       <v-flex md2 class="hidden-sm-and-down"/>
     </v-layout>
     <v-layout row wrap class="feature">
       <v-flex md12 class="hidden-sm-and-down vertical-spacer"/>
       <v-flex md2 class="hidden-sm-and-down"/>
-      <v-flex md4 sm12 class="observable-and-resilient-graphic hidden-sm-and-down"/>
+      <v-flex md4 sm12 class="feature-graphic observable-and-resilient-graphic hidden-sm-and-down"/>
       <v-flex md4 sm12 >
         <div class="section">
           <div>
@@ -63,7 +63,7 @@
           </div>
         </div>
       </v-flex>
-      <v-flex md4 sm12 class="observable-and-resilient-graphic hidden-md-and-up"/>
+      <v-flex md4 sm12 class="feature-graphic observable-and-resilient-graphic hidden-md-and-up"/>
       <v-flex md2 class="hidden-sm-and-down"/>
     </v-layout>
   </v-container>
@@ -119,6 +119,10 @@
     p
       :color #3ea5fd
       :font-size 1.25em
+      :margin-left 10px
+    .feature-graphic
+      :margin-top auto;
+      :margin-bottom auto
     .simple-and-fast-graphic
       :background-image url('../static/img/helidon_feature_simple_and_fast.svg')
       :background-position 50% 50%
