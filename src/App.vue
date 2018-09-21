@@ -25,8 +25,8 @@
         class="landing-page-toolbar">
         <v-toolbar-items>
           <v-btn flat v-scroll-to="'#top'" class="toolbar-logo"></v-btn>
-          <v-btn flat v-scroll-to="'#features'" class="hidden-sm-and-down">Features</v-btn>
-          <v-btn flat v-scroll-to="'#getting-started'" class="hidden-sm-and-down">Getting started</v-btn>
+          <v-btn flat v-scroll-to="'#features'" class="hidden-sm-and-down">特性</v-btn>
+          <v-btn flat v-scroll-to="'#getting-started'" class="hidden-sm-and-down">开始了解</v-btn>
         </v-toolbar-items>
         <v-spacer></v-spacer>
         <v-toolbar-items>
@@ -49,15 +49,14 @@
                 <v-container fluid>
                   <v-layout row wrap>
                     <v-flex md12 sm12 class="jumbotron">
-                      <h1>Project Helidon</h1>
-                      <p>Lightweight. Fast. Crafted for Microservices.</p>
+                      <h1>Helidon项目</h1>
+                      <p>轻巧，快速。专为微服务而精心打造。</p>
                     </v-flex>
                   </v-layout>
                   <v-flex md12 sm12 class="jumbotron-logo hidden-xs-only"/>
                   <v-layout row wrap class="section">
                     <div>
-                      <p>Helidon is a collection of Java libraries for writing
-                       microservices that run on a fast web core powered by Netty.</p>
+                      <p>Helidon是一个用于编写微服务的Java库集合，这些微服务运行在由Netty提供支持的快速Web核心上。</p>
                     </div>
                   </v-layout>
                 </v-container>
@@ -66,15 +65,14 @@
           </v-layout>
         </v-container>
         <v-container id="features" fluid light class="screen-2">
-          <h2>Features</h2>
+          <h2>特性</h2>
           <v-layout row wrap>
             <v-flex md2 class="hidden-sm-and-down"/>
             <v-flex md4 sm12 >
               <div class="section">
                 <div>
-                  <h3><v-icon>import_contacts</v-icon>Simple and fast</h3>
-                  <p>Helidon is designed to be simple to  use, with tooling and examples to get you going quickly. Since Helidon
-                  is just a collection of libraries running on a fast Netty core, there is no extra overhead or bloat.</p>
+                  <h3><v-icon>import_contacts</v-icon>简单快捷</h3>
+                  <p>Helidon设计简单易用，配有工具和示例，可帮助您快速上手。由于Helidon只是在快速的Netty的核心上运行的库集合，因此没有额外的开销或臃肿。</p>
                 </div>
               </div>
             </v-flex>
@@ -88,9 +86,8 @@
             <v-flex md4 sm12 >
               <div class="section">
                 <div>
-                  <h3><v-icon>border_clear</v-icon>Microprofile Support</h3>
-                  <p>Helidon supports MicroProfile and provides familiar APIs like JAX-RS, CDI and JSON-P/B. Our
-                   MicroProfile implementation runs on our fast Helidon Reactive WebServer</p>
+                  <h3><v-icon>border_clear</v-icon>支持Microprofile</h3>
+                  <p>Helidon支持MicroProfile并提供熟悉的API，如JAX-RS、CDI和JSON-P/B。我们的MicroProfile实现在我们的快速的Helidon响应式Web服务器上面运行。</p>
                 </div>
               </div>
             </v-flex>
@@ -102,10 +99,8 @@
             <v-flex md4 sm12 >
               <div class="section">
                 <div>
-                  <h3><v-icon>storage</v-icon>Reactive WebServer</h3>
-                  <p>Helidon Reactive WebServer provides a modern functional programming model and runs on top of Netty.
-                  Lightweight, flexible and reactive, the Helidon WebServer provides a simple to use and fast foundation for
-                  your microservices.</p>
+                  <h3><v-icon>storage</v-icon>响应式Web服务</h3>
+                  <p>Helidon响应式Web服务提供了运行在Netty之上的现代功能编程模型。Helidon的Web服务轻巧、灵活、反应灵敏，为您的微服务提供简单易用的基础设施。</p>
                 </div>
               </div>
             </v-flex>
@@ -119,9 +114,8 @@
             <v-flex md4 sm12 >
               <div class="section">
                 <div>
-                  <h3><v-icon>repeat</v-icon>Observable and Resilient</h3>
-                  <p>With support for health checks, metrics, tracing and fault tolerance, Helidon has what you need to
-                   write cloud ready applications that integrate with Prometheus, Zipkin and Kubernetes.</p>
+                  <h3><v-icon>repeat</v-icon>可观察和弹性</h3>
+                  <p>通过支持运行状况检查，指标，跟踪和容错，Helidon拥有编写与Prometheus、Zipkin和Kubernetes集成的云应用程序所需的功能。</p>
                 </div>
               </div>
             </v-flex>
@@ -129,14 +123,14 @@
           </v-layout>
         </v-container>
         <v-container id="getting-started" fluid light class="screen-3">
-          <h2>Getting started</h2>
+          <h2>开始了解</h2>
           <v-layout row wrap>
             <v-flex md1 lg2 class="hidden-sm-and-down"/>
             <v-flex md10 lg8 xs12 sm12>
                 <v-layout row wrap>
                     <v-layout row wrap class="step1">
                         <v-flex xs12>
-                            <h4>Choose your programming model</h4>
+                            <h4>选择您的编程模型</h4>
                         </v-flex>
                         <v-flex md6 xs12 sm12 class="code-snippet microframework">
                             <h5>MicroFramework</h5>
@@ -159,21 +153,21 @@
                         </v-flex>
                     </v-layout>
                     <v-flex xs12 class="step2">
-                        <h4>Build, run, test</h4>
-                        <h5>Build</h5>
+                        <h4>构建，运行，测试</h4>
+                        <h5>构建</h5>
                         <pre><code>$ mvn package</code></pre>
-                        <h5>Run</h5>
+                        <h5>运行</h5>
                         <pre><code>$ java -jar target/myapp.jar</code></pre>
-                        <h5>Test</h5>
+                        <h5>测试</h5>
                         <pre><code>$ curl -X GET http://localhost:8080/greet
 Hello World!</code></pre>
                     </v-flex>
                     <v-flex xs12 class="step3">
-                        <h4>Get started!</h4>
+                        <h4>开始吧！</h4>
                         <v-btn light large
                                :href="gettingStartedUri"
                                target="_blank"
-                               rel="noopener">Go to docs</v-btn>
+                               rel="noopener">查看文档（开撸）</v-btn>
                     </v-flex>
                 </v-layout>
             </v-flex>
@@ -184,6 +178,10 @@ Hello World!</code></pre>
       <v-footer>
         <div>Copyright &copy; 2018, Oracle and/or its affiliates. All rights reserved. Oracle and Java are registered
          trademarks of Oracle and/or its affiliates. Other names may be trademarks of their respective owners.</div>
+          <div>Copyright &copy; 2018, Helidon-中文社区。All rights reserved by
+              <a target="_blank" href="https://daocloud.io/">DaoCloud</a>,
+              <a target="_blank" href="https://github.com/JaredTan95">Jian.Tan</a>
+          </div>
       </v-footer>
    </v-app>
 </template>

@@ -100,7 +100,7 @@
         <version.nodejs>v8.11.1</version.nodejs>
         <version.npm>5.6.0</version.npm>
         <site.output.dir>${project.build.directory}/site</site.output.dir>
-        <docs.version>0.10.0</docs.version>
+        <docs.version>0.10.1-SNAPSHOT</docs.version>
         <version.plugin.glassfish-copyright>1.48</version.plugin.glassfish-copyright>
         <version.plugin.frontend>1.6</version.plugin.frontend>
         <version.plugin.scm-plugin>3.0.0</version.plugin.scm-plugin>
@@ -314,17 +314,17 @@
             <id>ossrh-staging</id>
             <repositories>
                 <repository>
-                    <id>ossrh-staging</id>
-                    <url>https://oss.sonatype.org/content/groups/staging/</url>
+                    <id>labs</id>
+                    <url>http://nexus.mschina.io/nexus/content/repositories/labs/</url>
                     <snapshots>
-                        <enabled>false</enabled>
+                        <enabled>true</enabled>
                     </snapshots>
                 </repository>
             </repositories>
             <pluginRepositories>
                 <pluginRepository>
-                    <id>ossrh-staging</id>
-                    <url>https://oss.sonatype.org/content/groups/staging/</url>
+                    <id>labs</id>
+                    <url>http://nexus.mschina.io/nexus/content/repositories/labs/</url>
                     <snapshots>
                         <enabled>false</enabled>
                     </snapshots>
