@@ -1,6 +1,6 @@
 <doc-view>
 
-<h2 >Introduction</h2>
+<h2 >介绍</h2>
 <div class="section">
 <p>Helidon是用于开发微服务的一个Java库集合。
 没有唯一的工具或部署模型。你的微服务只是一个简单的Java SE 应用程序。</p>
@@ -73,35 +73,24 @@
 
 <h2 >MicroProfile</h2>
 <div class="section">
-<p>On top of this foundation Helidon supports the MicroProfile family of APIs,
- including JAX-RS and CDI. This means you can choose from one of two
- programming models:</p>
+<p>在此基础之上，Helidon支持MicroProfile系列API，包括JAX-RS和CDI。这意味着您可以从以下两种编程模型中选择一种：</p>
 
 <ul class="ulist">
 <li>
-<p>Helidon SE: a functional programming style that uses the Helidon WebServer,
-Config and Security APIs directly. This gives you full
-transparency and control.</p>
+<p>Helidon SE: 一种函数式编程风格，直接使用Helidon WebServer，Config和Security API。这种方式将控制权全权交给你自己。</p>
 
 </li>
 <li>
-<p>Helidon MP: a more declarative model that supports the <a id=""
-title=""
-target="_blank"
-href="https://microprofile.io">MicroProfile</a>
-family of APIs. This will be familiar to Java EE developers.</p>
+<p>Helidon MP: 这是一种对Java EE程序员来说很熟悉的一种方式，此方式支持https://microprofile.io[MicroProfile] API等一系列更具说明性的模型。这对Java EE开发人员来说很熟悉。</p>
 
 </li>
 </ul>
-<p>Our <router-link to="/getting-started/02_base-example">Quickstart Examples</router-link> gets
-you started using either of these programming models.</p>
+<p>我们的<router-link to="/getting-started/02_base-example">快速入门示例</router-link>可让您开始使用这些编程模型中的任何一种。</p>
 
 
-<h3 >Docker and Kubernetes support</h3>
+<h3 >支持Docker和Kubernetes</h3>
 <div class="section">
-<p>The <router-link to="/getting-started/02_base-example">Helidon Quickstart Examples</router-link> contain
-support for Docker and Kubernetes. Just follow the examples and you&#8217;ll have
-a simple service up and running in minutes.</p>
+<p><router-link to="/getting-started/02_base-example">Helidon 快速入门示例</router-link>包含对Docker和Kubernetes的支持。只需按照示例操作，您就可以在几分钟内完成并运行简单的服务。</p>
 
 </div>
 </div>

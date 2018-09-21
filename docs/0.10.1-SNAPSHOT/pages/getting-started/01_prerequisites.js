@@ -7,8 +7,8 @@
 <v-card class="section-def__card">
 <v-card-text>
 <dl>
-<dt slot=title>Prerequisites</dt>
-<dd slot="desc"><p>Everything you need to use Helidon is listed here.</p>
+<dt slot=title>前置条件</dt>
+<dd slot="desc"><p>此处列出了使用想要开始使用Helidon所需的一切。</p>
 </dd>
 </dl>
 </v-card-text>
@@ -18,14 +18,12 @@
 </v-flex>
 </v-layout>
 
-<h2 >Prerequisites</h2>
+<h2 >先决条件</h2>
 <div class="section">
-<p>Helidon requires Java 8 (or greater) and Maven. You need Docker if you
-want to build and deploy Docker containers. If you want to
-deploy to Kubernetes, you need <code>kubectl</code> and a Kubernetes cluster (you can
-<router-link to="/getting-started/04_kubernetes">install one on your desktop</router-link>).</p>
+<p>Helidon需要Java 8（或更高版本）和Maven。如果要构建和部署Docker容器，你则需要学习一些Docker的知识。
+如果要将服务部署到Kubernetes，则需要`kubectl`和Kubernetes集群(您可以<router-link to="/getting-started/04_kubernetes">在你电脑桌面上安装一个</router-link>)。</p>
 
-<p>The following list shows the minimum versions.</p>
+<p>以下列表显示了最低版本要求：</p>
 
 
 <div class="table__overflow elevation-1 flex sm7
@@ -60,7 +58,7 @@ href="https://maven.apache.org/download.cgi">Maven 3.5</a></td>
 title=""
 target="_blank"
 href="https://docs.docker.com/install/">Docker 18.02</a></td>
-<td>Use the Edge channel to run Kubernetes on your desktop</td>
+<td>使用Edge通道在桌面上运行Kubernetes</td>
 </tr>
 <tr>
 <td><a id=""
@@ -74,7 +72,7 @@ href="https://kubernetes.io/docs/tasks/tools/install-kubectl/">Kubectl 1.7.4</a>
 </div>
 <markup
 lang="bash"
-title="Verify Prerequisites"
+title="检查环境配置"
 >java --version
 mvn --version
 docker --version
@@ -82,7 +80,7 @@ kubectl version --short</markup>
 
 </div>
 
-<h2 >Setting JAVA_HOME</h2>
+<h2 >配置 JAVA_HOME</h2>
 <div class="section">
 <markup
 lang="bash"
@@ -96,10 +94,9 @@ export JAVA_HOME=/usr/lib/jvm/jdk-8</markup>
 
 </div>
 
-<h2 >Try the Quickstart Examples</h2>
+<h2 >开始尝试快速开始示例</h2>
 <div class="section">
-<p>Now you are ready to try the
-<router-link :to="{path: '/getting-started/02_base-example', hash: '#Prerequisites'}">Quickstart Examples</router-link>.</p>
+<p>现在您已准备好基础环境并可以进行尝试<router-link :to="{path: '/getting-started/02_base-example', hash: '#Prerequisites'}">快速入门示例</router-link>。</p>
 
 </div>
 </doc-view>

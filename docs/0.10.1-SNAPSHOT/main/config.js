@@ -28,8 +28,8 @@ function createRoutes(){
         {
             path: '/about/01_introduction',
             meta: {
-                h1: 'Introduction',
-                title: 'Introduction',
+                h1: '介绍',
+                title: '介绍',
                 description: 'about Helidon',
                 keywords: 'helidon, java, microservices, microprofile',
                 customLayout: null,
@@ -40,8 +40,8 @@ function createRoutes(){
         {
             path: '/getting-started/01_prerequisites',
             meta: {
-                h1: 'Prerequisites',
-                title: 'Prerequisites',
+                h1: '前置条件',
+                title: '前置条件',
                 description: 'Helidon pre-requisites',
                 keywords: 'helidon',
                 customLayout: null,
@@ -52,9 +52,9 @@ function createRoutes(){
         {
             path: '/getting-started/02_base-example',
             meta: {
-                h1: 'Quickstart Examples',
-                title: 'Quickstart Examples',
-                description: 'Helidon Quickstart examples',
+                h1: '快速入门示例',
+                title: '快速入门示例',
+                description: 'Helidon 快速入门',
                 keywords: 'helidon',
                 customLayout: null,
                 hasNav: true
@@ -438,7 +438,7 @@ function createNav(){
             action: 'weekend',
             group: '/about',
             items: [
-                { href: '/about/01_introduction', title: 'Introduction' }
+                { href: '/about/01_introduction', title: '介绍' }
             ]
         },
         {
@@ -446,8 +446,8 @@ function createNav(){
             action: 'assistant',
             group: '/getting-started',
             items: [
-                { href: '/getting-started/01_prerequisites', title: 'Prerequisites' },
-                { href: '/getting-started/02_base-example', title: 'Quickstart Examples' },
+                { href: '/getting-started/01_prerequisites', title: '前置条件' },
+                { href: '/getting-started/02_base-example', title: '快速入门示例' },
                 { href: '/getting-started/03_managing-dependencies', title: 'Managing Dependencies' },
                 { href: '/getting-started/04_kubernetes', title: 'Kubernetes on your Desktop' }
             ]

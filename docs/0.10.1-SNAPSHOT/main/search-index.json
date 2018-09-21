@@ -367,53 +367,53 @@
         },
         {
             "location": "/getting-started/02_base-example",
-            "text": " There are two quickstart samples, one for Helidon SE and one for Helidon MP (MicroProfile). Generate the examples using Maven archetypes. The resulting Maven projects contain support for Docker and Kubernetes. ",
+            "text": " 有两个快速入门示例，一个用于Helidon SE，另一个用于Helidon MP（MicroProfile）。 使用Maven模版生成示例。生成的Maven项目中包含对Docker和Kubernetes的支持。 ",
             "title": "preambule"
         },
         {
             "location": "/getting-started/02_base-example",
-            "text": " If you haven&#8217;t already, make sure you have satisfied the system prerequisites ",
-            "title": "Prerequisites"
+            "text": " 如果您还没有准备好环境配置等条件，请确保您已满足 系统前置条件 ",
+            "title": "前置条件"
         },
         {
             "location": "/getting-started/02_base-example",
-            "text": " Generate the project sources using one (or both) of the Helidon Maven archetypes. Both examples result in a REST service that supports the same REST API, but they implement it differently: The Helidon SE example implements the REST service using the Helidon WebServer component directly. It shows the basics of configuring the WebServer and implementing basic routing rules. The Helidon MP example implements the REST service using the JAX-RS support provided by the Helidon MicroProfile server. <markup lang=\"bash\" title=\"Helidon SE Example\" >mvn archetype:generate -DinteractiveMode=false \\ -DarchetypeGroupId=io.helidon.archetypes \\ -DarchetypeArtifactId=helidon-quickstart-se \\ -DarchetypeVersion=0.10.1-SNAPSHOT \\ -DgroupId=io.helidon.examples \\ -DartifactId=quickstart-se \\ -Dpackage=io.helidon.examples.quickstart.se <markup lang=\"bash\" title=\"Helidon MP Example\" >mvn archetype:generate -DinteractiveMode=false \\ -DarchetypeGroupId=io.helidon.archetypes \\ -DarchetypeArtifactId=helidon-quickstart-mp \\ -DarchetypeVersion=0.10.1-SNAPSHOT \\ -DgroupId=io.helidon.examples \\ -DartifactId=quickstart-mp \\ -Dpackage=io.helidon.examples.quickstart.mp The archetype generates a Maven project in your current directory (for example, quickstart-mp ). Change into this directory. <markup lang=\"bash\" >cd quickstart-* If you want to use the generated project as a starter for your own application, then you can replace groupId, artifactId and package with values appropriate for your application. ",
-            "title": "Generate The Project"
+            "text": " 使用Helidon Maven模版中的一个（或两个）生成项目源码。这两个示例都产生了支持相同REST API的REST服务，但它们以不同方式实现： Helidon SE示例直接使用Helidon WebServer组件实现REST服务。它展示了配置WebServer和实现基本路由规则的基础知识。 Helidon MP示例使用Helidon MicroProfile服务器提供的JAX-RS支持实现REST服务。 <markup lang=\"bash\" title=\"Helidon SE 样例\" >mvn archetype:generate -DinteractiveMode=false \\ -DarchetypeGroupId=io.helidon.archetypes \\ -DarchetypeArtifactId=helidon-quickstart-se \\ -DarchetypeVersion=0.10.1-SNAPSHOT \\ -DgroupId=io.helidon.样例s \\ -DartifactId=quickstart-se \\ -Dpackage=io.helidon.样例s.quickstart.se <markup lang=\"bash\" title=\"Helidon MP 样例\" >mvn archetype:generate -DinteractiveMode=false \\ -DarchetypeGroupId=io.helidon.archetypes \\ -DarchetypeArtifactId=helidon-quickstart-mp \\ -DarchetypeVersion=0.10.1-SNAPSHOT \\ -DgroupId=io.helidon.样例s \\ -DartifactId=quickstart-mp \\ -Dpackage=io.helidon.样例s.quickstart.mp 模版在当前目录中生成Maven项目（比如，quickstart-mp）。切换到此目录： <markup lang=\"bash\" >cd quickstart-* 如果要将生成的项目用作自己应用程序的启动器，那么你可以用适合你的应用程序的值替换groupId，artifactId和package。 ",
+            "title": "生成工程"
         },
         {
             "location": "/getting-started/02_base-example",
-            "text": " For either example: <markup lang=\"bash\" >mvn package ",
-            "title": "Build the Application"
+            "text": " 比如： <markup lang=\"bash\" >mvn package ",
+            "title": "构建此应用程序"
         },
         {
             "location": "/getting-started/02_base-example",
-            "text": " The project builds an application jar for the example and saves all runtime dependencies in the target/libs directory. This means you can easily start the application by running the application jar file: <markup lang=\"bash\" title=\"Helidon SE Example\" >java -jar target/quickstart-se.jar <markup lang=\"bash\" title=\"Helidon MP Example\" >java -jar target/quickstart-mp.jar ",
-            "title": "Run the Application"
+            "text": " 该项目为该示例构建了一个应用程序jar，并将所有运行时依赖项保存在`target/libs`目录中。 这意味着您可以通过运行应用程序生成的jar文件轻松启动应用程序： <markup lang=\"bash\" title=\"Helidon SE 样例\" >java -jar target/quickstart-se.jar <markup lang=\"bash\" title=\"Helidon MP 样例\" >java -jar target/quickstart-mp.jar ",
+            "title": "运行此应用程序"
         },
         {
             "location": "/getting-started/02_base-example",
-            "text": " Both examples support the same REST interface, so you exercise both examples the same way. The example is a very simple \"Hello World\" greeting service. It supports GET requests for generating a greeting message, and a PUT request for changing the greeting itself. The response is encoded using JSON. For example: <markup >curl -X GET http://localhost:8080/greet {\"message\":\"Hello World!\"} curl -X GET http://localhost:8080/greet/Joe {\"message\":\"Hello Joe!\"} curl -X PUT http://localhost:8080/greet/greeting/Hola {\"greeting\":\"Hola\"} curl -X GET http://localhost:8080/greet/Jose {\"message\":\"Hola Jose!\"} ",
-            "title": "Try the Application"
+            "text": " 这两个示例都支持相同的REST接口，因此您以相同的方式尝试这两个示例。 该示例是一个非常简单的“Hello World”问候语服务。它支持生成问候消息的GET请求，以及更改问候语本身的PUT请求。 请求响应使用JSON格式进行编码。例如： <markup >curl -X GET http://localhost:8080/greet {\"message\":\"Hello World!\"} curl -X GET http://localhost:8080/greet/Joe {\"message\":\"Hello Joe!\"} curl -X PUT http://localhost:8080/greet/greeting/Hola {\"greeting\":\"Hola\"} curl -X GET http://localhost:8080/greet/Jose {\"message\":\"Hola Jose!\"} ",
+            "title": "试试运行的应用程序"
         },
         {
             "location": "/getting-started/02_base-example",
-            "text": " The project also contains a Docker file so that you can easily build and run a docker image. Because the example&#8217;s runtime dependencies are already in target/libs , the Docker file is pretty simple (see target/Dockerfile ). To build the Docker image, you need to have Docker installed and running on your system. <markup lang=\"bash\" title=\"Helidon SE Example\" >docker build -t quickstart-se target <markup lang=\"bash\" title=\"Helidon MP Example\" >docker build -t quickstart-mp target ",
-            "title": "Build a Docker Image"
+            "text": " 该项目还包含一个Dockerfile，因此您可以轻松地构建和运行docker镜像。 因为示例的运行时依赖性已经在`target/libs`中，所以Dockerfile非常简单（参考`target/Dockerfile`）。 要构建Docker镜像，您需要在系统上安装并确保Docker处于运行状态。 <markup lang=\"bash\" title=\"Helidon SE 样例\" >docker build -t quickstart-se target <markup lang=\"bash\" title=\"Helidon MP 样例\" >docker build -t quickstart-mp target ",
+            "title": "构建Docker镜像"
         },
         {
             "location": "/getting-started/02_base-example",
-            "text": "<markup lang=\"bash\" title=\"Helidon SE Example\" >docker run --rm -p 8080:8080 quickstart-se:latest <markup lang=\"bash\" title=\"Helidon MP Example\" >docker run --rm -p 8080:8080 quickstart-mp:latest Then you can try the application as you did before. ",
-            "title": "Run Docker Image"
+            "text": "<markup lang=\"bash\" title=\"Helidon SE 样例\" >docker run --rm -p 8080:8080 quickstart-se:latest <markup lang=\"bash\" title=\"Helidon MP 样例\" >docker run --rm -p 8080:8080 quickstart-mp:latest 然后您可以像以前一样尝试应用程序。 ",
+            "title": "运行Docker镜像"
         },
         {
             "location": "/getting-started/02_base-example",
-            "text": " If you don&#8217;t have access to a Kubernetes cluster, you can install one on your desktop . Then deploy the example: <markup lang=\"bash\" title=\"Verify connectivity to cluster\" >kubectl cluster-info kubectl get nodes <markup lang=\"bash\" title=\"Deploy the application to Kubernetes\" >kubectl create -f target/app.yaml kubectl get pods # Wait for quickstart pod to be RUNNING ",
-            "title": "Deploy the application to Kubernetes"
+            "text": " 如果您无权访问Kubernetes群集，则可以 在本地电脑桌面上安装一个群集 。 然后发布这个样例程序： <markup lang=\"bash\" title=\"验证与群集的连接\" >kubectl cluster-info kubectl get nodes <markup lang=\"bash\" title=\"将应用程序部署到Kubernetes\" >kubectl create -f target/app.yaml kubectl get pods # 等待启动pod运行 ",
+            "title": "将此应用程序发布至Kubernetes"
         },
         {
             "location": "/getting-started/02_base-example",
-            "text": " Start the Kubernetes proxy server so you can connect to your service via localhost: <markup lang=\"bash\" title=\"Start kubctl proxy\" >kubectl proxy Next get the service&#8217;s info. <markup lang=\"bash\" title=\"Helidon SE Example\" >kubectl get service quickstart-se <markup lang=\"bash\" title=\"Helidon MP Example\" >kubectl get service quickstart-mp Note the PORTs. You can now exercise the application as you did before but use the second port number (the NodePort) instead of 8080. For example: <markup >curl -X GET http://localhost:31431/greet After you&#8217;re done, cleanup. <markup lang=\"bash\" title=\"Remove the application from Kubernetes\" >kubectl delete -f target/app.yaml ",
-            "title": "Exercise the Application on Kubernetes"
+            "text": " 启动Kubernetes代理服务器，以便您可以通过localhost连接到您的服务： <markup lang=\"bash\" title=\"启动kubctl代理\" >kubectl proxy 接下来获取服务的信息。 <markup lang=\"bash\" title=\"Helidon SE 样例\" >kubectl get service quickstart-se <markup lang=\"bash\" title=\"Helidon MP 样例\" >kubectl get service quickstart-mp 注意端口号。您现在可以像以前一样使用应用程序，但这里是使用第二个端口号（NodePort）而不是8080.例如： <markup >curl -X GET http://localhost:31431/greet 当你完成练习后，记得清理。 <markup lang=\"bash\" title=\"从Kubernetes中删除该应用程序\" >kubectl delete -f target/app.yaml ",
+            "title": "在Kubernetes上运用应用程序"
         },
         {
             "location": "/webserver/02_configuration",
@@ -783,16 +783,16 @@
         {
             "location": "/about/01_introduction",
             "text": " Helidon是用于开发微服务的一个Java库集合。 没有唯一的工具或部署模型。你的微服务只是一个简单的Java SE 应用程序。 Helidon的基础由三部分组成： settings_ethernet WebServer 由Netty提供支持并具有响应式功能的编程HTTP API。 settings Config 灵活的配置框架，支持多种源和格式。 security Security 用于处理身份验证，授权和上下文传播的工具链。 ",
-            "title": "Introduction"
+            "title": "介绍"
         },
         {
             "location": "/about/01_introduction",
-            "text": " The Helidon Quickstart Examples contain support for Docker and Kubernetes. Just follow the examples and you&#8217;ll have a simple service up and running in minutes. ",
-            "title": "Docker and Kubernetes support"
+            "text": " Helidon 快速入门示例 包含对Docker和Kubernetes的支持。只需按照示例操作，您就可以在几分钟内完成并运行简单的服务。 ",
+            "title": "支持Docker和Kubernetes"
         },
         {
             "location": "/about/01_introduction",
-            "text": " On top of this foundation Helidon supports the MicroProfile family of APIs, including JAX-RS and CDI. This means you can choose from one of two programming models: Helidon SE: a functional programming style that uses the Helidon WebServer, Config and Security APIs directly. This gives you full transparency and control. Helidon MP: a more declarative model that supports the <a id=\"\" title=\"\" target=\"_blank\" href=\"https://microprofile.io\">MicroProfile family of APIs. This will be familiar to Java EE developers. Our Quickstart Examples gets you started using either of these programming models. Docker and Kubernetes support The Helidon Quickstart Examples contain support for Docker and Kubernetes. Just follow the examples and you&#8217;ll have a simple service up and running in minutes. ",
+            "text": " 在此基础之上，Helidon支持MicroProfile系列API，包括JAX-RS和CDI。这意味着您可以从以下两种编程模型中选择一种： Helidon SE: 一种函数式编程风格，直接使用Helidon WebServer，Config和Security API。这种方式将控制权全权交给你自己。 Helidon MP: 这是一种对Java EE程序员来说很熟悉的一种方式，此方式支持https://microprofile.io[MicroProfile] API等一系列更具说明性的模型。这对Java EE开发人员来说很熟悉。 我们的 快速入门示例 可让您开始使用这些编程模型中的任何一种。 支持Docker和Kubernetes Helidon 快速入门示例 包含对Docker和Kubernetes的支持。只需按照示例操作，您就可以在几分钟内完成并运行简单的服务。 ",
             "title": "MicroProfile"
         },
         {
@@ -912,23 +912,23 @@
         },
         {
             "location": "/getting-started/01_prerequisites",
-            "text": " Everything you need to use Helidon is listed here. ",
+            "text": " 此处列出了使用想要开始使用Helidon所需的一切。 ",
             "title": "preambule"
         },
         {
             "location": "/getting-started/01_prerequisites",
-            "text": " Helidon requires Java 8 (or greater) and Maven. You need Docker if you want to build and deploy Docker containers. If you want to deploy to Kubernetes, you need kubectl and a Kubernetes cluster (you can install one on your desktop ). The following list shows the minimum versions. <div class=\"table__overflow elevation-1 flex sm7 \"> <a id=\"\" title=\"\" target=\"_blank\" href=\"https://www.oracle.com/technetwork/java/javase/downloads\">Java&#160;SE&#160;8 or <a id=\"\" title=\"\" target=\"_blank\" href=\"http://jdk.java.net\">Open&#160;JDK&#160;8 &#160; <a id=\"\" title=\"\" target=\"_blank\" href=\"https://maven.apache.org/download.cgi\">Maven 3.5 &#160; <a id=\"\" title=\"\" target=\"_blank\" href=\"https://docs.docker.com/install/\">Docker 18.02 Use the Edge channel to run Kubernetes on your desktop <a id=\"\" title=\"\" target=\"_blank\" href=\"https://kubernetes.io/docs/tasks/tools/install-kubectl/\">Kubectl 1.7.4 &#160; <markup lang=\"bash\" title=\"Verify Prerequisites\" >java --version mvn --version docker --version kubectl version --short ",
-            "title": "Prerequisites"
+            "text": " Helidon需要Java 8（或更高版本）和Maven。如果要构建和部署Docker容器，你则需要学习一些Docker的知识。 如果要将服务部署到Kubernetes，则需要`kubectl`和Kubernetes集群(您可以 在你电脑桌面上安装一个 )。 以下列表显示了最低版本要求： <div class=\"table__overflow elevation-1 flex sm7 \"> <a id=\"\" title=\"\" target=\"_blank\" href=\"https://www.oracle.com/technetwork/java/javase/downloads\">Java&#160;SE&#160;8 or <a id=\"\" title=\"\" target=\"_blank\" href=\"http://jdk.java.net\">Open&#160;JDK&#160;8 &#160; <a id=\"\" title=\"\" target=\"_blank\" href=\"https://maven.apache.org/download.cgi\">Maven 3.5 &#160; <a id=\"\" title=\"\" target=\"_blank\" href=\"https://docs.docker.com/install/\">Docker 18.02 使用Edge通道在桌面上运行Kubernetes <a id=\"\" title=\"\" target=\"_blank\" href=\"https://kubernetes.io/docs/tasks/tools/install-kubectl/\">Kubectl 1.7.4 &#160; <markup lang=\"bash\" title=\"检查环境配置\" >java --version mvn --version docker --version kubectl version --short ",
+            "title": "先决条件"
         },
         {
             "location": "/getting-started/01_prerequisites",
             "text": "<markup lang=\"bash\" title=\"Setting JAVA_HOME\" ># On Mac export JAVA_HOME=`/usr/libexec/java_home -v 1.8` # On Linux # Use the appropriate path to your JDK export JAVA_HOME=/usr/lib/jvm/jdk-8 ",
-            "title": "Setting JAVA_HOME"
+            "title": "配置 JAVA_HOME"
         },
         {
             "location": "/getting-started/01_prerequisites",
-            "text": " Now you are ready to try the Quickstart Examples . ",
-            "title": "Try the Quickstart Examples"
+            "text": " 现在您已准备好基础环境并可以进行尝试 快速入门示例 。 ",
+            "title": "开始尝试快速开始示例"
         },
         {
             "location": "/webserver/05_error-handling",

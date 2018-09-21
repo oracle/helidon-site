@@ -7,10 +7,9 @@
 <v-card class="section-def__card">
 <v-card-text>
 <dl>
-<dt slot=title>Quickstart Examples</dt>
-<dd slot="desc"><p>There are two quickstart samples, one for Helidon SE and one for Helidon
-MP (MicroProfile). Generate the examples using Maven archetypes.
-The resulting Maven projects contain support for Docker and Kubernetes.</p>
+<dt slot=title>快速入门示例</dt>
+<dd slot="desc"><p>有两个快速入门示例，一个用于Helidon SE，另一个用于Helidon MP（MicroProfile）。
+使用Maven模版生成示例。生成的Maven项目中包含对Docker和Kubernetes的支持。</p>
 </dd>
 </dl>
 </v-card-text>
@@ -20,56 +19,49 @@ The resulting Maven projects contain support for Docker and Kubernetes.</p>
 </v-flex>
 </v-layout>
 
-<h2 >Prerequisites</h2>
+<h2 >前置条件</h2>
 <div class="section">
-<p>If you haven&#8217;t already, make sure you have satisfied the
-<router-link to="/getting-started/01_prerequisites">system prerequisites</router-link></p>
+<p>如果您还没有准备好环境配置等条件，请确保您已满足<router-link to="/getting-started/01_prerequisites">系统前置条件</router-link></p>
 
 </div>
 
-<h2 >Generate The Project</h2>
+<h2 >生成工程</h2>
 <div class="section">
-<p>Generate the project sources using one (or both) of the Helidon Maven archetypes.
-Both examples result in a REST service that supports the same
-REST API, but they implement it differently:</p>
+<p>使用Helidon Maven模版中的一个（或两个）生成项目源码。这两个示例都产生了支持相同REST API的REST服务，但它们以不同方式实现：</p>
 
 <ol style="margin-left: 15px;">
 <li>
-The Helidon SE example implements the REST service using the Helidon WebServer
-component directly. It shows the basics of configuring the WebServer
-and implementing basic routing rules.
+Helidon SE示例直接使用Helidon WebServer组件实现REST服务。它展示了配置WebServer和实现基本路由规则的基础知识。
 
 </li>
 <li>
-The Helidon MP example implements the REST service using the JAX-RS
-support provided by the Helidon MicroProfile server.
+Helidon MP示例使用Helidon MicroProfile服务器提供的JAX-RS支持实现REST服务。
 
 </li>
 </ol>
 <markup
 lang="bash"
-title="Helidon SE Example"
+title="Helidon SE 样例"
 >mvn archetype:generate -DinteractiveMode=false \
     -DarchetypeGroupId=io.helidon.archetypes \
     -DarchetypeArtifactId=helidon-quickstart-se \
     -DarchetypeVersion=0.10.1-SNAPSHOT \
-    -DgroupId=io.helidon.examples \
+    -DgroupId=io.helidon.样例s \
     -DartifactId=quickstart-se \
-    -Dpackage=io.helidon.examples.quickstart.se</markup>
+    -Dpackage=io.helidon.样例s.quickstart.se</markup>
 
 <markup
 lang="bash"
-title="Helidon MP Example"
+title="Helidon MP 样例"
 >mvn archetype:generate -DinteractiveMode=false \
     -DarchetypeGroupId=io.helidon.archetypes \
     -DarchetypeArtifactId=helidon-quickstart-mp \
     -DarchetypeVersion=0.10.1-SNAPSHOT \
-    -DgroupId=io.helidon.examples \
+    -DgroupId=io.helidon.样例s \
     -DartifactId=quickstart-mp \
-    -Dpackage=io.helidon.examples.quickstart.mp</markup>
+    -Dpackage=io.helidon.样例s.quickstart.mp</markup>
 
-<p>The archetype generates a Maven project in your current directory
-(for example, <code>quickstart-mp</code>). Change into this directory.</p>
+<p>模版在当前目录中生成Maven项目（比如，quickstart-mp）。切换到此目录：</p>
 
 <markup
 lang="bash"
@@ -77,15 +69,13 @@ lang="bash"
 >cd quickstart-*</markup>
 
 <div class="admonition tip">
-<p class="admonition-inline">If you want to use the generated project as a starter
-for your own application, then you can replace groupId, artifactId
-and package with values appropriate for your application.</p>
+<p class="admonition-inline">如果要将生成的项目用作自己应用程序的启动器，那么你可以用适合你的应用程序的值替换groupId，artifactId和package。</p>
 </div>
 </div>
 
-<h2 >Build the Application</h2>
+<h2 >构建此应用程序</h2>
 <div class="section">
-<p>For either example:</p>
+<p>比如：</p>
 
 <markup
 lang="bash"
@@ -94,34 +84,29 @@ lang="bash"
 
 </div>
 
-<h2 >Run the Application</h2>
+<h2 >运行此应用程序</h2>
 <div class="section">
-<p>The project builds an application jar for the example and
-saves all runtime dependencies in the <code>target/libs</code> directory.
-This means you can easily start the application by running the
-application jar file:</p>
+<p>该项目为该示例构建了一个应用程序jar，并将所有运行时依赖项保存在`target/libs`目录中。
+这意味着您可以通过运行应用程序生成的jar文件轻松启动应用程序：</p>
 
 <markup
 lang="bash"
-title="Helidon SE Example"
+title="Helidon SE 样例"
 >java -jar target/quickstart-se.jar</markup>
 
 <markup
 lang="bash"
-title="Helidon MP Example"
+title="Helidon MP 样例"
 >java -jar target/quickstart-mp.jar</markup>
 
 </div>
 
-<h2 >Try the Application</h2>
+<h2 >试试运行的应用程序</h2>
 <div class="section">
-<p>Both examples support the same REST interface, so you exercise both examples
-the same way.</p>
+<p>这两个示例都支持相同的REST接口，因此您以相同的方式尝试这两个示例。</p>
 
-<p>The example is a very simple "Hello World" greeting service. It supports
-GET requests for generating a greeting message, and a PUT request for
-changing the greeting itself. The response is encoded using JSON.
-For example:</p>
+<p>该示例是一个非常简单的“Hello World”问候语服务。它支持生成问候消息的GET请求，以及更改问候语本身的PUT请求。
+请求响应使用JSON格式进行编码。例如：</p>
 
 <markup
 
@@ -140,96 +125,92 @@ curl -X GET http://localhost:8080/greet/Jose
 
 </div>
 
-<h2 >Build a Docker Image</h2>
+<h2 >构建Docker镜像</h2>
 <div class="section">
-<p>The project also contains a Docker file so that you can easily
-build and run a docker image. Because the example&#8217;s runtime
-dependencies are already in <code>target/libs</code>, the Docker file is
-pretty simple (see <code>target/Dockerfile</code>). To build the Docker
-image, you need to have Docker installed and running on your system.</p>
+<p>该项目还包含一个Dockerfile，因此您可以轻松地构建和运行docker镜像。
+因为示例的运行时依赖性已经在`target/libs`中，所以Dockerfile非常简单（参考`target/Dockerfile`）。
+要构建Docker镜像，您需要在系统上安装并确保Docker处于运行状态。</p>
 
 <markup
 lang="bash"
-title="Helidon SE Example"
+title="Helidon SE 样例"
 >docker build -t quickstart-se target</markup>
 
 <markup
 lang="bash"
-title="Helidon MP Example"
+title="Helidon MP 样例"
 >docker build -t quickstart-mp target</markup>
 
 </div>
 
-<h2 >Run Docker Image</h2>
+<h2 >运行Docker镜像</h2>
 <div class="section">
 <markup
 lang="bash"
-title="Helidon SE Example"
+title="Helidon SE 样例"
 >docker run --rm -p 8080:8080 quickstart-se:latest</markup>
 
 <markup
 lang="bash"
-title="Helidon MP Example"
+title="Helidon MP 样例"
 >docker run --rm -p 8080:8080 quickstart-mp:latest</markup>
 
-<p>Then you can try the application as you did before.</p>
+<p>然后您可以像以前一样尝试应用程序。</p>
 
 </div>
 
-<h2  id="deploy-to-k8s">Deploy the application to Kubernetes</h2>
+<h2  id="deploy-to-k8s">将此应用程序发布至Kubernetes</h2>
 <div class="section">
-<p>If you don&#8217;t have access to a Kubernetes cluster, you can
-<router-link to="/getting-started/04_kubernetes">install one on your desktop</router-link>.
-Then deploy the example:</p>
+<p>如果您无权访问Kubernetes群集，则可以<router-link to="/getting-started/04_kubernetes">在本地电脑桌面上安装一个群集</router-link>。
+然后发布这个样例程序：</p>
 
 <markup
 lang="bash"
-title="Verify connectivity to cluster"
+title="验证与群集的连接"
 >kubectl cluster-info
 kubectl get nodes</markup>
 
 <markup
 lang="bash"
-title="Deploy the application to Kubernetes"
+title="将应用程序部署到Kubernetes"
 >kubectl create -f target/app.yaml
-kubectl get pods                    # Wait for quickstart pod to be RUNNING</markup>
+kubectl get pods                    # 等待启动pod运行</markup>
 
 </div>
 
-<h2 >Exercise the Application on Kubernetes</h2>
+<h2 >在Kubernetes上运用应用程序</h2>
 <div class="section">
-<p>Start the Kubernetes proxy server so you can connect to your service via localhost:</p>
+<p>启动Kubernetes代理服务器，以便您可以通过localhost连接到您的服务：</p>
 
 <markup
 lang="bash"
-title="Start kubctl proxy"
+title="启动kubctl代理"
 >kubectl proxy</markup>
 
-<p>Next get the service&#8217;s info.</p>
+<p>接下来获取服务的信息。</p>
 
 <markup
 lang="bash"
-title="Helidon SE Example"
+title="Helidon SE 样例"
 >kubectl get service quickstart-se</markup>
 
 <markup
 lang="bash"
-title="Helidon MP Example"
+title="Helidon MP 样例"
 >kubectl get service quickstart-mp</markup>
 
-<p>Note the PORTs. You can now exercise the application as you did before
-but use the second port number (the NodePort) instead of 8080. For example:</p>
+<p>注意端口号。您现在可以像以前一样使用应用程序，但这里是使用第二个端口号（NodePort）而不是8080.例如：</p>
 
 <markup
 
 
 >curl -X GET http://localhost:31431/greet</markup>
 
-<p>After you&#8217;re done, cleanup.</p>
+<p>当你完成练习后，记得清理。</p>
 
 <markup
 lang="bash"
-title="Remove the application from Kubernetes"
+title="从Kubernetes中删除该应用程序"
 >kubectl delete -f target/app.yaml</markup>
 
 </div>
