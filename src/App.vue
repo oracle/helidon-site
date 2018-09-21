@@ -25,8 +25,8 @@
         class="landing-page-toolbar">
         <v-toolbar-items>
           <v-btn flat v-scroll-to="'#top'" class="toolbar-logo"></v-btn>
-          <v-btn flat v-scroll-to="'#features'" class="hidden-sm-and-down">Features</v-btn>
-          <v-btn flat v-scroll-to="'#getting-started'" class="hidden-sm-and-down">Getting started</v-btn>
+          <v-btn flat v-scroll-to="'#features'" class="hidden-sm-and-down">特性</v-btn>
+          <v-btn flat v-scroll-to="'#getting-started'" class="hidden-sm-and-down">开始</v-btn>
         </v-toolbar-items>
         <v-spacer></v-spacer>
         <v-toolbar-items>
