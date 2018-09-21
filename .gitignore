@@ -4,3 +4,5 @@ node
 node_modules
 log.txt
 .DS_Store
+.idea/
+*.iml
