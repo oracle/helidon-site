@@ -377,7 +377,7 @@
         },
         {
             "location": "/getting-started/02_base-example",
-            "text": " 使用Helidon Maven模版中的一个（或两个）生成项目源码。这两个示例都产生了支持相同REST API的REST服务，但它们以不同方式实现： Helidon SE示例直接使用Helidon WebServer组件实现REST服务。它展示了配置WebServer和实现基本路由规则的基础知识。 Helidon MP示例使用Helidon MicroProfile服务器提供的JAX-RS支持实现REST服务。 <markup lang=\"bash\" title=\"Helidon SE 样例\" >mvn archetype:generate -DinteractiveMode=false \\ -DarchetypeGroupId=io.helidon.archetypes \\ -DarchetypeArtifactId=helidon-quickstart-se \\ -DarchetypeVersion=0.10.1-SNAPSHOT \\ -DgroupId=io.helidon.样例s \\ -DartifactId=quickstart-se \\ -Dpackage=io.helidon.样例s.quickstart.se <markup lang=\"bash\" title=\"Helidon MP 样例\" >mvn archetype:generate -DinteractiveMode=false \\ -DarchetypeGroupId=io.helidon.archetypes \\ -DarchetypeArtifactId=helidon-quickstart-mp \\ -DarchetypeVersion=0.10.1-SNAPSHOT \\ -DgroupId=io.helidon.样例s \\ -DartifactId=quickstart-mp \\ -Dpackage=io.helidon.样例s.quickstart.mp 模版在当前目录中生成Maven项目（比如，quickstart-mp）。切换到此目录： <markup lang=\"bash\" >cd quickstart-* 如果要将生成的项目用作自己应用程序的启动器，那么你可以用适合你的应用程序的值替换groupId，artifactId和package。 ",
+            "text": " 使用Helidon Maven模版中的一个（或两个）生成项目源码。这两个示例都产生了支持相同REST API的REST服务，但它们以不同方式实现： Helidon SE示例直接使用Helidon WebServer组件实现REST服务。它展示了配置WebServer和实现基本路由规则的基础知识。 Helidon MP示例使用Helidon MicroProfile服务器提供的JAX-RS支持实现REST服务。 <markup lang=\"bash\" title=\"Helidon SE 样例\" >mvn archetype:generate -DinteractiveMode=false \\ -DarchetypeGroupId=io.helidon.archetypes \\ -DarchetypeArtifactId=helidon-quickstart-se \\ -DarchetypeVersion=0.10.1-SNAPSHOT \\ -DgroupId=io.helidon.examples \\ -DartifactId=quickstart-se \\ -Dpackage=io.helidon.examples.quickstart.se <markup lang=\"bash\" title=\"Helidon MP 样例\" >mvn archetype:generate -DinteractiveMode=false \\ -DarchetypeGroupId=io.helidon.archetypes \\ -DarchetypeArtifactId=helidon-quickstart-mp \\ -DarchetypeVersion=0.10.1-SNAPSHOT \\ -DgroupId=io.helidon.examples \\ -DartifactId=quickstart-mp \\ -Dpackage=io.helidon.examples.quickstart.mp 模版在当前目录中生成Maven项目（比如，quickstart-mp）。切换到此目录： <markup lang=\"bash\" >cd quickstart-* 如果要将生成的项目用作自己应用程序的启动器，那么你可以用适合你的应用程序的值替换groupId，artifactId和package。 ",
             "title": "生成工程"
         },
         {
@@ -797,38 +797,38 @@
         },
         {
             "location": "/getting-started/04_kubernetes",
-            "text": " For development it&#8217;s often convenient to run Kubernetes on your desktop. Two popular ways to do this are with <a id=\"\" title=\"\" target=\"_blank\" href=\"https://kubernetes.io/docs/getting-started-guides/minikube/\">Kubernetes Minikube or <a id=\"\" title=\"\" target=\"_blank\" href=\"https://docs.docker.com/docker-for-mac/kubernetes/\">Kubernetes support in Docker for Desktop . In this guide we&#8217;ll use Docker for Desktop. ",
+            "text": " 对于开发人员来将，通常会在个人电脑上面运行Kubernetes环境，两种流行的方法是在Docker for Desktop中使用 <a id=\"\" title=\"\" target=\"_blank\" href=\"https://kubernetes.io/docs/getting-started-guides/minikube/\">Kubernetes Minikube 或 <a id=\"\" title=\"\" target=\"_blank\" href=\"https://docs.docker.com/docker-for-mac/kubernetes/\">Kubernetes Docker桌面版支持 。 在本指南中，我们将使用 <a id=\"\" title=\"\" target=\"_blank\" href=\"https://docs.docker.com/docker-for-mac/kubernetes/\">Kubernetes Docker桌面版支持 . ",
             "title": "preambule"
         },
         {
             "location": "/getting-started/04_kubernetes",
-            "text": " Install <a id=\"\" title=\"\" target=\"_blank\" href=\"https://docs.docker.com/docker-for-mac/install/\">Docker for Mac or <a id=\"\" title=\"\" target=\"_blank\" href=\"https://docs.docker.com/docker-for-windows/install/\">Docker for Windows . To use the Kubernetes support you&#8217;ll want to get the Edge Channel installer. ",
-            "title": "Install"
+            "text": " 安装适用于 <a id=\"\" title=\"\" target=\"_blank\" href=\"https://docs.docker.com/docker-for-mac/install/\">Mac的Docker 或适用于 <a id=\"\" title=\"\" target=\"_blank\" href=\"https://docs.docker.com/docker-for-windows/install/\">Windows的Docker 。 要使用Kubernetes支持，您需要获得Edge Channel安装程序。 ",
+            "title": "安装"
         },
         {
             "location": "/getting-started/04_kubernetes",
-            "text": " Enable <a id=\"\" title=\"\" target=\"_blank\" href=\"https://docs.docker.com/docker-for-mac/#kubernetes\">Kubernetes Support for Mac or <a id=\"\" title=\"\" target=\"_blank\" href=\"https://docs.docker.com/docker-for-windows/#kubernetes\">Kubernetes Support for Windows . Once Kubernetes installation is complete, make sure you have your context set correctly to use docker-for-desktop. <markup lang=\"bash\" title=\"Make sure K8s context is set to docker-for-desktop\" >kubectl config get-contexts kubectl config use-context docker-for-desktop kubectl cluster-info kubectl version --short kubectl get nodes ",
-            "title": "Enable Kubernetes Support"
+            "text": " 启用 <a id=\"\" title=\"\" target=\"_blank\" href=\"https://docs.docker.com/docker-for-mac/#kubernetes\">Kubernetes Support for Mac 或者 <a id=\"\" title=\"\" target=\"_blank\" href=\"https://docs.docker.com/docker-for-windows/#kubernetes\">Kubernetes Support for Windows . Kubernetes安装完成后，请确保正确设置上下文以使用docker-for-desktop。 <markup lang=\"bash\" title=\"确保将K8s上下文设置为docker-for-desktop\" >kubectl config get-contexts kubectl config use-context docker-for-desktop kubectl cluster-info kubectl version --short kubectl get nodes ",
+            "title": "启用Kubernetes支持"
         },
         {
             "location": "/getting-started/04_kubernetes",
             "text": "",
-            "title": "Continue with the quickstart example "
+            "title": "继续 快速入门示例 "
         },
         {
             "location": "/getting-started/03_managing-dependencies",
-            "text": " Helidon provides a &#8220;Bill Of Materials&#8221; (BOM) to manage dependencies. This is a special Maven pom file that provides dependency management. Using the Helidon BOM allows you to use Helidon component dependencies with a single version: the Helidon version. ",
+            "text": " Helidon提供了\"`Bill Of Materials`\" (BOM)来管理依赖。 这是一个提供了管理依赖的的特殊maven的pom文件。 使用Helidon BOM允许我们通过Helison的版本信息来使用Helidon的组件们。 ",
             "title": "preambule"
         },
         {
             "location": "/getting-started/03_managing-dependencies",
-            "text": " Add the following snippet to your pom.xml file in order to import the Helidon BOM. <markup lang=\"xml\" title=\"Import the Helidon BOM\" >&lt;dependencyManagement&gt; &lt;dependencies&gt; &lt;dependency&gt; &lt;groupId&gt;io.helidon&lt;/groupId&gt; &lt;artifactId&gt;helidon-bom&lt;/artifactId&gt; &lt;version&gt;0.10.1-SNAPSHOT&lt;/version&gt; &lt;type&gt;pom&lt;/type&gt; &lt;scope&gt;import&lt;/scope&gt; &lt;/dependency&gt; &lt;/dependencies&gt; &lt;/dependencyManagement&gt; ",
-            "title": "The Helidon BOM POM"
+            "text": " 将以下代码段添加到pom.xml文件中, 以此来导入Helidon BOM。 <markup lang=\"xml\" title=\"导入Helidon BOM\" >&lt;dependencyManagement&gt; &lt;dependencies&gt; &lt;dependency&gt; &lt;groupId&gt;io.helidon&lt;/groupId&gt; &lt;artifactId&gt;helidon-bom&lt;/artifactId&gt; &lt;version&gt;0.10.1-SNAPSHOT&lt;/version&gt; &lt;type&gt;pom&lt;/type&gt; &lt;scope&gt;import&lt;/scope&gt; &lt;/dependency&gt; &lt;/dependencies&gt; &lt;/dependencyManagement&gt; ",
+            "title": "Helidon的BOM和POM"
         },
         {
             "location": "/getting-started/03_managing-dependencies",
-            "text": " Once you have imported the BOM, you can declare dependencies on Helidon components without specifying a version. <markup lang=\"xml\" title=\"Component dependency\" >&lt;dependency&gt; &lt;groupId&gt;io.helidon.webserver&lt;/groupId&gt; &lt;artifactId&gt;helidon-webserver&lt;/artifactId&gt; &lt;/dependency&gt; ",
-            "title": "Using Helidon Component Dependencies"
+            "text": " 导入BOM后，可以在不指定版本的情况下声明Helidon组件的依赖关系。 <markup lang=\"xml\" title=\"组件依赖\" >&lt;dependency&gt; &lt;groupId&gt;io.helidon.webserver&lt;/groupId&gt; &lt;artifactId&gt;helidon-webserver&lt;/artifactId&gt; &lt;/dependency&gt; ",
+            "title": "使用Helidon组件依赖项"
         },
         {
             "location": "/microprofile/03_application-configuration",

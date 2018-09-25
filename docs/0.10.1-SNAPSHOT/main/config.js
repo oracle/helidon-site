@@ -64,8 +64,8 @@ function createRoutes(){
         {
             path: '/getting-started/03_managing-dependencies',
             meta: {
-                h1: 'Managing Dependencies',
-                title: 'Managing Dependencies',
+                h1: '管理依赖',
+                title: '管理依赖',
                 description: 'Managing Maven dependencies',
                 keywords: 'bom, dependency management',
                 customLayout: null,
@@ -76,8 +76,8 @@ function createRoutes(){
         {
             path: '/getting-started/04_kubernetes',
             meta: {
-                h1: 'Kubernetes on your Desktop',
-                title: 'Kubernetes on your Desktop',
+                h1: 'Kubernetes开发环境',
+                title: 'Kubernetes开发环境',
                 description: 'Running Kubernetes on your desktop.',
                 keywords: 'kubernetes',
                 customLayout: null,
@@ -448,8 +448,8 @@ function createNav(){
             items: [
                 { href: '/getting-started/01_prerequisites', title: '前置条件' },
                 { href: '/getting-started/02_base-example', title: '快速入门示例' },
-                { href: '/getting-started/03_managing-dependencies', title: 'Managing Dependencies' },
-                { href: '/getting-started/04_kubernetes', title: 'Kubernetes on your Desktop' }
+                { href: '/getting-started/03_managing-dependencies', title: '管理依赖' },
+                { href: '/getting-started/04_kubernetes', title: 'Kubernetes开发环境' }
             ]
         },
         {

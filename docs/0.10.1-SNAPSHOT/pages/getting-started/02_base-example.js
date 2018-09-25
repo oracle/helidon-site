@@ -46,9 +46,9 @@ title="Helidon SE 样例"
     -DarchetypeGroupId=io.helidon.archetypes \
     -DarchetypeArtifactId=helidon-quickstart-se \
     -DarchetypeVersion=0.10.1-SNAPSHOT \
-    -DgroupId=io.helidon.样例s \
+    -DgroupId=io.helidon.examples \
     -DartifactId=quickstart-se \
-    -Dpackage=io.helidon.样例s.quickstart.se</markup>
+    -Dpackage=io.helidon.examples.quickstart.se</markup>
 
 <markup
 lang="bash"
@@ -57,9 +57,9 @@ title="Helidon MP 样例"
     -DarchetypeGroupId=io.helidon.archetypes \
     -DarchetypeArtifactId=helidon-quickstart-mp \
     -DarchetypeVersion=0.10.1-SNAPSHOT \
-    -DgroupId=io.helidon.样例s \
+    -DgroupId=io.helidon.examples \
     -DartifactId=quickstart-mp \
-    -Dpackage=io.helidon.样例s.quickstart.mp</markup>
+    -Dpackage=io.helidon.examples.quickstart.mp</markup>
 
 <p>模版在当前目录中生成Maven项目（比如，quickstart-mp）。切换到此目录：</p>
 
