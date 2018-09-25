@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (c) 2018 Oracle and/or its affiliates. All rights reserved.
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>io.helidon</groupId>
+    <artifactId>helidon-site</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>Helidon Site</name>
+
+    <description>Sources for the helidon.io website</description>
+
+    <url>https://helidon.io</url>
+
+    <organization>
+        <name>Oracle Corporation</name>
+        <url>http://www.oracle.com/</url>
+    </organization>
+
+    <inceptionYear>2018</inceptionYear>
+
+    <licenses>
+        <license>
+            <name>Apache 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Tomas Langer</name>
+            <email>tomas.langer@oracle.com</email>
+            <organization>Oracle Corporation</organization>
+        </developer>
+        <developer>
+            <name>Tim Quinn</name>
+            <email>tim.quinn@oracle.com</email>
+            <organization>Oracle Corporation</organization>
+        </developer>
+        <developer>
+            <name>Romain Grecourt</name>
+            <email>romain.grecourt@oracle.com</email>
+            <organization>Oracle Corporation</organization>
+        </developer>
+        <developer>
+            <name>Laird Jarrett Nelson</name>
+            <email>laird.nelson@oracle.com</email>
+            <organization>Oracle Corporation</organization>
+        </developer>
+        <developer>
+            <name>Santiago Pericas-Geertsen</name>
+            <email>santiago.pericasgeertsen@oracle.com</email>
+            <organization>Oracle Corporation</organization>
+        </developer>
+        <developer>
+            <name>Joe Di Pol</name>
+            <email>joe.dipol@oracle.com</email>
+            <organization>Oracle Corporation</organization>
+        </developer>
+        <developer>
+            <name>Dmitry Kornilov</name>
+            <email>dmitry.kornilov@oracle.com</email>
+            <organization>Oracle Corporation</organization>
+        </developer>
+    </developers>
+
+    <scm>
+        <developerConnection>scm:git:git@github.com:oracle/helidon-site.git</developerConnection>
+        <connection>scm:git:git@github.com:oracle/helidon-site.git</connection>
+        <tag>HEAD</tag>
+        <url>https://github.com/oracle/helidon-site</url>
+    </scm>
+
+    <distributionManagement>
+        <site>
+            <id>site</id>
+            <url>scm:git:git@github.com:oracle/helidon-site.git</url>
+        </site>
+    </distributionManagement>
+
+    <properties>
+        <maven.deploy.skip>true</maven.deploy.skip>
+        <version.nodejs>v8.11.1</version.nodejs>
+        <version.npm>5.6.0</version.npm>
+        <site.output.dir>${project.build.directory}/site</site.output.dir>
+        <docs.version>0.10.1-SNAPSHOT</docs.version>
+        <version.plugin.glassfish-copyright>1.48</version.plugin.glassfish-copyright>
+        <version.plugin.frontend>1.6</version.plugin.frontend>
+        <version.plugin.scm-plugin>3.0.0</version.plugin.scm-plugin>
+        <version.plugin.dependency-plugin>3.0.0</version.plugin.dependency-plugin>
+        <version.plugin.resources-plugin>3.1.0</version.plugin.resources-plugin>
+    </properties>
+
+    <build>
+        <sourceDirectory>src</sourceDirectory>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.glassfish.copyright</groupId>
+                    <artifactId>glassfish-copyright-maven-plugin</artifactId>
+                    <version>${version.plugin.glassfish-copyright}</version>
+                    <configuration>
+                        <templateFile>etc/copyright.txt</templateFile>
+                        <excludeFile>etc/copyright-exclude.txt</excludeFile>
+                        <scm>git</scm>
+                        <debug>false</debug>
+                        <scmOnly>true</scmOnly>
+                        <warn>true</warn>
+                        <ignoreYear>false</ignoreYear>
+                        <useComma>true</useComma>
+                        <doHidden>true</doHidden>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>com.github.eirslett</groupId>
+                    <artifactId>frontend-maven-plugin</artifactId>
+                    <version>${version.plugin.frontend}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <version>${version.plugin.dependency-plugin}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-scm-publish-plugin</artifactId>
+                    <version>${version.plugin.scm-plugin}</version>
+                </plugin>
+                <plugin>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-resources-plugin</artifactId>
+                  <version>${version.plugin.resources-plugin}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-resources</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${site.output.dir}</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>src/main/resources</directory>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.github.eirslett</groupId>
+                <artifactId>frontend-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>install-node-and-npm</goal>
+                        </goals>
+                        <configuration>
+                            <nodeVersion>${version.nodejs}</nodeVersion>
+                            <npmVersion>${version.npm}</npmVersion>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>npm install</id>
+                        <goals>
+                            <goal>npm</goal>
+                        </goals>
+                        <configuration>
+                            <arguments>install</arguments>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>npm run build</id>
+                        <goals>
+                            <goal>npm</goal>
+                        </goals>
+                        <configuration>
+                            <arguments>run build</arguments>
+                            <environmentVariables>
+                                <DOCS_VERSION>latest</DOCS_VERSION>
+                            </environmentVariables>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>add-docs</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>io.helidon</groupId>
+                                    <artifactId>helidon-docs</artifactId>
+                                    <version>${docs.version}</version>
+                                    <outputDirectory>${site.output.dir}/docs/${docs.version}</outputDirectory>
+                                    <excludes>META-INF/**</excludes>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>io.helidon</groupId>
+                                    <artifactId>helidon-docs</artifactId>
+                                    <version>0.9.1</version>
+                                    <outputDirectory>${site.output.dir}/docs/0.9.1</outputDirectory>
+                                    <excludes>META-INF/**</excludes>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.8</version>
+                <executions>
+                    <execution>
+                        <id>create-latest-link</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <symlink link="${site.output.dir}/docs/latest"
+                                         resource="./${docs.version}"/>
+                            </target>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>publish</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-scm-publish-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <phase>deploy</phase>
+                                <goals>
+                                    <goal>publish-scm</goal>
+                                </goals>
+                                <configuration>
+                                    <scmBranch>gh-pages</scmBranch>
+                                    <content>${site.output.dir}</content>
+                                    <skipDeletedFiles>false</skipDeletedFiles>
+                                    <checkinComment>Update site</checkinComment>
+                                    <tryUpdate>true</tryUpdate>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>ossrh-releases</id>
+            <repositories>
+                <repository>
+                    <id>ossrh-releases</id>
+                    <url>https://oss.sonatype.org/content/repositories/releases/</url>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>ossrh-releases</id>
+                    <url>https://oss.sonatype.org/content/repositories/releases/</url>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </pluginRepository>
+            </pluginRepositories>
+        </profile>
+        <profile>
+            <id>ossrh-staging</id>
+            <repositories>
+                <repository>
+                    <id>labs</id>
+                    <url>http://nexus.mschina.io/nexus/content/repositories/labs/</url>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>labs</id>
+                    <url>http://nexus.mschina.io/nexus/content/repositories/labs/</url>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </pluginRepository>
+            </pluginRepositories>
+        </profile>
+    </profiles>
+</project>
