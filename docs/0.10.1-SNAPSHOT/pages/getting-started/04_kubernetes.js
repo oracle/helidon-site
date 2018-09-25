@@ -7,20 +7,19 @@
 <v-card class="section-def__card">
 <v-card-text>
 <dl>
-<dt slot=title>Kubernetes on your Desktop</dt>
-<dd slot="desc"><p>For development it&#8217;s often convenient to run Kubernetes on your desktop.
-Two popular ways to do this are with
-<a id=""
+<dt slot=title>Kubernetes开发环境</dt>
+<dd slot="desc"><p>对于开发人员来将，通常会在个人电脑上面运行Kubernetes环境，两种流行的方法是在Docker for Desktop中使用 <a id=""
 title=""
 target="_blank"
-href="https://kubernetes.io/docs/getting-started-guides/minikube/">Kubernetes Minikube</a>
-or
-<a id=""
+href="https://kubernetes.io/docs/getting-started-guides/minikube/">Kubernetes Minikube</a> 或 <a id=""
 title=""
 target="_blank"
-href="https://docs.docker.com/docker-for-mac/kubernetes/">Kubernetes support in Docker for Desktop</a>.</p>
+href="https://docs.docker.com/docker-for-mac/kubernetes/">Kubernetes Docker桌面版支持</a>。</p>
 
-<p>In this guide we&#8217;ll use Docker for Desktop.</p>
+<p>在本指南中，我们将使用 <a id=""
+title=""
+target="_blank"
+href="https://docs.docker.com/docker-for-mac/kubernetes/">Kubernetes Docker桌面版支持</a>.</p>
 </dd>
 </dl>
 </v-card-text>
@@ -30,41 +29,38 @@ href="https://docs.docker.com/docker-for-mac/kubernetes/">Kubernetes support in 
 </v-flex>
 </v-layout>
 
-<h2 >Install</h2>
+<h2 >安装</h2>
 <div class="section">
-<p>Install
-<a id=""
+<p>安装适用于 <a id=""
 title=""
 target="_blank"
-href="https://docs.docker.com/docker-for-mac/install/">Docker for Mac</a> or
-<a id=""
+href="https://docs.docker.com/docker-for-mac/install/">Mac的Docker</a> 或适用于 <a id=""
 title=""
 target="_blank"
-href="https://docs.docker.com/docker-for-windows/install/">Docker for Windows</a>.</p>
+href="https://docs.docker.com/docker-for-windows/install/">Windows的Docker</a>。</p>
 
-<p>To use the Kubernetes support you&#8217;ll want to get the Edge Channel installer.</p>
+<p>要使用Kubernetes支持，您需要获得Edge Channel安装程序。</p>
 
 </div>
 
-<h2 >Enable Kubernetes Support</h2>
+<h2 >启用Kubernetes支持</h2>
 <div class="section">
-<p>Enable
+<p>启用
 <a id=""
 title=""
 target="_blank"
 href="https://docs.docker.com/docker-for-mac/#kubernetes">Kubernetes Support for Mac</a>
-or
+或者
 <a id=""
 title=""
 target="_blank"
 href="https://docs.docker.com/docker-for-windows/#kubernetes">Kubernetes Support for Windows</a>.</p>
 
-<p>Once Kubernetes installation is complete, make sure you have your context
-set correctly to use docker-for-desktop.</p>
+<p>Kubernetes安装完成后，请确保正确设置上下文以使用docker-for-desktop。</p>
 
 <markup
 lang="bash"
-title="Make sure K8s context is set to docker-for-desktop"
+title="确保将K8s上下文设置为docker-for-desktop"
 >kubectl config get-contexts
 kubectl config use-context docker-for-desktop
 kubectl cluster-info
@@ -73,7 +69,7 @@ kubectl get nodes</markup>
 
 </div>
 
-<h2 >Continue with <router-link :to="{path: '/getting-started/02_base-example', hash: '#deploy-to-k8s'}">the quickstart example</router-link></h2>
+<h2 >继续 <router-link :to="{path: '/getting-started/02_base-example', hash: '#deploy-to-k8s'}">快速入门示例</router-link></h2>
 <div class="section">
 
 </div>

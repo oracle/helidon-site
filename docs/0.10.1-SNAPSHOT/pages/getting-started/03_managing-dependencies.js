@@ -7,12 +7,11 @@
 <v-card class="section-def__card">
 <v-card-text>
 <dl>
-<dt slot=title>Managing Dependencies</dt>
-<dd slot="desc"><p>Helidon provides a &#8220;Bill Of Materials&#8221; (BOM) to manage dependencies.
-This is a special Maven pom file that provides dependency management.</p>
+<dt slot=title>管理依赖</dt>
+<dd slot="desc"><p>Helidon提供了"`Bill Of Materials`" (BOM)来管理依赖。
+这是一个提供了管理依赖的的特殊maven的pom文件。</p>
 
-<p>Using the Helidon BOM allows you to use Helidon component dependencies with a single
- version: the Helidon version.</p>
+<p>使用Helidon BOM允许我们通过Helison的版本信息来使用Helidon的组件们。</p>
 </dd>
 </dl>
 </v-card-text>
@@ -22,13 +21,13 @@ This is a special Maven pom file that provides dependency management.</p>
 </v-flex>
 </v-layout>
 
-<h2 >The Helidon BOM POM</h2>
+<h2 >Helidon的BOM和POM</h2>
 <div class="section">
-<p>Add the following snippet to your pom.xml file in order to import the Helidon BOM.</p>
+<p>将以下代码段添加到pom.xml文件中, 以此来导入Helidon BOM。</p>
 
 <markup
 lang="xml"
-title="Import the Helidon BOM"
+title="导入Helidon BOM"
 >&lt;dependencyManagement&gt;
     &lt;dependencies&gt;
         &lt;dependency&gt;
@@ -43,14 +42,13 @@ title="Import the Helidon BOM"
 
 </div>
 
-<h2 >Using Helidon Component Dependencies</h2>
+<h2 >使用Helidon组件依赖项</h2>
 <div class="section">
-<p>Once you have imported the BOM, you can declare dependencies on Helidon components
- without specifying a version.</p>
+<p>导入BOM后，可以在不指定版本的情况下声明Helidon组件的依赖关系。</p>
 
 <markup
 lang="xml"
-title="Component dependency"
+title="组件依赖"
 >&lt;dependency&gt;
     &lt;groupId&gt;io.helidon.webserver&lt;/groupId&gt;
     &lt;artifactId&gt;helidon-webserver&lt;/artifactId&gt;
