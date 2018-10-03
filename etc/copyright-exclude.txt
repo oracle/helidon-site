@@ -19,4 +19,5 @@
 .DS_Store
 .vue
 .pdf
+.md
 CNAME
