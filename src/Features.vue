@@ -25,7 +25,7 @@
       <v-flex md4 sm12 >
         <div class="section">
           <div>
-            <h3><v-icon>border_clear</v-icon>Microprofile Support</h3>
+            <h3><v-icon>border_clear</v-icon>MicroProfile Support</h3>
             <p>Helidon supports MicroProfile and provides familiar APIs like JAX-RS, CDI and JSON-P/B. Our
              MicroProfile implementation runs on our fast Helidon Reactive WebServer</p>
           </div>
