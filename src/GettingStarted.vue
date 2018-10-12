@@ -69,7 +69,7 @@ Hello World!</code></pre>
 <style lang="sass">
   .slide_getting_started
     :background-color #41a8ff
-    :padding-top 100px
+    :padding-top 200px
     :padding-bottom 100px
     h2
       :color white
@@ -118,13 +118,13 @@ Hello World!</code></pre>
     @media screen and (min-width: 460px)
       .step1
         :padding-left 65px
-        :background-image url('../static/img/helidon_getting_started_step1.svg')
+        :background-image url('../static/img/helidon_getting_started_step1.png')
       .step2
         :padding-left 65px
-        :background-image url('../static/img/helidon_getting_started_step2.svg')
+        :background-image url('../static/img/helidon_getting_started_step2.png')
       .step3
         :padding-left 65px
         :min-height 350px
-        :background-image url('../static/img/helidon_getting_started_step3.svg')
+        :background-image url('../static/img/helidon_getting_started_step3.png')
 </style>
 
