@@ -69,13 +69,14 @@ Hello World!</code></pre>
 <style lang="sass">
   .slide_getting_started
     :background-color #41a8ff
+    :padding-top 100px
+    :padding-bottom 100px
     h2
       :color white
       :text-align center
       :font-weight 400
       :font-size 3em
-      :margin-top 100px
-      :margin-bottom 150px
+      :margin-bottom 100px
     h4
       :text-align left
       :font-weight 400

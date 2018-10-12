@@ -81,6 +81,8 @@
 <style lang="sass">
   .slide_features
     :background-color #f6f6f6
+    :padding-top 100px
+    :padding-bottom 100px
     .vertical-spacer
       :height 100px
     .section
@@ -105,8 +107,7 @@
       :text-align center
       :font-weight 400
       :font-size 3em
-      :margin-top 100px
-      :margin-bottom 150px
+      :margin-bottom 100px
     h3
       :font-weight 400
       :font-size 1.8em
@@ -123,24 +124,15 @@
     .feature-graphic
       :margin-top auto;
       :margin-bottom auto
-    .simple-and-fast-graphic
-      :background-image url('../static/img/helidon_feature_simple_and_fast.svg')
-      :background-position 50% 50%
-      :height 200px
-      :width 200px
-    .microprofile-support-graphic
-      :background-image url('../static/img/helidon_feature_microprofile_support.svg')
-      :background-position 50% 50%
-      :height 200px
-      :width 200px
-    .reactive-web-server-graphic
-      :background-image: url('../static/img/helidon_feature_reactive_web_server.svg')
       :background-position: 50% 50%
-      :height 200px
-      :width 200px
+      :background-size: contain
+      :height: 200px
+    .simple-and-fast-graphic
+      :background-image url('../static/img/helidon_feature_simple_and_fast.png')
+    .microprofile-support-graphic
+      :background-image url('../static/img/helidon_feature_microprofile_support.png')
+    .reactive-web-server-graphic
+      :background-image: url('../static/img/helidon_feature_reactive_web_server.png')
     .observable-and-resilient-graphic
-      :background-image url('../static/img/helidon_feature_observable_and_resilient.svg')
-      :background-position 50% 50%
-      :height 200px
-      :width 200px
+      :background-image url('../static/img/helidon_feature_observable_and_resilient.png')
 </style>

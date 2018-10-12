@@ -4,42 +4,47 @@
 <template>
   <v-app>
 
-    <parallaxWrapper id="parallax_wrapper" v-bind:scrollOffset=600 >
+    <!-- NAVIGATION MENU -->
+    <!--
+      Firefox workaround: put the toolbar outside the wrapper to fix some bug
+      with position sticky. The trade-off is that the toolbar takes the full width
+      of the window overlaps the scroll bar. Scrolling functions normally.
+    -->
+    <v-toolbar app
+               fixed
+               height="58px"
+               v-bind:dark="!isScrolling()"
+               v-bind:flat="!isScrolling()"
+               class="landing-page-toolbar"
+               v-bind:class="toolbarClass()">
+      <v-toolbar-items>
+        <v-btn flat
+               v-scroll-to="'#top'"
+               class="toolbar-logo"
+               rel="noopener"/>
+        <v-btn flat
+               v-scroll-to="'#features'"
+               class="hidden-sm-and-down"
+               rel="noopener">Features</v-btn>
+        <v-btn flat
+               v-scroll-to="'#getting-started'"
+               class="hidden-sm-and-down"
+               rel="noopener">Getting Started</v-btn>
+      </v-toolbar-items>
+      <v-spacer></v-spacer>
+      <v-toolbar-items>
+        <v-btn flat
+               href="./docs/latest"
+               target="_blank"
+               rel="noopener"><v-icon>import_contacts</v-icon></v-btn>
+        <v-btn flat
+               href="https://github.com/oracle/helidon"
+               target="_blank"
+               rel="noopener"><i class="icon fab fa-github"></i></v-btn>
+      </v-toolbar-items>
+    </v-toolbar>
 
-      <!-- NAVIGATION MENU -->
-      <v-toolbar app
-                 fixed
-                 height="58px"
-                 v-bind:dark="!isScrolling()"
-                 v-bind:flat="!isScrolling()"
-                 class="landing-page-toolbar"
-                 v-bind:class="toolbarClass()">
-        <v-toolbar-items>
-          <v-btn flat
-                 v-scroll-to="'#top'"
-                 class="toolbar-logo"
-                 rel="noopener"/>
-          <v-btn flat
-                 v-scroll-to="'#features'"
-                 class="hidden-sm-and-down"
-                 rel="noopener">Features</v-btn>
-          <v-btn flat
-                 v-scroll-to="'#getting-started'"
-                 class="hidden-sm-and-down"
-                 rel="noopener">Getting Started</v-btn>
-        </v-toolbar-items>
-        <v-spacer></v-spacer>
-        <v-toolbar-items>
-          <v-btn flat
-                 href="./docs/latest"
-                 target="_blank"
-                 rel="noopener"><v-icon>import_contacts</v-icon></v-btn>
-          <v-btn flat
-                 href="https://github.com/oracle/helidon"
-                 target="_blank"
-                 rel="noopener"><i class="icon fab fa-github"></i></v-btn>
-        </v-toolbar-items>
-      </v-toolbar>
+    <parallaxWrapper id="parallax_wrapper" v-bind:scrollOffset=400 >
 
       <!-- PARALLAX LAYERS -->
       <parallaxLayer img="parallax_layer_sky.png"
@@ -47,60 +52,53 @@
                      v-bind:height="1066"
                      v-bind:top="0"
                      v-bind:zIndex="0"
-                     v-bind:depth="5" >
-
-        <!-- TEXT TOP OF PARALLAX -->
-        <div class="hero_title">
-          <h1>Project Helidon</h1>
-          <p>Lightweight. Fast. Crafted for Microservices.</p>
-        </div>
-      </parallaxlayer>
+                     v-bind:depth="5" />
 
       <parallaxLayer img="parallax_layer_sun.png"
-                     v-bind:height="236"
+                     v-bind:height="314"
                      v-bind:top="500"
                      v-bind:zIndex="10"
                      v-bind:depth="5" />
 
       <parallaxLayer img="parallax_layer_mountains_1.png"
-                     v-bind:height="238"
+                     v-bind:height="317"
                      v-bind:top="600"
                      v-bind:zIndex="10"
                      v-bind:depth="4.75" />
 
       <parallaxLayer img="parallax_layer_mountains_2.png"
-                     v-bind:height="260"
+                     v-bind:height="346"
                      v-bind:top="650"
                      v-bind:zIndex="20"
                      v-bind:depth="3.75" />
 
       <parallaxLayer img="parallax_layer_mountains_3.png"
-                     v-bind:height="300"
+                     v-bind:height="400"
                      v-bind:top="716"
                      v-bind:zIndex="30"
                      v-bind:depth="3" />
 
       <parallaxLayer img="parallax_layer_frank.png"
-                     v-bind:height="146"
+                     v-bind:height="194"
                      v-bind:top="450"
                      v-bind:zIndex="30"
                      v-bind:depth="3" />
 
       <parallaxLayer img="parallax_layer_city.png"
-                     v-bind:height="684"
-                     v-bind:top="812"
+                     v-bind:height="910"
+                     v-bind:top="810"
                      v-bind:zIndex="40"
                      v-bind:depth="1.7" />
 
       <parallaxLayer img="parallax_layer_hills.png"
-                     v-bind:height="860"
+                     v-bind:height="1145"
                      v-bind:top="780"
                      v-bind:zIndex="50"
                      v-bind:depth="1" />
 
       <parallaxCover v-bind:top=1640
                      v-bind:zIndex=80
-                     backgroundColor="#f6f6f6">
+                     backgroundColor="#f8f8f8">
 
         <!-- TEXT BELOW PARALLAX -->
         <div class="hero_text">
@@ -160,58 +158,26 @@
     &.landing-page-toolbar
       :z-index 200
       :position sticky !important
-      //:border 1px solid blue
       .toolbar-logo
-        // Toolbar logo text, hidden on super small display
-        @media screen and (min-width: 376px)
-          .btn__content
-            &:after
-              :text-transform none
-              :padding-left 65px
-              :font-weight 500
-              :content "helidon.io"
+        :width 140px
+        :background-size 110px 25px
+        :background-position 16px 19px
       &.theme--dark
         &.toolbar-top
-          // Set the toolbar background to transparent when not scrolling
           :background-color transparent!important
           .toolbar-logo
-            :background-size 35px 35px
-            :background-image url('../static/img/helidon_logo_white_outline_35x35.svg')
-            :background-position 16px 11.5px
+            :background-image url('../static/img/helidon_logo_white_outline.png')
       &.toolbar-scroll
-        // Set the toolbar background to white when scrolling
         .toolbar-logo
-          // Change the toolbar to black when scrolling
-          :background-size 35px 35px
-          :background-image url('../static/img/helidon_logo_black_outline_35x35.svg')
-          :background-position 16px 11.5px
+          :background-image url('../static/img/helidon_logo_black_outline.png')
       .toolbar__items
-        // Force toolbar button text to be capitalized instead of all caps
         .btn
           :text-transform none
           :font-size 16px
           :font-weight 400
-        // Remove transition on icons when scrolling
         i
           :-webkit-transition unset!important
           :transition unset!important
-
-  .hero_title
-    :position absolute
-    :left 0
-    :top 0
-    :z-index 40
-    :text-align center
-    :margin-top 300px
-    :width 100%
-    h1
-      :color white
-      :font-size 56px
-      :font-weight 300
-    p
-      :color rgba(255,255,255,.5)
-      :font-size 22px
-      :font-weight 400
 
   .hero_text
     :left 0
