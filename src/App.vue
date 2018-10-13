@@ -49,49 +49,49 @@
       <!-- PARALLAX LAYERS -->
       <parallaxLayer img="parallax_layer_sky.png"
                      id="top"
-                     v-bind:height="1066"
+                     v-bind:height="1753"
                      v-bind:top="0"
                      v-bind:zIndex="0"
                      v-bind:depth="5" />
 
       <parallaxLayer img="parallax_layer_sun.png"
-                     v-bind:height="314"
+                     v-bind:height="310"
                      v-bind:top="500"
                      v-bind:zIndex="10"
                      v-bind:depth="5" />
 
       <parallaxLayer img="parallax_layer_mountains_1.png"
-                     v-bind:height="317"
+                     v-bind:height="277"
                      v-bind:top="600"
                      v-bind:zIndex="10"
                      v-bind:depth="4.75" />
 
       <parallaxLayer img="parallax_layer_mountains_2.png"
-                     v-bind:height="346"
+                     v-bind:height="330"
                      v-bind:top="650"
                      v-bind:zIndex="20"
                      v-bind:depth="3.75" />
 
       <parallaxLayer img="parallax_layer_mountains_3.png"
-                     v-bind:height="400"
+                     v-bind:height="434"
                      v-bind:top="716"
                      v-bind:zIndex="30"
                      v-bind:depth="3" />
 
       <parallaxLayer img="parallax_layer_frank.png"
-                     v-bind:height="194"
+                     v-bind:height="148"
                      v-bind:top="450"
                      v-bind:zIndex="30"
                      v-bind:depth="3" />
 
       <parallaxLayer img="parallax_layer_city.png"
-                     v-bind:height="910"
+                     v-bind:height="1048"
                      v-bind:top="810"
                      v-bind:zIndex="40"
                      v-bind:depth="1.7" />
 
       <parallaxLayer img="parallax_layer_hills.png"
-                     v-bind:height="1145"
+                     v-bind:height="1201"
                      v-bind:top="780"
                      v-bind:zIndex="50"
                      v-bind:depth="1" />
@@ -123,6 +123,16 @@
   </v-app>
 </template>
 <script>
+  // import the parallax image for webpack to bundle them
+  import '../static/img/parallax_layer_sky.png'
+  import '../static/img/parallax_layer_sun.png'
+  import '../static/img/parallax_layer_mountains_1.png'
+  import '../static/img/parallax_layer_mountains_2.png'
+  import '../static/img/parallax_layer_mountains_3.png'
+  import '../static/img/parallax_layer_frank.png'
+  import '../static/img/parallax_layer_city.png'
+  import '../static/img/parallax_layer_hills.png'
+
   import parallaxWrapper from './ParallaxWrapper'
   import parallaxLayer from './ParallaxLayer'
   import parallaxCover from './ParallaxCover'

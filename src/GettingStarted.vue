@@ -48,7 +48,7 @@ Hello World!</code></pre>
                    large
                    href="./docs/latest/#/getting-started/02_base-example"
                    target="_blank"
-                   rel="noopener">Go to docs</v-btn>
+                   rel="noopener">Try it now</v-btn>
           </v-flex>
         </v-layout>
       </v-flex>

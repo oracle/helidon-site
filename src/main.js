@@ -22,6 +22,8 @@ import Vuex from 'vuex'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
 
+import '../static/img/favicon.png'
+
 Vue.use(VueScrollTo, {
   container: '#parallax_wrapper',
   duration: 500,
