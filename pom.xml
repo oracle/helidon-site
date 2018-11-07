@@ -231,7 +231,7 @@
                                     <groupId>io.helidon</groupId>
                                     <artifactId>helidon-docs</artifactId>
                                     <version>0.10.4</version>
-                                    <outputDirectory>${site.output.dir}/docs/0.10.3</outputDirectory>
+                                    <outputDirectory>${site.output.dir}/docs/0.10.4</outputDirectory>
                                     <excludes>META-INF/**</excludes>
                                 </artifactItem>
                                 <artifactItem>
