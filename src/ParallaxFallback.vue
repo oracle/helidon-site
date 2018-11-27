@@ -35,12 +35,6 @@
         default: 0
       }
     },
-    created () {
-      window.addEventListener('scroll', this.onScroll)
-    },
-    destroyed () {
-      window.removeEventListener('scroll', this.onScroll)
-    },
     methods: {
       fallbackStyle () {
         let style = {}
