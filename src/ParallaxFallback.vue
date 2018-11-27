@@ -7,7 +7,7 @@
        v-bind:style="fallbackStyle()"
        v-on:scroll.passive="onScroll">
 
-    <div v-bind:style="fallbackImgStyle()" />
+    <div id="top" v-bind:style="fallbackImgStyle()" />
     <slot/>
   </div>
 </template>

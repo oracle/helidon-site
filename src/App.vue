@@ -48,9 +48,9 @@
     <!-- MOBILE (<= 960px width) -->
     <parallaxFallback v-if="this.isMobile"
                       img="parallax_mobile.png"
-                      id="top"
+                      id="parallax_fallback"
                       v-bind:height="1400"
-                      v-bind:scrollOffset="100" >
+                      v-bind:scrollOffset="0" >
         <parallaxContent/>
     </parallaxfallback>
 
@@ -185,7 +185,7 @@
           offset: -58
         }
         if (this.isMobile) {
-          options.container = 'body'
+          options.container = '#parallax_fallback'
         } else {
           options.container = '#parallax_wrapper'
         }
