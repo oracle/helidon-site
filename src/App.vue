@@ -16,18 +16,19 @@
                v-bind:dark="!isScrolling()"
                v-bind:flat="!isScrolling()"
                class="landing-page-toolbar"
+               v-bind:style="toolbarStyle()"
                v-bind:class="toolbarClass()">
       <v-toolbar-items>
         <v-btn flat
-               v-scroll-to="'#top'"
+               v-on:click="scrollTo('#top')"
                class="toolbar-logo"
                rel="noopener"/>
         <v-btn flat
-               v-scroll-to="'#features'"
+               v-on:click="scrollTo('#features')"
                class="hidden-sm-and-down"
                rel="noopener">Features</v-btn>
         <v-btn flat
-               v-scroll-to="'#getting-started'"
+               v-on:click="scrollTo('#getting-started')"
                class="hidden-sm-and-down"
                rel="noopener">Getting Started</v-btn>
       </v-toolbar-items>
@@ -44,12 +45,24 @@
       </v-toolbar-items>
     </v-toolbar>
 
-    <parallaxWrapper id="parallax_wrapper" v-bind:scrollOffset=400 >
+    <!-- MOBILE (<= 960px width) -->
+    <parallaxFallback v-if="this.isMobile"
+                      img="parallax_mobile.png"
+                      id="top"
+                      v-bind:height="1400"
+                      v-bind:scrollOffset="100" >
+        <parallaxContent/>
+    </parallaxfallback>
+
+    <!-- DESKTOP (> 960px) -->
+    <parallaxWrapper v-else
+                     id="parallax_wrapper"
+                     v-bind:scrollOffset="400" >
 
       <!-- PARALLAX LAYERS -->
       <parallaxLayer img="parallax_layer_sky.png"
                      id="top"
-                     v-bind:height="1753"
+                     v-bind:height="1066"
                      v-bind:top="0"
                      v-bind:zIndex="0"
                      v-bind:depth="5" />
@@ -99,24 +112,7 @@
       <parallaxCover v-bind:top=1640
                      v-bind:zIndex=80
                      backgroundColor="#f8f8f8">
-
-        <!-- TEXT BELOW PARALLAX -->
-        <div class="hero_text">
-          <div class="container fluid light hero_text_content">
-            <p>Helidon is a collection of Java libraries for writing
-              microservices that run on a fast web core powered by Netty.</p>
-          </div>
-        </div>
-
-        <!-- SLIDES -->
-        <features id="features" />
-        <gettingStarted id="getting-started"/>
-
-        <!-- FOOTER -->
-        <v-footer>
-          <div>Copyright &copy; 2018, Oracle and/or its affiliates. All rights reserved. Oracle and Java are registered
-         trademarks of Oracle and/or its affiliates. Other names may be trademarks of their respective owners.</div>
-        </v-footer>
+        <parallaxContent/>
       </parallaxCover>
 
     </parallaxWrapper>
@@ -132,26 +128,68 @@
   import '../static/img/parallax_layer_frank.png'
   import '../static/img/parallax_layer_city.png'
   import '../static/img/parallax_layer_hills.png'
+  import '../static/img/parallax_mobile.png'
 
   import parallaxWrapper from './ParallaxWrapper'
   import parallaxLayer from './ParallaxLayer'
   import parallaxCover from './ParallaxCover'
-  import features from './Features'
-  import gettingStarted from './GettingStarted'
+  import parallaxFallback from './ParallaxFallback'
+  import parallaxContent from './ParallaxContent'
+  import VueScrollTo from 'vue-scrollto'
+
   export default {
     components: {
       parallaxWrapper,
       parallaxLayer,
       parallaxCover,
-      features,
-      gettingStarted
+      parallaxFallback,
+      parallaxContent
+    },
+    data () {
+      return {
+        isMobile: false
+      }
+    },
+    created () {
+      window.addEventListener('resize', this.onResize)
+      this.onResize()
+    },
+    destroyed () {
+      window.removeEventListener('resize', this.onResize)
     },
     methods: {
+      onResize () {
+        const previousIsMobile = this.isMobile
+        const currentIsMobile = window.innerWidth <= 960
+        if (previousIsMobile !== currentIsMobile) {
+          this.isMobile = currentIsMobile
+          this.$forceUpdate()
+        }
+      },
+      toolbarStyle () {
+        let style = {}
+        if (!this.isMobile) {
+          style.position = 'sticky !important'
+        }
+        return style
+      },
       toolbarClass () {
         return [!this.$store.state.isScrolling ? 'toolbar-top' : 'toolbar-scroll']
       },
       isScrolling () {
         return this.$store.state.isScrolling
+      },
+      scrollTo (elt) {
+        var options = {
+          ease: 'ease',
+          offset: -58
+        }
+        if (this.isMobile) {
+          options.container = 'body'
+        } else {
+          options.container = '#parallax_wrapper'
+        }
+        VueScrollTo.scrollTo(elt, 500, options)
       }
     }
   }
@@ -167,7 +205,6 @@
   nav
     &.landing-page-toolbar
       :z-index 200
-      :position sticky !important
       .toolbar-logo
         :width 140px
         :background-size 110px 25px
@@ -188,45 +225,4 @@
         i
           :-webkit-transition unset!important
           :transition unset!important
-
-  .hero_text
-    :left 0
-    :margin-top -100px
-    :margin-bottom 150px
-    .hero_text_content
-      @media (min-width: 600px)
-        :margin-left 20%
-        :margin-right 20%
-        :width 60%
-      @media (min-width: 1000px)
-        :margin-left 25%
-        :margin-right 25%
-        :width 50%
-      @media (min-width: 1300px)
-        :margin-left 33%
-        :margin-right 33%
-        :width 33%
-      p
-        :color #3ea5fd
-        :font-size 25px
-        :font-weight 400
-        :text-align center
-
-  .footer
-    :height auto!important
-    :padding-bottom 30px
-    :padding-top 30px
-    :padding-left 50px
-    :padding-right 50px
-    :background-color #258bf5 !important
-    > div
-     :color white
-     :width 100%
-     :text-align center
-     :padding-top 10px
-     :padding-bottom 0px
-     :padding-left 10%
-     :padding-right 10%
-     :border-top 1px solid white
-     :font-size 0.9em
 </style>

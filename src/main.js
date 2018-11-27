@@ -17,19 +17,11 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import VueScrollTo from 'vue-scrollto'
 import Vuex from 'vuex'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
 
 import '../static/img/favicon.png'
-
-Vue.use(VueScrollTo, {
-  container: '#parallax_wrapper',
-  duration: 500,
-  ease: 'ease',
-  offset: -58
-})
 
 Vue.use(Vuetify, { theme: {
   primary: '#ee44aa',

@@ -6,7 +6,7 @@
     <h2>Features</h2>
     <v-layout row wrap class="feature">
       <v-flex md2 class="hidden-sm-and-down"/>
-      <v-flex md4 sm12 >
+      <v-flex md4 xs12 >
         <div class="section">
           <div>
             <h3><v-icon>import_contacts</v-icon>Simple and fast</h3>
@@ -15,14 +15,14 @@
           </div>
         </div>
       </v-flex>
-      <v-flex md4 sm12 class="feature-graphic simple-and-fast-graphic "/>
+      <v-flex md4 xs12 class="feature-graphic simple-and-fast-graphic "/>
       <v-flex md2 class="hidden-sm-and-down"/>
     </v-layout>
     <v-layout row wrap class="feature">
       <v-flex md12 class="hidden-sm-and-down vertical-spacer"/>
       <v-flex md2 class="hidden-sm-and-down"/>
-      <v-flex md4 sm12 class="feature-graphic microprofile-support-graphic hidden-sm-and-down"/>
-      <v-flex md4 sm12 >
+      <v-flex md4 xs12 class="feature-graphic microprofile-support-graphic hidden-sm-and-down"/>
+      <v-flex md4 xs12 >
         <div class="section">
           <div>
             <h3><v-icon>border_clear</v-icon>MicroProfile Support</h3>
@@ -32,12 +32,12 @@
         </div>
       </v-flex>
       <v-flex md2 class="hidden-sm-and-down"/>
-      <v-flex md4 sm12 class="feature-graphic microprofile-support-graphic hidden-md-and-up"/>
+      <v-flex md4 xs12 class="feature-graphic microprofile-support-graphic hidden-md-and-up"/>
     </v-layout>
     <v-layout row wrap class="feature">
       <v-flex md12 class="hidden-sm-and-down vertical-spacer"/>
       <v-flex md2 class="hidden-sm-and-down"/>
-      <v-flex md4 sm12 >
+      <v-flex md4 xs12 >
         <div class="section">
           <div>
             <h3><v-icon>storage</v-icon>Reactive WebServer</h3>
@@ -47,14 +47,14 @@
           </div>
         </div>
       </v-flex>
-      <v-flex md4 sm12 class="feature-graphic reactive-web-server-graphic"/>
+      <v-flex md4 xs12 class="feature-graphic reactive-web-server-graphic"/>
       <v-flex md2 class="hidden-sm-and-down"/>
     </v-layout>
     <v-layout row wrap class="feature">
       <v-flex md12 class="hidden-sm-and-down vertical-spacer"/>
       <v-flex md2 class="hidden-sm-and-down"/>
-      <v-flex md4 sm12 class="feature-graphic observable-and-resilient-graphic hidden-sm-and-down"/>
-      <v-flex md4 sm12 >
+      <v-flex md4 xs12 class="feature-graphic observable-and-resilient-graphic hidden-sm-and-down"/>
+      <v-flex md4 xs12 >
         <div class="section">
           <div>
             <h3><v-icon>repeat</v-icon>Observable and Resilient</h3>
@@ -63,7 +63,7 @@
           </div>
         </div>
       </v-flex>
-      <v-flex md4 sm12 class="feature-graphic observable-and-resilient-graphic hidden-md-and-up"/>
+      <v-flex md4 xs12 class="feature-graphic observable-and-resilient-graphic hidden-md-and-up"/>
       <v-flex md2 class="hidden-sm-and-down"/>
     </v-layout>
   </v-container>
@@ -80,7 +80,7 @@
 </script>
 <style lang="sass">
   .slide_features
-    :background-color #f6f6f6
+    :background-color #f8f8f8
     :padding-top 200px
     :padding-bottom 100px
     .vertical-spacer
