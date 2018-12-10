@@ -19,3 +19,6 @@
 .DS_Store
 .vue
 .gitkeep
+.pdf
+.md
+CNAME
