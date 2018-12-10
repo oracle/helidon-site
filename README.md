@@ -29,3 +29,19 @@ $ mvn install
 # Cd to the component you want to check
 $ mvn validate  -Pcopyright
 ```
+
+## Dev build
+
+While the site can be built with Maven, it is only wrapping the underlying NPM
+ production build. It is more convenient to use `npm` directly when making changes
+ to the site.
+
+The site is bundled with webpack which supports incremental builds. You can start
+ the development server with the following command and simply edit files with
+ your editor of choice.
+
+```bash
+npm run dev
+```
+
+The site is served at http://localhost:8080.

@@ -20,4 +20,6 @@
 if [ "${WERCKER}" = "true" ] ; then
     export MAVEN_OPTS="-Dmaven.repo.local=${WERCKER_CACHE_DIR}/local_repository"
     rm -rf ~/.m2/settings* ~/.gitconfig ~/.ssh ${WERCKER_CACHE_DIR}/local_repository/io/helidon
+    apt-get update
+    apt-get install -y libpng* build-essential gcc make autoconf libtool pkg-config nasm
 fi
