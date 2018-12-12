@@ -152,7 +152,7 @@
   import parallaxLayer from './ParallaxLayer'
   import parallaxCover from './ParallaxCover'
   import parallaxFallback from './ParallaxFallback'
-  import mobileCover from './mobileCover'
+  import mobileCover from './MobileCover'
   import heroText from './HeroText'
   import features from './Features'
   import gettingStarted from './GettingStarted'
