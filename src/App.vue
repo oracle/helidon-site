@@ -37,6 +37,12 @@
         <v-btn flat
                href="./docs/latest"
                target="_blank"
+               class="hidden-xs-only"
+               rel="noopener">Documentation</v-btn>
+        <v-btn flat
+               href="./docs/latest"
+               target="_blank"
+               class="hidden-sm-and-up"
                rel="noopener"><v-icon>import_contacts</v-icon></v-btn>
         <v-btn flat
                href="https://github.com/oracle/helidon"
@@ -47,11 +53,16 @@
 
     <!-- MOBILE (<= 960px width) -->
     <parallaxFallback v-if="this.isMobile"
-                      img="parallax_mobile.png"
                       id="parallax_fallback"
-                      v-bind:height="1400"
-                      v-bind:scrollOffset="0" >
-        <parallaxContent/>
+                      v-bind:scrollOffset="50" >
+
+      <mobileCover id="top">
+        <heroText/>
+      </mobileCover>
+      <features id="features" />
+      <gettingStarted id="getting-started"/>
+      <zFooter/>
+
     </parallaxfallback>
 
     <!-- DESKTOP (> 960px) -->
@@ -112,7 +123,15 @@
       <parallaxCover v-bind:top=1640
                      v-bind:zIndex=80
                      backgroundColor="#f8f8f8">
-        <parallaxContent/>
+
+        <heroText backgroundColor="#f8f8f8"
+                  color="#3ea5fd"
+                  v-bind:paddingBottom=100 />
+
+        <features id="features" />
+        <gettingStarted id="getting-started"/>
+        <zFooter/>
+
       </parallaxCover>
 
     </parallaxWrapper>
@@ -128,13 +147,16 @@
   import '../static/img/parallax_layer_frank.png'
   import '../static/img/parallax_layer_city.png'
   import '../static/img/parallax_layer_hills.png'
-  import '../static/img/parallax_mobile.png'
 
   import parallaxWrapper from './ParallaxWrapper'
   import parallaxLayer from './ParallaxLayer'
   import parallaxCover from './ParallaxCover'
   import parallaxFallback from './ParallaxFallback'
-  import parallaxContent from './ParallaxContent'
+  import mobileCover from './MobileCover'
+  import heroText from './HeroText'
+  import features from './Features'
+  import gettingStarted from './GettingStarted'
+  import zFooter from './ZFooter'
   import VueScrollTo from 'vue-scrollto'
 
   export default {
@@ -143,7 +165,11 @@
       parallaxLayer,
       parallaxCover,
       parallaxFallback,
-      parallaxContent
+      mobileCover,
+      heroText,
+      features,
+      gettingStarted,
+      zFooter
     },
     data () {
       return {

@@ -81,10 +81,9 @@
 <style lang="sass">
   .slide_features
     :background-color #f8f8f8
-    :padding-top 200px
-    :padding-bottom 100px
+    :padding-top 100px
     .vertical-spacer
-      :height 100px
+      :height 50px
     .section
       :margin-left auto
       :margin-right auto

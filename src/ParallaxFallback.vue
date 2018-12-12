@@ -4,10 +4,7 @@
 <template>
   <div class="parallax_fallback" ref="parallaxFallback"
        v-bind:id="id"
-       v-bind:style="fallbackStyle()"
        v-on:scroll.passive="onScroll">
-
-    <div id="top" v-bind:style="fallbackImgStyle()" />
     <slot/>
   </div>
 </template>
@@ -18,35 +15,12 @@
         type: String,
         required: false
       },
-      img: {
-        type: String,
-        required: true
-      },
-      height: {
-        type: Number,
-        required: true
-      },
-      top: {
-        type: Number,
-        default: 0
-      },
       scrollOffset: {
         type: Number,
         default: 0
       }
     },
     methods: {
-      fallbackStyle () {
-        let style = {}
-        style.top = (this.top * this.depth) + 'px'
-        return style
-      },
-      fallbackImgStyle () {
-        let style = {}
-        style.backgroundImage = 'url( ./static/img/' + this.img + ')'
-        style.height = this.height + 'px'
-        return style
-      },
       onScroll () {
         const previousIsScrolling = this.$store.state.isScrolling
         const currentIsScrolling = this.$refs.parallaxFallback.scrollTop > this.scrollOffset
@@ -71,4 +45,3 @@
     :bottom 0
     :-webkit-overflow-scrolling touch
 </style>
-
