@@ -69,7 +69,7 @@ Hello World!</code></pre>
 <style lang="sass">
   .slide_getting_started
     :background-color #41a8ff
-    :padding-top 200px
+    :padding-top 100px
     :padding-bottom 100px
     h2
       :color white
@@ -127,4 +127,3 @@ Hello World!</code></pre>
         :min-height 350px
         :background-image url('../static/img/helidon_getting_started_step3.png')
 </style>
-
