@@ -173,12 +173,15 @@
     },
     data () {
       return {
-        isMobile: false
+        isMobile: true
       }
     },
     created () {
-      window.addEventListener('resize', this.onResize)
-      this.onResize()
+      this.isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
+      if (!this.isMobile) {
+        window.addEventListener('resize', this.onResize)
+        this.onResize()
+      }
     },
     destroyed () {
       window.removeEventListener('resize', this.onResize)
