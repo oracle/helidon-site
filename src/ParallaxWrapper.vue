@@ -7,6 +7,8 @@
   </div>
 </template>
 <script>
+  import PerfectScrollbar from 'perfect-scrollbar'
+  import '../node_modules/perfect-scrollbar/css/perfect-scrollbar.css'
   export default {
     props: {
       id: {
@@ -17,6 +19,12 @@
         type: Number,
         default: 0
       }
+    },
+    mounted () {
+      /* eslint-disable no-new */
+      new PerfectScrollbar(this.$refs.parallaxWrapper, {
+        suppressScrollX: true
+      })
     },
     methods: {
       onScroll () {
@@ -35,11 +43,12 @@
     :perspective-origin 0% 0%
     :height 100vh
     :width 100vw
-    :overflow-y auto
-    :overflow-x hidden
+    :overflow hidden
     :position absolute
     :top 0
     :right 0
     :bottom 0
     :-webkit-overflow-scrolling touch
+    .ps__rail-y
+      :z-index 1000
 </style>

@@ -11,6 +11,7 @@
     "build": "rimraf target/site && webpack --debug --config build/webpack.prod.conf.js"
   },
   "dependencies": {
+    "perfect-scrollbar": "^1.4.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
     "vue-scrollto": "^2.11.0",
