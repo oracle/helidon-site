@@ -36,11 +36,15 @@ Vue.use(Vuetify, { theme: {
 Vue.use(Vuex)
 const store = new Vuex.Store({
   state: {
-    isScrolling: false
+    isScrolling: false,
+    isMobile: true
   },
   mutations: {
     'ISSCROLLING' (state, payload) {
       state.isScrolling = payload
+    },
+    'ISMOBILE' (state, payload) {
+      state.isMobile = payload
     }
   }
 })

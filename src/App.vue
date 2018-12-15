@@ -51,8 +51,7 @@
       </v-toolbar-items>
     </v-toolbar>
 
-    <!-- MOBILE (<= 960px width) -->
-    <parallaxFallback v-if="this.isMobile"
+    <parallaxFallback v-if="!this.doParallax"
                       id="parallax_fallback"
                       v-bind:scrollOffset="50" >
 
@@ -173,25 +172,31 @@
     },
     data () {
       return {
-        isMobile: true
+        doParallax: false
       }
     },
     created () {
-      this.isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
-      if (!this.isMobile) {
+      document.body.addEventListener('touchmove', this.onTouch, { passive: false })
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
+      this.$store.commit('ISMOBILE', isMobile)
+      if (!isMobile) {
         window.addEventListener('resize', this.onResize)
         this.onResize()
       }
     },
     destroyed () {
       window.removeEventListener('resize', this.onResize)
+      document.body.removeEventListener('touchmove', this.onTouch)
     },
     methods: {
+      onTouch (e) {
+        e.preventDefault()
+      },
       onResize () {
-        const previousIsMobile = this.isMobile
-        const currentIsMobile = window.innerWidth <= 960
-        if (previousIsMobile !== currentIsMobile) {
-          this.isMobile = currentIsMobile
+        const previousDoParallax = this.doParallax
+        const currentDoParallax = window.innerWidth > 960
+        if (previousDoParallax !== currentDoParallax) {
+          this.doParallax = currentDoParallax
           this.$forceUpdate()
         }
       },
@@ -213,10 +218,10 @@
           ease: 'ease',
           offset: -58
         }
-        if (this.isMobile) {
-          options.container = '#parallax_fallback'
-        } else {
+        if (this.doParallax) {
           options.container = '#parallax_wrapper'
+        } else {
+          options.container = '#parallax_fallback'
         }
         VueScrollTo.scrollTo(elt, 500, options)
       }
@@ -225,8 +230,11 @@
 </script>
 <style lang="sass">
 
-  html
-    :overflow-y auto!important
+  html,body, #app
+    :width 100%
+    :height 100%
+    :overflow hidden
+    :position fixed
 
   *
    :box-sizing border-box

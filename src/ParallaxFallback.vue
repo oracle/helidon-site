@@ -42,7 +42,6 @@
 <style lang="sass">
   .parallax_fallback
     :display block
-    :width 100%
     :height 100vh
     :width 100vw
     :overflow-y auto
@@ -52,8 +51,6 @@
     :right 0
     :bottom 0
     :-webkit-overflow-scrolling touch
-    .ps__rail-y
-      :z-index 1000
     .ps__thumb-y
       :background-color: #655c5c
 </style>
