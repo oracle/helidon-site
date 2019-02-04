@@ -13,7 +13,7 @@
                 <h4>Choose your programming model</h4>
             </v-flex>
             <v-flex xs12 class="code-snippet">
-                <h5>MicroFramework</h5>
+                <h5>Helidon SE: MicroFramework</h5>
                 <pre><code>WebServer.create(
   Routing.builder()
     .get("/greet", (req, res)
@@ -22,7 +22,7 @@
   .start();</code></pre>
             </v-flex>
             <v-flex xs12 class="code-snippet">
-              <h5>MicroProfile</h5>
+              <h5>Helidon MP: MicroProfile</h5>
               <pre><code>public class GreetService {
   @GET
   @Path("/greet")
