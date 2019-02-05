@@ -1,5 +1,5 @@
 <!--
-  ~ Copyright (c) 2018 Oracle and/or its affiliates. All rights reserved.
+  ~ Copyright (c) 2018, 2019 Oracle and/or its affiliates. All rights reserved.
 -->
 <template>
   <v-container v-bind:id="id" fluid light class="slide_getting_started">
