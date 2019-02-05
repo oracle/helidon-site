@@ -1,5 +1,5 @@
 <!--
-  ~ Copyright (c) 2018 Oracle and/or its affiliates. All rights reserved.
+  ~ Copyright (c) 2018, 2019 Oracle and/or its affiliates. All rights reserved.
 -->
 <template>
   <v-container v-bind:id="id" fluid light class="slide_getting_started">
@@ -13,7 +13,7 @@
                 <h4>Choose your programming model</h4>
             </v-flex>
             <v-flex xs12 class="code-snippet">
-                <h5>MicroFramework</h5>
+                <h5>Helidon SE: MicroFramework</h5>
                 <pre><code>WebServer.create(
   Routing.builder()
     .get("/greet", (req, res)
@@ -22,7 +22,7 @@
   .start();</code></pre>
             </v-flex>
             <v-flex xs12 class="code-snippet">
-              <h5>MicroProfile</h5>
+              <h5>Helidon MP: MicroProfile</h5>
               <pre><code>public class GreetService {
   @GET
   @Path("/greet")
