@@ -46,7 +46,7 @@ Hello World!</code></pre>
             <h4>Get started!</h4>
             <v-btn light
                    large
-                   href="./docs/latest/#/getting-started/02_base-example"
+                   href="./docs/latest/#/guides/01_overview"
                    target="_blank"
                    rel="noopener">Try it now</v-btn>
           </v-flex>
