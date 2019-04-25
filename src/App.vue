@@ -170,6 +170,15 @@
         this.onResize()
       }
     },
+    mounted () {
+      if (this.doParallax) {
+        // on firefox do a scroll to force rendering of parallax layers
+        var isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1
+        if (isFirefox) {
+          document.getElementById('parallax_wrapper').scrollTop = 1
+        }
+      }
+    },
     destroyed () {
       window.removeEventListener('resize', this.onResize)
       document.body.removeEventListener('touchmove', this.onTouch)
