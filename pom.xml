@@ -101,7 +101,7 @@
         <version.nodejs>v8.11.1</version.nodejs>
         <version.npm>5.6.0</version.npm>
         <site.output.dir>${project.build.directory}/site</site.output.dir>
-        <docs.version>1.1.2</docs.version>
+        <docs.version>1.2.0</docs.version>
         <version.plugin.glassfish-copyright>1.48</version.plugin.glassfish-copyright>
         <version.plugin.frontend>1.6</version.plugin.frontend>
         <version.plugin.scm-plugin>3.0.0</version.plugin.scm-plugin>
@@ -232,6 +232,13 @@
                                 <artifactItem>
                                     <groupId>io.helidon</groupId>
                                     <artifactId>helidon-docs</artifactId>
+                                    <version>1.1.2</version>
+                                    <outputDirectory>${site.output.dir}/docs/1.1.2</outputDirectory>
+                                    <excludes>META-INF/**</excludes>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>io.helidon</groupId>
+                                    <artifactId>helidon-docs</artifactId>
                                     <version>1.1.1</version>
                                     <outputDirectory>${site.output.dir}/docs/1.1.1</outputDirectory>
                                     <excludes>META-INF/**</excludes>
@@ -281,50 +288,8 @@
                                 <artifactItem>
                                     <groupId>io.helidon</groupId>
                                     <artifactId>helidon-docs</artifactId>
-                                    <version>0.11.0</version>
-                                    <outputDirectory>${site.output.dir}/docs/0.11.0</outputDirectory>
-                                    <excludes>META-INF/**</excludes>
-                                </artifactItem>
-                                <artifactItem>
-                                    <groupId>io.helidon</groupId>
-                                    <artifactId>helidon-docs</artifactId>
                                     <version>0.10.5</version>
                                     <outputDirectory>${site.output.dir}/docs/0.10.5</outputDirectory>
-                                    <excludes>META-INF/**</excludes>
-                                </artifactItem>
-                                <artifactItem>
-                                    <groupId>io.helidon</groupId>
-                                    <artifactId>helidon-docs</artifactId>
-                                    <version>0.10.4</version>
-                                    <outputDirectory>${site.output.dir}/docs/0.10.4</outputDirectory>
-                                    <excludes>META-INF/**</excludes>
-                                </artifactItem>
-                                <artifactItem>
-                                    <groupId>io.helidon</groupId>
-                                    <artifactId>helidon-docs</artifactId>
-                                    <version>0.10.3</version>
-                                    <outputDirectory>${site.output.dir}/docs/0.10.3</outputDirectory>
-                                    <excludes>META-INF/**</excludes>
-                                </artifactItem>
-                                <artifactItem>
-                                    <groupId>io.helidon</groupId>
-                                    <artifactId>helidon-docs</artifactId>
-                                    <version>0.10.2</version>
-                                    <outputDirectory>${site.output.dir}/docs/0.10.2</outputDirectory>
-                                    <excludes>META-INF/**</excludes>
-                                </artifactItem>
-                                <artifactItem>
-                                    <groupId>io.helidon</groupId>
-                                    <artifactId>helidon-docs</artifactId>
-                                    <version>0.10.1</version>
-                                    <outputDirectory>${site.output.dir}/docs/0.10.1</outputDirectory>
-                                    <excludes>META-INF/**</excludes>
-                                </artifactItem>
-                                <artifactItem>
-                                    <groupId>io.helidon</groupId>
-                                    <artifactId>helidon-docs</artifactId>
-                                    <version>0.10.0</version>
-                                    <outputDirectory>${site.output.dir}/docs/0.10.0</outputDirectory>
                                     <excludes>META-INF/**</excludes>
                                 </artifactItem>
                                 <artifactItem>
