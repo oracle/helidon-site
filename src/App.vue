@@ -1,5 +1,5 @@
 <!--
-  ~ Copyright (c) 2018 Oracle and/or its affiliates. All rights reserved.
+  ~ Copyright (c) 2018, 2019 Oracle and/or its affiliates. All rights reserved.
 -->
 <template>
   <v-app>
@@ -34,6 +34,11 @@
       </v-toolbar-items>
       <v-spacer></v-spacer>
       <v-toolbar-items>
+        <v-btn flat
+               href="https://medium.com/oracledevs/search?q=Helidon"
+               target="_blank"
+               class="hidden-xs-only"
+               rel="noopener">Blog</v-btn>
         <v-btn flat
                href="./docs/latest"
                target="_blank"
@@ -116,6 +121,7 @@
                   v-bind:paddingBottom=100 />
 
         <features id="features" />
+        <technologies id="technologies"/>
         <gettingStarted id="getting-started"/>
         <zFooter/>
 
@@ -133,6 +139,19 @@
   import '../static/img/parallax_layer_city.png'
   import '../static/img/parallax_layer_hills.png'
 
+  import '../static/img/logo-docker-500x500.png'
+  import '../static/img/logo-eclipselink-500x500.png'
+  import '../static/img/logo-graalvm-500x500.png'
+  import '../static/img/logo-jaeger-500x500.png'
+  import '../static/img/logo-jersey-500x500.png'
+  import '../static/img/logo-kubernetes-500x500.png'
+  import '../static/img/logo-microprofile-500x500.png'
+  import '../static/img/logo-netty-500x500.png'
+  import '../static/img/logo-openapi-500x500.png'
+  import '../static/img/logo-opentracing-500x500.png'
+  import '../static/img/logo-prometheus-500x500.png'
+  import '../static/img/logo-zipkin-500x500.png'
+
   import parallaxWrapper from './ParallaxWrapper'
   import parallaxLayer from './ParallaxLayer'
   import parallaxCover from './ParallaxCover'
@@ -141,6 +160,7 @@
   import heroText from './HeroText'
   import features from './Features'
   import gettingStarted from './GettingStarted'
+  import technologies from './Technologies'
   import zFooter from './ZFooter'
   import VueScrollTo from 'vue-scrollto'
 
@@ -153,6 +173,7 @@
       mobileCover,
       heroText,
       features,
+      technologies,
       gettingStarted,
       zFooter
     },

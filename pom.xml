@@ -98,8 +98,8 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.deploy.skip>true</maven.deploy.skip>
-        <version.nodejs>v8.11.1</version.nodejs>
-        <version.npm>5.6.0</version.npm>
+        <version.nodejs>v12.7.0</version.nodejs>
+        <version.npm>6.10.0</version.npm>
         <site.output.dir>${project.build.directory}/site</site.output.dir>
         <docs.version>1.2.0</docs.version>
         <version.plugin.glassfish-copyright>1.48</version.plugin.glassfish-copyright>
