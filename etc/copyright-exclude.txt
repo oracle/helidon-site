@@ -21,4 +21,5 @@
 .gitkeep
 .pdf
 .md
+.xcf
 CNAME

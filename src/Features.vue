@@ -1,5 +1,5 @@
 <!--
-  ~ Copyright (c) 2018 Oracle and/or its affiliates. All rights reserved.
+  ~ Copyright (c) 2018, 2019 Oracle and/or its affiliates. All rights reserved.
 -->
 <template>
   <v-container v-bind:id="id" fluid light class="slide_features">
@@ -59,7 +59,7 @@
           <div>
             <h3><v-icon>repeat</v-icon>Observable and Resilient</h3>
             <p>With support for health checks, metrics, tracing and fault tolerance, Helidon has what you need to
-             write cloud ready applications that integrate with Prometheus, Zipkin and Kubernetes.</p>
+             write cloud ready applications that integrate with Prometheus, Jaeger/Zipkin and Kubernetes.</p>
           </div>
         </div>
       </v-flex>
