@@ -21,25 +21,25 @@
             </a>
           </v-flex>
           <v-flex xs4 md2 lg2>
-            <a href="https:/microprofile.io" target="_blank">
+            <a href="https://microprofile.io" target="_blank">
               <img src="../static/img/logo-microprofile-500x500.png" />
               <span>MicroProfile</span>
             </a>
           </v-flex>
           <v-flex xs4 md2 lg2>
-            <a href="https:/opentracing.io" target="_blank">
+            <a href="https://opentracing.io" target="_blank">
               <img src="../static/img/logo-opentracing-500x500.png" />
               <span>OpenTracing</span>
             </a>
           </v-flex>
           <v-flex xs4 md2 lg2>
-            <a href="https:/openapis.org" target="_blank">
+            <a href="https://openapis.org" target="_blank">
               <img src="../static/img/logo-openapi-500x500.png" />
               <span>OpenAPI</span>
             </a>
           </v-flex>
           <v-flex xs4 md2 lg2>
-            <a href="https:/kubernetes.io" target="_blank">
+            <a href="https://kubernetes.io" target="_blank">
               <img src="../static/img/logo-kubernetes-500x500.png" />
               <span>Kubernetes</span>
             </a>
@@ -63,7 +63,7 @@
             </a>
           </v-flex>
           <v-flex xs4 md2 lg2>
-            <a href="https:/zipkin.io" target="_blank">
+            <a href="https://zipkin.io" target="_blank">
               <img src="../static/img/logo-zipkin-500x500.png" />
               <span>Zipkin</span>
             </a>
@@ -75,7 +75,7 @@
             </a>
           </v-flex>
           <v-flex xs4 md2 lg2>
-            <a href="https:/docker.io" target="_blank">
+            <a href="https://docker.io" target="_blank">
               <img src="../static/img/logo-docker-500x500.png" />
               <span>Docker</span>
             </a>
