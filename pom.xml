@@ -288,8 +288,8 @@
                                 <artifactItem>
                                     <groupId>io.helidon</groupId>
                                     <artifactId>helidon-docs</artifactId>
-                                    <version>0.10.5</version>
-                                    <outputDirectory>${site.output.dir}/docs/0.10.5</outputDirectory>
+                                    <version>0.10.6</version>
+                                    <outputDirectory>${site.output.dir}/docs/0.10.6</outputDirectory>
                                     <excludes>META-INF/**</excludes>
                                 </artifactItem>
                                 <artifactItem>
