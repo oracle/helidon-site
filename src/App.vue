@@ -35,7 +35,7 @@
       <v-spacer></v-spacer>
       <v-toolbar-items>
         <v-btn flat
-               href="https://medium.com/oracledevs/search?q=Helidon"
+               href="https://medium.com/helidon"
                target="_blank"
                class="hidden-xs-only"
                rel="noopener">Blog</v-btn>
