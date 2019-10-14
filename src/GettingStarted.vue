@@ -11,8 +11,14 @@
           <v-layout row wrap>
             <!-- The break to single column is at sm -->
             <v-flex xs12 sm12 md6 lg6 xl6 getting_started_panel getting_started_panel_left>
-                <img src="../static/img/Helidon_SE_white.png" />
-                <h4>Microframework</h4>
+                <div class="helidon-logo helidon-se-logo"/>
+                <ul>
+                  <li>Reactive Microframework</li>
+                  <li>Tiny Footprint</li>
+                  <li>Functional Style</li>
+                  <li>Simple and Transparent</li>
+                  <li>GraalVM Native Image</li>
+                </ul>
                 <pre><code>WebServer.create(
   Routing.builder()
     .get("/greet", (req, res)
@@ -40,8 +46,14 @@
             </v-flex>
             <v-flex xs12 hidden-md-and-up vertical-spacer />
             <v-flex xs12 sm12 md6 lg6 xl6 getting_started_panel getting_started_panel_right>
-              <img src="../static/img/Helidon_MP_white.png" width="100%" />
-              <h4>MicroProfile</h4>
+              <div class="helidon-logo helidon-mp-logo"/>
+              <ul>
+                <li>MicroProfile</li>
+                <li>Small Footprint</li>
+                <li>Declarative Style</li>
+                <li>Dependency Injection</li>
+                <li>CDI, JAX-RS, JSON-P/B </li>
+              </ul>
               <pre><code>public class GreetService {
   @GET
   @Path("/greet")
@@ -103,6 +115,13 @@
       :width 100%
     img
       :width 100%
+    ul
+      :text-align left
+      :font-weight 400
+      :color white
+      :font-size 1.5em
+      :margin-bottom 15px
+      :margin-left 25%
     h2
       :color white
       :text-align center
@@ -127,6 +146,17 @@
       :color white
       :font-size: 1.1em
       :margin-top 25px
+    .helidon-logo
+      // The images already have lots top and bottom padding. Compensate.
+      :margin-top -40px
+      :margin-bottom -20px
+      :background-position: 50% 50%
+      :background-size contain
+      :height 150px
+    .helidon-se-logo
+      :background-image url('../static/img/Helidon_SE_white.png')
+    .helidon-mp-logo
+      :background-image url('../static/img/Helidon_MP_white.png')
     code
       :width 100%
       :font-size 1.25em
