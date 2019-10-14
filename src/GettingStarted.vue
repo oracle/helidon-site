@@ -66,7 +66,7 @@
                   <v-btn light
                          large
                          class="ma-0"
-                         href="./docs/latest/#/guides/02_quickstart-se"
+                         href="./docs/latest/#/guides/02_quickstart-mp"
                          target="_blank"
                          rel="noopener">Get Started</v-btn>
                 </v-flex>
