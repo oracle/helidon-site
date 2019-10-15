@@ -58,7 +58,7 @@
           :list-style-type none
           :margin-left 20px
           :font-weight 400
-          :font-size 1.5em
+          :font-size 1.3em
           :color white
           i
             :margin-right 15px
@@ -76,6 +76,8 @@
     a
       :color #FFFFFF
       :text-decoration-line none
+      &:hover
+        :color #bcddff
     h2
       :color white
       :text-align center
@@ -87,4 +89,9 @@
       :color white
       :font-size 2.0em
       :margin-top 25px
+    @media screen and (min-width: 960px)
+      .community_panel_left
+        ul
+          li
+            :font-size 1.5em
 </style>
