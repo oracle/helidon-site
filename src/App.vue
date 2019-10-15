@@ -69,6 +69,7 @@
       </mobileCover>
       <features id="features" />
       <gettingStarted id="getting-started"/>
+      <technologies id="technologies"/>
       <community id="community"/>
       <zFooter/>
 
