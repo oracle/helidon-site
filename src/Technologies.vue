@@ -99,6 +99,7 @@
 </script>
 <style lang="sass">
   .slide_technologies
+    :margin-top 100px
     :background-color #f8f8f8
     .section
       :margin-bottom 100px

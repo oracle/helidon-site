@@ -31,6 +31,10 @@
                v-on:click="scrollTo('#getting-started')"
                class="hidden-sm-and-down"
                rel="noopener">Getting Started</v-btn>
+        <v-btn flat
+               v-on:click="scrollTo('#community')"
+               class="hidden-sm-and-down"
+               rel="noopener">Community</v-btn>
       </v-toolbar-items>
       <v-spacer></v-spacer>
       <v-toolbar-items>
@@ -65,6 +69,7 @@
       </mobileCover>
       <features id="features" />
       <gettingStarted id="getting-started"/>
+      <community id="community"/>
       <zFooter/>
 
     </parallaxfallback>
@@ -121,8 +126,9 @@
                   v-bind:paddingBottom=100 />
 
         <features id="features" />
-        <technologies id="technologies"/>
         <gettingStarted id="getting-started"/>
+        <technologies id="technologies"/>
+        <community id="community"/>
         <zFooter/>
 
       </parallaxCover>
@@ -161,6 +167,7 @@
   import features from './Features'
   import gettingStarted from './GettingStarted'
   import technologies from './Technologies'
+  import community from './Community'
   import zFooter from './ZFooter'
   import VueScrollTo from 'vue-scrollto'
 
@@ -175,6 +182,7 @@
       features,
       technologies,
       gettingStarted,
+      community,
       zFooter
     },
     data () {
