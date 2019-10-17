@@ -37,20 +37,22 @@
                 </v-carousel>
                 <v-layout row wrap>
                   <v-flex xs6 btn-container>
-                    <v-btn light
+                    <v-btn dark
+                           color="blue darken-4"
                            large
                            class="ma-0"
                            href="./docs/latest/#/guides/02_quickstart-se"
                            target="_blank"
-                           rel="noopener">Get Started</v-btn>
+                           rel="noopener">Try Helidon SE</v-btn>
                   </v-flex>
                   <v-flex xs6 btn-container>
-                    <v-btn light
+                    <v-btn dark
+                           color="blue darken-4"
                            large
                            class="ma-0"
                            href="./docs/latest/#/about/02_introduction"
                            target="_blank"
-                           rel="noopener">Learn More</v-btn>
+                           rel="noopener">About Helidon SE</v-btn>
                   </v-flex>
                 </v-layout>
             </v-flex>
@@ -88,7 +90,7 @@
                          class="ma-0"
                          href="./docs/latest/#/guides/03_quickstart-mp"
                          target="_blank"
-                         rel="noopener">Get Started</v-btn>
+                         rel="noopener">Try Helidon MP</v-btn>
                 </v-flex>
                 <v-flex xs6 btn-container>
                   <v-btn light
@@ -96,7 +98,7 @@
                          class="ma-0"
                          href="./docs/latest/#/about/02_introduction"
                          target="_blank"
-                         rel="noopener">Learn More</v-btn>
+                         rel="noopener">About Helidon MP</v-btn>
                 </v-flex>
               </v-layout>
             </v-flex>
@@ -190,11 +192,14 @@
       :padding-bottom 10px
       ul
         :list-style none
-        :padding 0
+        :padding-top 5%
+        :padding-left 15%
         :color white
-        :font-family monospace
-        :font-size 1.25em
+        :font-size 1.5em
         :font-weight normal
+        i
+          :width 24px
+          :height 24px
 
     // Set padding-right and padding-left for the panels
     // in order to create an in-between spacing
