@@ -12,80 +12,61 @@
             <!-- The break to single column is at sm -->
             <v-flex xs12 sm12 md6 lg6 xl6 getting_started_panel getting_started_panel_left>
                 <div class="helidon-logo helidon-se-logo"/>
-                <v-carousel hide-controls delimiter-icon="stop">
-                  <v-carousel-item>
-                    <div class="carousel-item-container">
-                      <ul>
-                        <li><v-icon dark>checked</v-icon>Reactive Microframework</li>
-                        <li><v-icon dark>checked</v-icon>Tiny Footprint</li>
-                        <li><v-icon dark>checked</v-icon>Functional Style</li>
-                        <li><v-icon dark>checked</v-icon>Simple and Transparent</li>
-                        <li><v-icon dark>checked</v-icon>GraalVM Native Image</li>
-                      </ul>
-                    </div>
-                  </v-carousel-item>
-                  <v-carousel-item>
-                    <div class="carousel-item-container">
-                      <pre><code>WebServer.create(
+                <ul>
+                  <li>Reactive Microframework</li>
+                  <li>Tiny Footprint</li>
+                  <li>Functional Style</li>
+                  <li>Simple and Transparent</li>
+                  <li>GraalVM Native Image</li>
+                </ul>
+                <pre><code>WebServer.create(
   Routing.builder()
     .get("/greet", (req, res)
        -> res.send("Hello World!"))
     .build())
   .start();</code></pre>
-                    </div>
-                  </v-carousel-item>
-                </v-carousel>
-                <v-layout row wrap>
-                  <v-flex xs6 btn-container>
-                    <v-btn dark
-                           color="blue darken-4"
-                           large
-                           class="ma-0"
-                           href="./docs/latest/#/guides/02_quickstart-se"
-                           target="_blank"
-                           rel="noopener">Try Helidon SE</v-btn>
-                  </v-flex>
-                  <v-flex xs6 btn-container>
-                    <v-btn dark
-                           color="blue darken-4"
-                           large
-                           class="ma-0"
-                           href="./docs/latest/#/about/02_introduction"
-                           target="_blank"
-                           rel="noopener">About Helidon SE</v-btn>
-                  </v-flex>
-                </v-layout>
+              <v-layout row wrap>
+                <v-flex xs6 btn-container>
+              <v-btn dark
+                     color="blue darken-4"
+                     large
+                     class="ma-0"
+                     href="./docs/latest/#/guides/02_quickstart-se"
+                     target="_blank"
+                     rel="noopener">Try Helidon SE</v-btn>
+                </v-flex>
+                <v-flex xs6 btn-container>
+              <v-btn dark
+                     color="blue darken-4"
+                     large
+                     class="ma-0"
+                     href="./docs/latest/#/about/02_introduction"
+                     target="_blank"
+                     rel="noopener">About Helidon SE</v-btn>
+                </v-flex>
+              </v-layout>
             </v-flex>
             <v-flex xs12 hidden-md-and-up vertical-spacer />
             <v-flex xs12 sm12 md6 lg6 xl6 getting_started_panel getting_started_panel_right>
               <div class="helidon-logo helidon-mp-logo"/>
-              <v-carousel hide-controls delimiter-icon="stop">
-                  <v-carousel-item>
-                    <div class="carousel-item-container">
-                      <ul>
-                        <li><v-icon dark>checked</v-icon>MicroProfile</li>
-                        <li><v-icon dark>checked</v-icon>Small Footprint</li>
-                        <li><v-icon dark>checked</v-icon>Declarative Style</li>
-                        <li><v-icon dark>checked</v-icon>Dependency Injection</li>
-                        <li><v-icon dark>checked</v-icon>CDI, JAX-RS, JSON-P/B </li>
-                      </ul>
-                    </div>
-                  </v-carousel-item>
-                  <v-carousel-item>
-                    <div class="carousel-item-container">
-                      <pre><code>public class GreetService {
+              <ul>
+                <li>MicroProfile</li>
+                <li>Small Footprint</li>
+                <li>Declarative Style</li>
+                <li>Dependency Injection</li>
+                <li>CDI, JAX-RS, JSON-P/B </li>
+              </ul>
+              <pre><code>public class GreetService {
   @GET
   @Path("/greet")
   public String getMsg() {
     return "Hello World!";
   }
 }</code></pre>
-                    </div>
-                  </v-carousel-item>
-              </v-carousel>
               <v-layout row wrap>
                 <v-flex xs6 btn-container>
-                  <v-btn light
+                  <v-btn dark
+                         color="blue darken-4"
                          large
                          class="ma-0"
                          href="./docs/latest/#/guides/03_quickstart-mp"
@@ -93,7 +74,8 @@
                          rel="noopener">Try Helidon MP</v-btn>
                 </v-flex>
                 <v-flex xs6 btn-container>
-                  <v-btn light
+                  <v-btn dark
+                         color="blue darken-4"
                          large
                          class="ma-0"
                          href="./docs/latest/#/about/02_introduction"
@@ -103,7 +85,7 @@
               </v-layout>
             </v-flex>
           </v-layout>
-          </v-flex>
+      </v-flex>
       <v-flex sm2 md1 lg2 xl2 hidden-xs-only />
     </v-layout>
   </v-container>
@@ -137,12 +119,19 @@
       :width 100%
     img
       :width 100%
+    ul
+      :text-align left
+      :font-weight 400
+      :color white
+      :font-size 1.5em
+      :margin-bottom 15px
+      :margin-left 25%
     h2
       :color white
       :text-align center
       :font-weight 400
       :font-size 3em
-      :margin-bottom 80px
+      :margin-bottom 100px
     h3
       :text-align center
       :font-weight 400
@@ -162,6 +151,9 @@
       :font-size: 1.1em
       :margin-top 25px
     .helidon-logo
+      // The images already have lots top and bottom padding. Compensate.
+      :margin-top -40px
+      :margin-bottom -20px
       :background-position: 50% 50%
       :background-size contain
       :height 150px
@@ -173,34 +165,15 @@
       :width 100%
       :font-size 1.25em
       :font-weight normal
-      :background-color transparent
+      :background-color #258bf5
       :height 13em
       :color  white
       :-webkit-box-shadow none
       :box-shadow none
-    .carousel
-      :margin-top 20px
-      :box-shadow none
-      :height 250px
-      :background-color #258bf5
-      .carousel__controls
-        :background-color transparent
-    .carousel-item-container
       :padding-left 10px
       :padding-right 10px
       :padding-top 10px
       :padding-bottom 10px
-      ul
-        :list-style none
-        //:padding-top 5%
-        :padding-left 24px
-        :color white
-        :font-size 1.5em
-        :font-weight normal
-        i
-          :width 24px
-          :height 24px
-
     // Set padding-right and padding-left for the panels
     // in order to create an in-between spacing
     @media screen and (min-width: 960px)
@@ -210,7 +183,7 @@
         :padding-left 10px
     // Increase padding on non very small display
     @media screen and (min-width: 376px)
-      .carousel-item-container
+      code
         :padding-left 20px
         :padding-right 20px
       code:after, code:before
