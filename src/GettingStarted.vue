@@ -192,8 +192,8 @@
       :padding-bottom 10px
       ul
         :list-style none
-        :padding-top 5%
-        :padding-left 15%
+        //:padding-top 5%
+        :padding-left 24px
         :color white
         :font-size 1.5em
         :font-weight normal
