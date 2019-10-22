@@ -37,7 +37,8 @@
                 </v-carousel>
                 <v-layout row wrap>
                   <v-flex xs6 btn-container>
-                    <v-btn light
+                    <v-btn dark
+                           color="blue darken-4"
                            large
                            class="ma-0"
                            href="./docs/latest/#/guides/02_quickstart-se"
@@ -45,7 +46,8 @@
                            rel="noopener">Get Started</v-btn>
                   </v-flex>
                   <v-flex xs6 btn-container>
-                    <v-btn light
+                    <v-btn dark
+                           color="blue darken-4"
                            large
                            class="ma-0"
                            href="./docs/latest/#/about/02_introduction"
@@ -83,7 +85,8 @@
               </v-carousel>
               <v-layout row wrap>
                 <v-flex xs6 btn-container>
-                  <v-btn light
+                  <v-btn dark
+                         color="blue darken-4"
                          large
                          class="ma-0"
                          href="./docs/latest/#/guides/03_quickstart-mp"
@@ -91,7 +94,8 @@
                          rel="noopener">Get Started</v-btn>
                 </v-flex>
                 <v-flex xs6 btn-container>
-                  <v-btn light
+                  <v-btn dark
+                         color="blue darken-4"
                          large
                          class="ma-0"
                          href="./docs/latest/#/about/02_introduction"
@@ -190,11 +194,15 @@
       :padding-bottom 10px
       ul
         :list-style none
-        :padding 0
+        :padding-top 12px
         :color white
-        :font-family monospace
-        :font-size 1.25em
+        :font-size 1.5em
         :font-weight normal
+        :width 300px
+        :margin auto
+        li
+          i
+            :width: 24px
 
     // Set padding-right and padding-left for the panels
     // in order to create an in-between spacing
