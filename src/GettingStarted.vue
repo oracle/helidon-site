@@ -43,7 +43,7 @@
                            class="ma-0"
                            href="./docs/latest/#/guides/02_quickstart-se"
                            target="_blank"
-                           rel="noopener">Get Started</v-btn>
+                           rel="noopener">Try Helidon SE</v-btn>
                   </v-flex>
                   <v-flex xs6 btn-container>
                     <v-btn dark
@@ -52,7 +52,7 @@
                            class="ma-0"
                            href="./docs/latest/#/about/02_introduction"
                            target="_blank"
-                           rel="noopener">Learn More</v-btn>
+                           rel="noopener">About Helidon SE</v-btn>
                   </v-flex>
                 </v-layout>
             </v-flex>
@@ -91,7 +91,7 @@
                          class="ma-0"
                          href="./docs/latest/#/guides/03_quickstart-mp"
                          target="_blank"
-                         rel="noopener">Get Started</v-btn>
+                         rel="noopener">Try Helidon MP</v-btn>
                 </v-flex>
                 <v-flex xs6 btn-container>
                   <v-btn dark
@@ -100,7 +100,7 @@
                          class="ma-0"
                          href="./docs/latest/#/about/02_introduction"
                          target="_blank"
-                         rel="noopener">Learn More</v-btn>
+                         rel="noopener">About Helidon MP</v-btn>
                 </v-flex>
               </v-layout>
             </v-flex>
