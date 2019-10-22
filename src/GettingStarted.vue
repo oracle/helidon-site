@@ -198,7 +198,7 @@
         :color white
         :font-size 1.5em
         :font-weight normal
-        :width 300px
+        :width 13em
         :margin auto
         li
           i
