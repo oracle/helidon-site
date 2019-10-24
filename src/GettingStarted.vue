@@ -216,11 +216,6 @@
       .carousel-item-container
         :padding-left 20px
         :padding-right 20px
-        ul
-          :font-size 1.25em
-          li
-            i
-              :margin-right 0px
         code
           :font-size 1.25em
       .carousel
