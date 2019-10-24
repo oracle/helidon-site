@@ -7,7 +7,7 @@
     <v-layout row wrap>
       <!-- The break to single column is at sm -->
       <v-flex sm2 md1 lg2 xl2 hidden-xs-only />
-      <v-flex sm8 md10 lg8 xl8>
+      <v-flex xs12 sm8 md10 lg8 xl8>
           <v-layout row wrap>
             <!-- The break to single column is at sm -->
             <v-flex xs12 sm12 md8 lg7 xl6 community_panel_left>
@@ -56,15 +56,15 @@
         :margin 0px
         li
           :list-style-type none
-          :margin-left 20px
           :font-weight 400
-          :font-size 1.3em
+          :font-size 0.9em
+          :line-height 25px
           :color white
+          :margin-bottom 5px
           i
             :margin-right 15px
             :width 25px
             :color #bcddff
-            //:color #595959
     .community_panel_right
       :background-position: 50% 50%
       :background-size contain
@@ -89,6 +89,16 @@
       :color white
       :font-size 2.0em
       :margin-top 25px
+    @media screen and (min-width: 376px)
+      .community_panel_left
+        ul
+          li
+            :margin-left 20px
+    @media screen and (min-width: 600px)
+      .community_panel_left
+        ul
+          li
+            :font-size 1.3em
     @media screen and (min-width: 960px)
       .community_panel_left
         ul

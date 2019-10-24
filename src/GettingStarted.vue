@@ -173,7 +173,7 @@
       :background-image url('../static/img/Helidon_MP_white.png')
     code
       :width 100%
-      :font-size 1.25em
+      :font-size 1em
       :font-weight normal
       :background-color transparent
       :height 13em
@@ -183,7 +183,7 @@
     .carousel
       :margin-top 20px
       :box-shadow none
-      :height 250px
+      :height 200px
       :background-color #258bf5
       .carousel__controls
         :background-color transparent
@@ -211,11 +211,20 @@
         :padding-right 10px
       .getting_started_panel_right
         :padding-left 10px
-    // Increase padding on non very small display
+    // Non very small display
     @media screen and (min-width: 376px)
       .carousel-item-container
         :padding-left 20px
         :padding-right 20px
+        ul
+          :font-size 1.25em
+          li
+            i
+              :margin-right 0px
+        code
+          :font-size 1.25em
+      .carousel
+        :height 250px
       code:after, code:before
         :content none!important
 </style>
