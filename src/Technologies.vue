@@ -80,6 +80,18 @@
               <span>Docker</span>
             </a>
           </v-flex>
+          <v-flex xs4 sm3 md2 lg2>
+            <a href="https://openjdk.java.net/" target="_blank">
+              <img src="../static/img/logo-openjdk-500x500.png" />
+              <span>OpenJDK</span>
+            </a>
+          </v-flex>
+          <v-flex xs4 sm3 md2 lg2>
+            <a href="https://grpc.io/" target="_blank">
+              <img src="../static/img/logo-grpc-500x500.png" />
+              <span>gRPC (Experimental)</span>
+            </a>
+          </v-flex>
         </v-layout>
       </v-flex>
       <v-flex sm2 md1 lg2 xl2 hidden-xs-only />
