@@ -229,6 +229,16 @@
                                     <outputDirectory>${site.output.dir}/docs/${docs.version}</outputDirectory>
                                     <excludes>META-INF/**</excludes>
                                 </artifactItem>
+
+                                <!-- Milestone docs should not be latest -->
+                                <artifactItem>
+                                    <groupId>io.helidon</groupId>
+                                    <artifactId>helidon-docs</artifactId>
+                                    <version>2.0.0-M1</version>
+                                    <outputDirectory>${site.output.dir}/docs/2.0.0-M1</outputDirectory>
+                                    <excludes>META-INF/**</excludes>
+                                </artifactItem>
+
                                 <artifactItem>
                                     <groupId>io.helidon</groupId>
                                     <artifactId>helidon-docs</artifactId>
