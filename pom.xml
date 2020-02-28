@@ -101,7 +101,7 @@
         <version.nodejs>v12.7.0</version.nodejs>
         <version.npm>6.10.0</version.npm>
         <site.output.dir>${project.build.directory}/site</site.output.dir>
-        <docs.version>1.4.1</docs.version>
+        <docs.version>1.4.2</docs.version>
         <version.plugin.glassfish-copyright>1.48</version.plugin.glassfish-copyright>
         <version.plugin.frontend>1.6</version.plugin.frontend>
         <version.plugin.scm-plugin>3.0.0</version.plugin.scm-plugin>
@@ -239,6 +239,13 @@
                                     <excludes>META-INF/**</excludes>
                                 </artifactItem>
 
+                                <artifactItem>
+                                    <groupId>io.helidon</groupId>
+                                    <artifactId>helidon-docs</artifactId>
+                                    <version>1.4.1</version>
+                                    <outputDirectory>${site.output.dir}/docs/1.4.1</outputDirectory>
+                                    <excludes>META-INF/**</excludes>
+                                </artifactItem>
                                 <artifactItem>
                                     <groupId>io.helidon</groupId>
                                     <artifactId>helidon-docs</artifactId>
