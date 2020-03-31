@@ -98,15 +98,17 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.deploy.skip>true</maven.deploy.skip>
-        <version.nodejs>v12.7.0</version.nodejs>
-        <version.npm>6.10.0</version.npm>
+        <version.nodejs>v12.16.1</version.nodejs>
+        <version.npm>6.13.4</version.npm>
         <site.output.dir>${project.build.directory}/site</site.output.dir>
         <docs.version>1.4.4</docs.version>
-        <version.plugin.glassfish-copyright>1.48</version.plugin.glassfish-copyright>
-        <version.plugin.frontend>1.6</version.plugin.frontend>
+        <version.plugin.glassfish-copyright>2.3</version.plugin.glassfish-copyright>
+        <version.plugin.frontend>1.9.1</version.plugin.frontend>
         <version.plugin.scm-plugin>3.0.0</version.plugin.scm-plugin>
         <version.plugin.dependency-plugin>3.0.0</version.plugin.dependency-plugin>
         <version.plugin.resources-plugin>3.1.0</version.plugin.resources-plugin>
+        <npm.download.root>https://registry.npmjs.org/npm/-/</npm.download.root>
+        <npm.proxy.auto>false</npm.proxy.auto>
     </properties>
 
     <build>
@@ -176,6 +178,10 @@
             <plugin>
                 <groupId>com.github.eirslett</groupId>
                 <artifactId>frontend-maven-plugin</artifactId>
+                <configuration>
+                    <npmDownloadRoot>${npm.download.root}</npmDownloadRoot>
+                    <npmInheritsProxyConfigFromMaven>${npm.proxy.auto}</npmInheritsProxyConfigFromMaven>
+                </configuration>
                 <executions>
                     <execution>
                         <id>install-node-and-npm</id>
@@ -193,7 +199,7 @@
                             <goal>npm</goal>
                         </goals>
                         <configuration>
-                            <arguments>install</arguments>
+                            <arguments>-d install</arguments>
                         </configuration>
                     </execution>
                     <execution>
@@ -385,27 +391,6 @@
                     </plugin>
                 </plugins>
             </build>
-        </profile>
-        <profile>
-            <id>ossrh-releases</id>
-            <repositories>
-                <repository>
-                    <id>ossrh-releases</id>
-                    <url>https://oss.sonatype.org/content/repositories/releases/</url>
-                    <snapshots>
-                        <enabled>false</enabled>
-                    </snapshots>
-                </repository>
-            </repositories>
-            <pluginRepositories>
-                <pluginRepository>
-                    <id>ossrh-releases</id>
-                    <url>https://oss.sonatype.org/content/repositories/releases/</url>
-                    <snapshots>
-                        <enabled>false</enabled>
-                    </snapshots>
-                </pluginRepository>
-            </pluginRepositories>
         </profile>
         <profile>
             <id>ossrh-staging</id>
