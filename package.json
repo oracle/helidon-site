@@ -1,7 +1,7 @@
 {
   "name": "helidon-landing-page",
   "version": "1.0.0",
-  "description": "J4C Landing Page",
+  "description": "Helidon Landing Page",
   "author": "Romain Grecourt <romain.grecourt@oracle.com>",
   "private": true,
   "scripts": {

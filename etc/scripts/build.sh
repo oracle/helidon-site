@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Copyright (c) 2018 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2018, 2020 Oracle and/or its affiliates. All rights reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -74,24 +74,22 @@ fi
 # Path to the root of the workspace
 readonly WS_DIR=$(cd $(dirname -- "${SCRIPT_PATH}") ; cd ../.. ; pwd -P)
 
-source ${WS_DIR}/etc/scripts/wercker-env.sh
+source ${WS_DIR}/etc/scripts/pipeline-env.sh
 
-if [ "${WERCKER}" = "true" ] ; then
-  # Add private_key from IDENTITY_FILE
-  mkdir ~/.ssh/ 2>/dev/null || true
-  echo -e "${IDENTITY_FILE}" > ~/.ssh/id_rsa
-  chmod og-rwx ~/.ssh/id_rsa
-  echo -e "Host *" >> ~/.ssh/config
-  echo -e "\tStrictHostKeyChecking no" >> ~/.ssh/config
-  echo -e "\tUserKnownHostsFile /dev/null" >> ~/.ssh/config
-
-  # Git user info
-  git config user.email || git config --global user.email "info@helidon.io"
-  git config user.name || git config --global user.name "Helidon Robot"
-fi
+npm install
+export DOCS_VERSION="latest"
+npm run build
 
 if [ "${PUBLISH}" = "true" ] ; then
-    mvn -f ${WS_DIR}/pom.xml clean deploy -Ppublish,ossrh-releases
+    if [ "${JENKINS_HOME}" ] ; then
+        git config user.email || git config --global user.email "info@helidon.io"
+        git config user.name || git config --global user.name "Helidon Robot"
+    fi
+    mvn ${MAVEN_ARGS} -f ${WS_DIR}/pom.xml deploy \
+        -Ppublish,ossrh-staging \
+        -Dskip.npm -Dskip.installnodenpm
 else
-    mvn -f ${WS_DIR}/pom.xml clean install -Possrh-releases,ossrh-staging
+    mvn ${MAVEN_ARGS} -f ${WS_DIR}/pom.xml install \
+        -Possrh-staging \
+        -Dskip.npm -Dskip.installnodenpm
 fi
