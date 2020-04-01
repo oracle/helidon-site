@@ -76,10 +76,7 @@ readonly WS_DIR=$(cd $(dirname -- "${SCRIPT_PATH}") ; cd ../.. ; pwd -P)
 
 source ${WS_DIR}/etc/scripts/pipeline-env.sh
 
-unset https_proxy http_proxy HTTP_PROXY HTTPS_PROXY
 export DOCS_VERSION="latest"
-
-env
 
 npm -d install
 npm -d run build
