@@ -37,10 +37,24 @@ if [ -n "${JENKINS_HOME}" ] ; then
         MAVEN_ARGS="${MAVEN_ARGS} -s ${MAVEN_SETTINGS_FILE}"
     fi
     export MAVEN_ARGS
-    if [ -n "${https_proxy}" ] && [[ ! "${https_proxy}" =~ ^http:// ]] ; then
-        export https_proxy="http://${https_proxy}"
-    fi
-    if [ -n "${http_proxy}" ] && [[ ! "${http_proxy}" =~ ^http:// ]] ; then
-        export http_proxy="http://${http_proxy}"
+    if [ ! -e "${HOME}/.npmrc" ] ; then
+        if [ -n "${NPM_CONFIG_REGISTRY}" ] ; then
+            echo "registry = https://artifacthub-tip.oraclecorp.com/api/npm/npmjs-remote" >> ${HOME}/.npmrc
+        fi
+        if [ -n "${https_proxy}" ] ; then
+            if [[ ! "${https_proxy}" =~ ^http:// ]] ; then
+                https_proxy="http://${https_proxy}"
+            fi
+            echo "https-proxy = ${https_proxy}" >> ${HOME}/.npmrc
+        fi
+        if [ -n "${http_proxy}" ] ; then
+            if [[ ! "${http_proxy}" =~ ^http:// ]] ; then
+                http_proxy="http://${http_proxy}"
+            fi
+            echo "proxy = ${http_proxy}" >> ${HOME}/.npmrc
+        fi
+        if [ -n "${NO_PROXY}" ] ; then
+            echo "noproxy = ${NO_PROXY}" >> ${HOME}/.npmrc
+        fi
     fi
 fi

@@ -80,8 +80,6 @@ if [ "${JENKINS_HOME}" = "true" ] ; then
     rm -rf node_modules
 fi
 
-export DOCS_VERSION="latest"
-
 mask_registry(){
     if [ -n "${NPM_CONFIG_REGISTRY}" ] ; then
         sed s@"${NPM_CONFIG_REGISTRY}"@'****'@g
@@ -90,9 +88,6 @@ mask_registry(){
     fi
 }
 
-npm -d install | mask_registry
-npm -d run build | mask_registry
-
 if [ "${PUBLISH}" = "true" ] ; then
     if [ "${JENKINS_HOME}" ] ; then
         git config user.email || git config --global user.email "info@helidon.io"
@@ -100,11 +95,13 @@ if [ "${PUBLISH}" = "true" ] ; then
     fi
     mvn ${MAVEN_ARGS} -f ${WS_DIR}/pom.xml deploy \
         -Ppublish,ossrh-staging \
-        -Dskip.npm -Dskip.installnodenpm
+        -Dskip.npm -Dskip.installnodenpm | \
+    mask_registry
 else
     mvn ${MAVEN_ARGS} -f ${WS_DIR}/pom.xml install \
         -Possrh-staging \
-        -Dskip.npm -Dskip.installnodenpm
+        -Dskip.npm -Dskip.installnodenpm | \
+    mask_registry
 fi
 
 tar -zcvf target/site.tar.gz -C target/site .
