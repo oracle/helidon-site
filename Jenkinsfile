@@ -32,7 +32,7 @@ pipeline {
           }
           steps {
             sh './etc/scripts/build.sh'
-            archiveArtifacts artifacts: "target/site/**"
+            archiveArtifacts artifacts: "target/site.tar.gz"
           }
         }
         stage('publish') {
@@ -44,7 +44,7 @@ pipeline {
           }
           steps {
             sh './etc/scripts/build.sh --publish'
-            archiveArtifacts artifacts: "target/site/**"
+            archiveArtifacts artifacts: "target/site.tar.gz"
           }
         }
         stage('copyright'){

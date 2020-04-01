@@ -82,8 +82,16 @@ fi
 
 export DOCS_VERSION="latest"
 
-npm -d install
-npm -d run build
+mask_registry(){
+    if [ -n "${NPM_CONFIG_REGISTRY}" ] ; then
+        sed s@"${NPM_CONFIG_REGISTRY}"@'****'@g
+    else
+        cat
+    fi
+}
+
+npm -d install | mask_registry
+npm -d run build | mask_registry
 
 if [ "${PUBLISH}" = "true" ] ; then
     if [ "${JENKINS_HOME}" ] ; then
@@ -98,3 +106,5 @@ else
         -Possrh-staging \
         -Dskip.npm -Dskip.installnodenpm
 fi
+
+tar -zcvf target/site.tar.gz -C target/site .
