@@ -1,6 +1,6 @@
 #!/bin/bash -e
 #
-# Copyright (c) 2018, 2020 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2018, 2020 Oracle and/or its affiliates.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ trap on_error ERR
 
 
 usage(){
-  cat <<EOF
+    cat <<EOF
 
 DESCRIPTION: Helidon Site Build Script
 
@@ -50,25 +50,25 @@ EOF
 ARGS=( "${@}" )
 for ((i=0;i<${#ARGS[@]};i++))
 {
-  ARG=${ARGS[${i}]}
-  case ${ARG} in
-  "--publish")
-    readonly PUBLISH=true
-    ;;
-  "--help")
-    usage
-    exit 0
-    ;;
-  *)
-    ;;
-  esac
+    ARG=${ARGS[${i}]}
+    case ${ARG} in
+    "--publish")
+        readonly PUBLISH=true
+        ;;
+    "--help")
+        usage
+        exit 0
+        ;;
+    *)
+        ;;
+    esac
 }
 
 # Path to this script
 if [ -h "${0}" ] ; then
-  readonly SCRIPT_PATH="$(readlink "${0}")"
+    readonly SCRIPT_PATH="$(readlink "${0}")"
 else
-  readonly SCRIPT_PATH="${0}"
+    readonly SCRIPT_PATH="${0}"
 fi
 
 # Path to the root of the workspace
