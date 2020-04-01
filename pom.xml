@@ -102,7 +102,7 @@
         <version.npm>6.10.0</version.npm>
         <site.output.dir>${project.build.directory}/site</site.output.dir>
         <docs.version>1.4.4</docs.version>
-        <version.plugin.glassfish-copyright>1.48</version.plugin.glassfish-copyright>
+        <version.plugin.glassfish-copyright>2.3</version.plugin.glassfish-copyright>
         <version.plugin.frontend>1.6</version.plugin.frontend>
         <version.plugin.scm-plugin>3.0.0</version.plugin.scm-plugin>
         <version.plugin.dependency-plugin>3.0.0</version.plugin.dependency-plugin>
