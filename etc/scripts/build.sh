@@ -76,6 +76,10 @@ readonly WS_DIR=$(cd $(dirname -- "${SCRIPT_PATH}") ; cd ../.. ; pwd -P)
 
 source ${WS_DIR}/etc/scripts/pipeline-env.sh
 
+if [ "${JENKINS_HOME}" = "true" ] ; then
+    rm -rf node_modules
+fi
+
 export DOCS_VERSION="latest"
 
 npm -d install
