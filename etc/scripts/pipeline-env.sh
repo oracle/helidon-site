@@ -37,4 +37,10 @@ if [ -n "${JENKINS_HOME}" ] ; then
         MAVEN_ARGS="${MAVEN_ARGS} -s ${MAVEN_SETTINGS_FILE}"
     fi
     export MAVEN_ARGS
+    if [ -n "${https_proxy}" ] && [[ ! "${https_proxy}" =~ ^http:// ]] ; then
+        export https_proxy="http://${https_proxy}"
+    fi
+    if [ -n "${http_proxy}" ] && [[ ! "${http_proxy}" =~ ^http:// ]] ; then
+        export http_proxy="http://${http_proxy}"
+    fi
 fi
