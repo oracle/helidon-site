@@ -76,9 +76,9 @@ readonly WS_DIR=$(cd $(dirname -- "${SCRIPT_PATH}") ; cd ../.. ; pwd -P)
 
 source ${WS_DIR}/etc/scripts/pipeline-env.sh
 
-npm install
+npm -d install
 export DOCS_VERSION="latest"
-npm run build
+npm -d run build
 
 if [ "${PUBLISH}" = "true" ] ; then
     if [ "${JENKINS_HOME}" ] ; then
