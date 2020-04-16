@@ -1,7 +1,7 @@
 {
-  "name": "helidon-landing-page",
+  "name": "helidon.io",
   "version": "1.0.0",
-  "description": "Helidon Landing Page",
+  "description": "Helidon Website",
   "author": "Romain Grecourt <romain.grecourt@oracle.com>",
   "private": true,
   "scripts": {
