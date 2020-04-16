@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/bin/bash -e
 #
-# Copyright (c) 2018 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2018, 2020 Oracle and/or its affiliates.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ trap on_error ERR
 
 
 usage(){
-  cat <<EOF
+    cat <<EOF
 
 DESCRIPTION: Helidon Site Build Script
 
@@ -50,48 +50,56 @@ EOF
 ARGS=( "${@}" )
 for ((i=0;i<${#ARGS[@]};i++))
 {
-  ARG=${ARGS[${i}]}
-  case ${ARG} in
-  "--publish")
-    readonly PUBLISH=true
-    ;;
-  "--help")
-    usage
-    exit 0
-    ;;
-  *)
-    ;;
-  esac
+    ARG=${ARGS[${i}]}
+    case ${ARG} in
+    "--publish")
+        readonly PUBLISH=true
+        ;;
+    "--help")
+        usage
+        exit 0
+        ;;
+    *)
+        ;;
+    esac
 }
 
 # Path to this script
 if [ -h "${0}" ] ; then
-  readonly SCRIPT_PATH="$(readlink "${0}")"
+    readonly SCRIPT_PATH="$(readlink "${0}")"
 else
-  readonly SCRIPT_PATH="${0}"
+    readonly SCRIPT_PATH="${0}"
 fi
 
 # Path to the root of the workspace
 readonly WS_DIR=$(cd $(dirname -- "${SCRIPT_PATH}") ; cd ../.. ; pwd -P)
 
-source ${WS_DIR}/etc/scripts/wercker-env.sh
+source ${WS_DIR}/etc/scripts/pipeline-env.sh
 
-if [ "${WERCKER}" = "true" ] ; then
-  # Add private_key from IDENTITY_FILE
-  mkdir ~/.ssh/ 2>/dev/null || true
-  echo -e "${IDENTITY_FILE}" > ~/.ssh/id_rsa
-  chmod og-rwx ~/.ssh/id_rsa
-  echo -e "Host *" >> ~/.ssh/config
-  echo -e "\tStrictHostKeyChecking no" >> ~/.ssh/config
-  echo -e "\tUserKnownHostsFile /dev/null" >> ~/.ssh/config
-
-  # Git user info
-  git config user.email || git config --global user.email "info@helidon.io"
-  git config user.name || git config --global user.name "Helidon Robot"
+if [ -n "${JENKINS_HOME}" ] ; then
+    rm -rf node_modules
 fi
+
+mask_registry(){
+    if [ -n "${NPM_CONFIG_REGISTRY}" ] ; then
+        sed s@"${NPM_CONFIG_REGISTRY}"@'****'@g
+    else
+        cat
+    fi
+}
 
 if [ "${PUBLISH}" = "true" ] ; then
-    mvn -f ${WS_DIR}/pom.xml clean deploy -Ppublish,ossrh-releases
+    if [ "${JENKINS_HOME}" ] ; then
+        git config user.email || git config --global user.email "info@helidon.io"
+        git config user.name || git config --global user.name "Helidon Robot"
+    fi
+    mvn ${MAVEN_ARGS} -f ${WS_DIR}/pom.xml clean deploy \
+        -Ppublish,ossrh-staging | \
+        mask_registry
 else
-    mvn -f ${WS_DIR}/pom.xml clean install -Possrh-releases,ossrh-staging
+    mvn ${MAVEN_ARGS} -f ${WS_DIR}/pom.xml clean install \
+        -Possrh-staging | \
+        mask_registry
 fi
+
+tar -zcvf target/site.tar.gz -C target/site .
