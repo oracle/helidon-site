@@ -48,6 +48,22 @@
                target="_blank"
                class="hidden-xs-only"
                rel="noopener">Documentation</v-btn>
+        <v-menu>
+            <v-btn flat
+                   slot="activator"
+                   class="hidden-xs-only">
+                   Documentation
+                <v-icon right>mdi-menu-down</v-icon>
+            </v-btn>
+            <v-list>
+                <v-list-item href="./docs/latest"
+                             target="_blank">
+                    <v-list-item-content>
+                        <v-list-item-title>Helidon 1.4</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+            </v-list>
+        </v-menu>
         <v-btn flat
                href="./docs/latest"
                target="_blank"
