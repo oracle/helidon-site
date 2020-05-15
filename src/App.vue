@@ -43,26 +43,18 @@
                target="_blank"
                class="hidden-xs-only"
                rel="noopener">Blog</v-btn>
-        <v-btn flat
-               href="./docs/latest"
-               target="_blank"
-               class="hidden-xs-only"
-               rel="noopener">Documentation</v-btn>
-        <v-menu>
-            <v-btn flat
-                   slot="activator"
-                   class="hidden-xs-only">
-                   Documentation
-                <v-icon right>mdi-menu-down</v-icon>
-            </v-btn>
-            <v-list>
-                <v-list-item href="./docs/latest"
-                             target="_blank">
-                    <v-list-item-content>
-                        <v-list-item-title>Helidon 1.4</v-list-item-title>
-                    </v-list-item-content>
-                </v-list-item>
-            </v-list>
+        <v-menu offset-y
+                bottom
+                transition="slide-y-transition">
+          <v-btn slot="activator"flat>
+            Documentation
+            <v-icon>arrow_drop_down</v-icon>
+          </v-btn>
+          <v-list>
+            <v-list-tile v-for="(item, index) in docs" :key="index" :href="item.url" target="_blank">
+              <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+            </v-list-tile>
+          </v-list>
         </v-menu>
         <v-btn flat
                href="./docs/latest"
@@ -204,7 +196,17 @@
     },
     data () {
       return {
-        doParallax: false
+        doParallax: false,
+        docs: [
+          {
+            title: '1.x',
+            url: 'docs/1.x'
+          },
+          {
+            title: '2.x',
+            url: 'docs/1.x'
+          }
+        ]
       }
     },
     created () {
