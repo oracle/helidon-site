@@ -349,9 +349,9 @@
                             <target>
                                 <symlink link="${site.output.dir}/docs/latest"
                                          resource="./${docs.latest.version}"/>
-                                <symlink link="${site.output.dir}/docs/latest-1"
+                                <symlink link="${site.output.dir}/docs/v1"
                                          resource="./${docs.1.version}"/>
-                                <symlink link="${site.output.dir}/docs/latest-2"
+                                <symlink link="${site.output.dir}/docs/v2"
                                          resource="./${docs.2.version}"/>
                             </target>
                         </configuration>

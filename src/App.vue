@@ -199,12 +199,12 @@
         doParallax: false,
         docs: [
           {
-            title: '1.x',
-            url: 'docs/1.x'
+            title: 'Helidon 1',
+            url: 'docs/v1'
           },
           {
-            title: '2.x',
-            url: 'docs/1.x'
+            title: 'Helidon 2 Preview',
+            url: 'docs/v2'
           }
         ]
       }
