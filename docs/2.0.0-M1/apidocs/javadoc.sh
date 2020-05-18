@@ -1,1 +1,0 @@
-/usr/local/openjdk-11/bin/javadoc -J-Xmx256m -J-Dhttp.agent=maven-javadoc-plugin @options @argfile
