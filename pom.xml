@@ -101,7 +101,9 @@
         <version.nodejs>v12.16.1</version.nodejs>
         <version.npm>6.13.4</version.npm>
         <site.output.dir>${project.build.directory}/site</site.output.dir>
-        <docs.version>1.4.4</docs.version>
+        <docs.1.version>1.4.4</docs.1.version>
+        <docs.2.version>2.0.0-M3</docs.2.version>
+        <docs.latest.version>${docs.1.version}</docs.latest.version>
         <version.plugin.glassfish-copyright>2.3</version.plugin.glassfish-copyright>
         <version.plugin.frontend>1.9.1</version.plugin.frontend>
         <version.plugin.scm-plugin>3.0.0</version.plugin.scm-plugin>
@@ -229,33 +231,17 @@
                                 <artifactItem>
                                     <groupId>io.helidon</groupId>
                                     <artifactId>helidon-docs</artifactId>
-                                    <version>${docs.version}</version>
-                                    <outputDirectory>${site.output.dir}/docs/${docs.version}</outputDirectory>
+                                    <version>${docs.1.version}</version>
+                                    <outputDirectory>${site.output.dir}/docs/${docs.1.version}</outputDirectory>
                                     <excludes>META-INF/**</excludes>
                                 </artifactItem>
 
-                                <!-- Milestone docs should not be latest -->
-                                <artifactItem>
-                                    <groupId>io.helidon</groupId>
-                                    <artifactId>helidon-docs</artifactId>
-                                    <version>2.0.0-M1</version>
-                                    <outputDirectory>${site.output.dir}/docs/2.0.0-M1</outputDirectory>
-                                    <excludes>META-INF/**</excludes>
-                                </artifactItem>
                                 <artifactItem>
                                     <groupId>io.helidon</groupId>
                                     <artifactId>helidon-project</artifactId>
-                                    <version>2.0.0-M2</version>
+                                    <version>${docs.2.version}</version>
                                     <classifier>site</classifier>
-                                    <outputDirectory>${site.output.dir}/docs/2.0.0-M2</outputDirectory>
-                                    <excludes>META-INF/**</excludes>
-                                </artifactItem>
-                                <artifactItem>
-                                    <groupId>io.helidon</groupId>
-                                    <artifactId>helidon-project</artifactId>
-                                    <version>2.0.0-M3</version>
-                                    <classifier>site</classifier>
-                                    <outputDirectory>${site.output.dir}/docs/2.0.0-M3</outputDirectory>
+                                    <outputDirectory>${site.output.dir}/docs/${docs.2.version}</outputDirectory>
                                     <excludes>META-INF/**</excludes>
                                 </artifactItem>
 
@@ -362,7 +348,11 @@
                         <configuration>
                             <target>
                                 <symlink link="${site.output.dir}/docs/latest"
-                                         resource="./${docs.version}"/>
+                                         resource="./${docs.latest.version}"/>
+                                <symlink link="${site.output.dir}/docs/v1"
+                                         resource="./${docs.1.version}"/>
+                                <symlink link="${site.output.dir}/docs/v2"
+                                         resource="./${docs.2.version}"/>
                             </target>
                         </configuration>
                     </execution>
