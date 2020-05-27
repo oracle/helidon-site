@@ -166,6 +166,7 @@
   import '../static/img/logo-opentracing-500x500.png'
   import '../static/img/logo-prometheus-500x500.png'
   import '../static/img/logo-zipkin-500x500.png'
+  import '../static/img/unfurl_logo.png'
 
   import parallaxWrapper from './ParallaxWrapper'
   import parallaxLayer from './ParallaxLayer'
