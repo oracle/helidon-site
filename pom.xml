@@ -102,7 +102,7 @@
         <version.npm>6.13.4</version.npm>
         <site.output.dir>${project.build.directory}/site</site.output.dir>
         <docs.1.version>1.4.4</docs.1.version>
-        <docs.2.version>2.0.0-M3</docs.2.version>
+        <docs.2.version>2.0.0-RC1</docs.2.version>
         <docs.latest.version>${docs.1.version}</docs.latest.version>
         <version.plugin.glassfish-copyright>2.3</version.plugin.glassfish-copyright>
         <version.plugin.frontend>1.9.1</version.plugin.frontend>
