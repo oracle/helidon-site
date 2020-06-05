@@ -1,5 +1,5 @@
 <!--
-  ~ Copyright (c) 2018 Oracle and/or its affiliates. All rights reserved.
+  ~ Copyright (c) 2018, 2020 Oracle and/or its affiliates. All rights reserved.
 -->
 <template>
     <v-footer v-bind:style="footerStyle()">
@@ -36,6 +36,5 @@
      :padding-bottom 0px
      :padding-left 10%
      :padding-right 10%
-     :border-top 1px solid white
      :font-size 0.9em
 </style>

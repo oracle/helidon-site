@@ -1,5 +1,5 @@
 <!--
-  ~ Copyright (c) 2018, 2019 Oracle and/or its affiliates. All rights reserved.
+  ~ Copyright (c) 2018, 2020 Oracle and/or its affiliates. All rights reserved.
 -->
 <template>
   <v-container v-bind:id="id" fluid light class="slide_features">
@@ -121,17 +121,17 @@
       :font-size 1.25em
       :margin-left 10px
     .feature-graphic
-      :margin-top auto;
+      :margin-top auto
       :margin-bottom auto
-      :background-position: 50% 50%
-      :background-size: contain
-      :height: 200px
+      :background-position 50% 50%
+      :background-size contain
+      :height 200px
     .simple-and-fast-graphic
       :background-image url('../static/img/helidon_feature_simple_and_fast.png')
     .microprofile-support-graphic
       :background-image url('../static/img/helidon_feature_microprofile_support.png')
     .reactive-web-server-graphic
-      :background-image: url('../static/img/helidon_feature_reactive_web_server.png')
+      :background-image url('../static/img/helidon_feature_reactive_web_server.png')
     .observable-and-resilient-graphic
       :background-image url('../static/img/helidon_feature_observable_and_resilient.png')
 </style>
