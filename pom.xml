@@ -100,9 +100,9 @@
         <docs.1.version>1.4.4</docs.1.version>
         <docs.2.version>2.0.0-RC1</docs.2.version>
         <docs.latest.version>${docs.1.version}</docs.latest.version>
-        <cli.data.latest.version>2.0.0-RC1</cli.data.latest.version>
-        <cli.maven.plugin.version>2.0.0-RC1</cli.maven.plugin.version>
-        <cli.latest.version>2.0.0-RC1</cli.latest.version>
+        <cli.data.latest.version>2.0.0-RC2</cli.data.latest.version>
+        <cli.maven.plugin.version>2.0.0-RC2</cli.maven.plugin.version>
+        <cli.latest.version>2.0.0-RC2</cli.latest.version>
 
         <!-- misc -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -271,25 +271,17 @@
                                     </downloads>
                                     <archives>
                                         <archive target="cli-data/${cli.data.latest.version}/cli-data.zip">
-                                            <copy-artifacts>
-                                                <copy-artifact groupId="io.helidon.archetypes"
+                                            <unpack-artifacts>
+                                                <unpack-artifact groupId="io.helidon.archetypes"
                                                                artifactId="helidon-archetype-catalog"
                                                                version="${cli.data.latest.version}"
-                                                               type="xml"
-                                                               target="archetype-catalog.xml"/>
-                                                <copy-artifact groupId="io.helidon.archetypes"
-                                                               artifactId="helidon-bare-se"
-                                                               version="${cli.data.latest.version}" />
-                                                <copy-artifact groupId="io.helidon.archetypes"
-                                                               artifactId="helidon-bare-mp"
-                                                               version="${cli.data.latest.version}" />
-                                            </copy-artifacts>
+                                                               type="zip"
+                                                               target="."/>
+                                            </unpack-artifacts>
                                             <templates>
                                                 <template source="etc/templates/cli-metadata.properties.mustache"
                                                           target="metadata.properties">
                                                     <variables>
-                                                        <variable name="helidonVersion"
-                                                                  value="${cli.data.latest.version}"/>
                                                         <variable name="buildtoolsVersion"
                                                                   value="${cli.maven.plugin.version}"/>
                                                         <variable name="cliVersion" value="${cli.latest.version}"/>
