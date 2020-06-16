@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-    Copyright (c) 2018, 2020 Oracle and/or its affiliates. All rights reserved.
+    Copyright (c) 2018, 2020 Oracle and/or its affiliates.
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -96,19 +96,30 @@
     </distributionManagement>
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.deploy.skip>true</maven.deploy.skip>
-        <version.nodejs>v12.16.1</version.nodejs>
-        <version.npm>6.13.4</version.npm>
-        <site.output.dir>${project.build.directory}/site</site.output.dir>
+        <!-- main version properties -->
         <docs.1.version>1.4.4</docs.1.version>
         <docs.2.version>2.0.0-RC1</docs.2.version>
         <docs.latest.version>${docs.1.version}</docs.latest.version>
+        <cli.data.latest.version>2.0.0-RC1</cli.data.latest.version>
+        <cli.maven.plugin.version>2.0.0-RC1</cli.maven.plugin.version>
+        <cli.latest.version>2.0.0-RC1</cli.latest.version>
+
+        <!-- misc -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.deploy.skip>true</maven.deploy.skip>
+        <site.output.dir>${project.build.directory}/site</site.output.dir>
+        <build-tools.download.url>https://github.com/oracle/helidon-build-tools/releases/download</build-tools.download.url>
+        <cname>helidon.io</cname>
+
+        <!-- maven plugin versions -->
         <version.plugin.glassfish-copyright>2.3</version.plugin.glassfish-copyright>
         <version.plugin.frontend>1.9.1</version.plugin.frontend>
         <version.plugin.scm-plugin>3.0.0</version.plugin.scm-plugin>
-        <version.plugin.dependency-plugin>3.0.0</version.plugin.dependency-plugin>
-        <version.plugin.resources-plugin>3.1.0</version.plugin.resources-plugin>
+        <version.plugin.stager>2.0.0-SNAPSHOT</version.plugin.stager>
+
+        <!-- npm/node -->
+        <version.nodejs>v12.16.1</version.nodejs>
+        <version.npm>6.13.4</version.npm>
         <npm.download.root>https://registry.npmjs.org/npm/-/</npm.download.root>
         <npm.proxy.auto>false</npm.proxy.auto>
     </properties>
@@ -129,8 +140,6 @@
                         <scmOnly>true</scmOnly>
                         <warn>true</warn>
                         <ignoreYear>false</ignoreYear>
-                        <useComma>true</useComma>
-                        <doHidden>true</doHidden>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -139,44 +148,18 @@
                     <version>${version.plugin.frontend}</version>
                 </plugin>
                 <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-dependency-plugin</artifactId>
-                    <version>${version.plugin.dependency-plugin}</version>
+                    <groupId>io.helidon.build-tools</groupId>
+                    <artifactId>helidon-stager-maven-plugin</artifactId>
+                    <version>${version.plugin.stager}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-scm-publish-plugin</artifactId>
                     <version>${version.plugin.scm-plugin}</version>
                 </plugin>
-                <plugin>
-                  <groupId>org.apache.maven.plugins</groupId>
-                  <artifactId>maven-resources-plugin</artifactId>
-                  <version>${version.plugin.resources-plugin}</version>
-                </plugin>
             </plugins>
         </pluginManagement>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>copy-resources</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <configuration>
-                            <outputDirectory>${site.output.dir}</outputDirectory>
-                            <resources>
-                                <resource>
-                                    <directory>src/main/resources</directory>
-                                </resource>
-                            </resources>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
             <plugin>
                 <groupId>com.github.eirslett</groupId>
                 <artifactId>frontend-maven-plugin</artifactId>
@@ -217,143 +200,150 @@
                 </executions>
             </plugin>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
+                <groupId>io.helidon.build-tools</groupId>
+                <artifactId>helidon-stager-maven-plugin</artifactId>
                 <executions>
                     <execution>
-                        <id>add-docs</id>
-                        <phase>process-resources</phase>
                         <goals>
-                            <goal>unpack</goal>
+                            <goal>stage</goal>
                         </goals>
                         <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>io.helidon</groupId>
-                                    <artifactId>helidon-docs</artifactId>
-                                    <version>${docs.1.version}</version>
-                                    <outputDirectory>${site.output.dir}/docs/${docs.1.version}</outputDirectory>
-                                    <excludes>META-INF/**</excludes>
-                                </artifactItem>
-
-                                <artifactItem>
-                                    <groupId>io.helidon</groupId>
-                                    <artifactId>helidon-project</artifactId>
-                                    <version>${docs.2.version}</version>
-                                    <classifier>site</classifier>
-                                    <outputDirectory>${site.output.dir}/docs/${docs.2.version}</outputDirectory>
-                                    <excludes>META-INF/**</excludes>
-                                </artifactItem>
-
-                                <artifactItem>
-                                    <groupId>io.helidon</groupId>
-                                    <artifactId>helidon-docs</artifactId>
-                                    <version>1.4.3</version>
-                                    <outputDirectory>${site.output.dir}/docs/1.4.3</outputDirectory>
-                                    <excludes>META-INF/**</excludes>
-                                </artifactItem>
-                                <artifactItem>
-                                    <groupId>io.helidon</groupId>
-                                    <artifactId>helidon-docs</artifactId>
-                                    <version>1.4.2</version>
-                                    <outputDirectory>${site.output.dir}/docs/1.4.2</outputDirectory>
-                                    <excludes>META-INF/**</excludes>
-                                </artifactItem>
-                                <artifactItem>
-                                    <groupId>io.helidon</groupId>
-                                    <artifactId>helidon-docs</artifactId>
-                                    <version>1.4.1</version>
-                                    <outputDirectory>${site.output.dir}/docs/1.4.1</outputDirectory>
-                                    <excludes>META-INF/**</excludes>
-                                </artifactItem>
-                                <artifactItem>
-                                    <groupId>io.helidon</groupId>
-                                    <artifactId>helidon-docs</artifactId>
-                                    <version>1.4.0</version>
-                                    <outputDirectory>${site.output.dir}/docs/1.4.0</outputDirectory>
-                                    <excludes>META-INF/**</excludes>
-                                </artifactItem>
-                                <artifactItem>
-                                    <groupId>io.helidon</groupId>
-                                    <artifactId>helidon-docs</artifactId>
-                                    <version>1.3.1</version>
-                                    <outputDirectory>${site.output.dir}/docs/1.3.1</outputDirectory>
-                                    <excludes>META-INF/**</excludes>
-                                </artifactItem>
-                                <artifactItem>
-                                    <groupId>io.helidon</groupId>
-                                    <artifactId>helidon-docs</artifactId>
-                                    <version>1.3.0</version>
-                                    <outputDirectory>${site.output.dir}/docs/1.3.0</outputDirectory>
-                                    <excludes>META-INF/**</excludes>
-                                </artifactItem>
-                                <artifactItem>
-                                    <groupId>io.helidon</groupId>
-                                    <artifactId>helidon-docs</artifactId>
-                                    <version>1.2.1</version>
-                                    <outputDirectory>${site.output.dir}/docs/1.2.1</outputDirectory>
-                                    <excludes>META-INF/**</excludes>
-                                </artifactItem>
-                                <artifactItem>
-                                    <groupId>io.helidon</groupId>
-                                    <artifactId>helidon-docs</artifactId>
-                                    <version>1.1.2</version>
-                                    <outputDirectory>${site.output.dir}/docs/1.1.2</outputDirectory>
-                                    <excludes>META-INF/**</excludes>
-                                </artifactItem>
-                                <artifactItem>
-                                    <groupId>io.helidon</groupId>
-                                    <artifactId>helidon-docs</artifactId>
-                                    <version>1.0.3</version>
-                                    <outputDirectory>${site.output.dir}/docs/1.0.3</outputDirectory>
-                                    <excludes>META-INF/**</excludes>
-                                </artifactItem>
-                                <artifactItem>
-                                    <groupId>io.helidon</groupId>
-                                    <artifactId>helidon-docs</artifactId>
-                                    <version>0.11.1</version>
-                                    <outputDirectory>${site.output.dir}/docs/0.11.1</outputDirectory>
-                                    <excludes>META-INF/**</excludes>
-                                </artifactItem>
-                                <artifactItem>
-                                    <groupId>io.helidon</groupId>
-                                    <artifactId>helidon-docs</artifactId>
-                                    <version>0.10.6</version>
-                                    <outputDirectory>${site.output.dir}/docs/0.10.6</outputDirectory>
-                                    <excludes>META-INF/**</excludes>
-                                </artifactItem>
-                                <artifactItem>
-                                    <groupId>io.helidon</groupId>
-                                    <artifactId>helidon-docs</artifactId>
-                                    <version>0.9.1</version>
-                                    <outputDirectory>${site.output.dir}/docs/0.9.1</outputDirectory>
-                                    <excludes>META-INF/**</excludes>
-                                </artifactItem>
-                            </artifactItems>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-antrun-plugin</artifactId>
-                <version>1.8</version>
-                <executions>
-                    <execution>
-                        <id>create-latest-link</id>
-                        <phase>process-resources</phase>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                        <configuration>
-                            <target>
-                                <symlink link="${site.output.dir}/docs/latest"
-                                         resource="./${docs.latest.version}"/>
-                                <symlink link="${site.output.dir}/docs/v1"
-                                         resource="./${docs.1.version}"/>
-                                <symlink link="${site.output.dir}/docs/v2"
-                                         resource="./${docs.2.version}"/>
-                            </target>
+                            <directories>
+                                <directory target="${site.output.dir}">
+                                    <unpack-artifacts>
+                                        <unpack-artifact
+                                                groupId="io.helidon"
+                                                artifactId="helidon-docs"
+                                                version="{version}"
+                                                excludes="META-INF/**"
+                                                target="docs/{version}">
+                                            <iterators>
+                                                <variables>
+                                                    <variable name="version">
+                                                        <value>${docs.1.version}</value>
+                                                        <value>1.4.3</value>
+                                                        <value>1.4.2</value>
+                                                        <value>1.4.1</value>
+                                                        <value>1.3.1</value>
+                                                        <value>1.3.0</value>
+                                                        <value>1.2.1</value>
+                                                        <value>1.1.2</value>
+                                                        <value>1.0.3</value>
+                                                        <value>0.11.1</value>
+                                                        <value>0.10.6</value>
+                                                        <value>0.9.1</value>
+                                                    </variable>
+                                                </variables>
+                                            </iterators>
+                                        </unpack-artifact>
+                                        <unpack-artifact
+                                                groupId="io.helidon"
+                                                artifactId="helidon-project"
+                                                version="{version}"
+                                                classifier="site"
+                                                excludes="META-INF/**"
+                                                target="docs/{version}">
+                                            <iterators>
+                                                <variables>
+                                                    <variable name="version">
+                                                        <value>${docs.2.version}</value>
+                                                    </variable>
+                                                </variables>
+                                            </iterators>
+                                        </unpack-artifact>
+                                    </unpack-artifacts>
+                                    <downloads>
+                                        <download
+                                                url="${build-tools.download.url}/{version}/helidon-cli-{platform}-amd64"
+                                                target="cli/{version}/{platform}/helidon">
+                                            <iterators>
+                                                <variables>
+                                                    <variable name="platform">
+                                                        <value>darwin</value>
+                                                        <value>linux</value>
+                                                    </variable>
+                                                    <variable name="version">
+                                                        <value>${cli.latest.version}</value>
+                                                    </variable>
+                                                </variables>
+                                            </iterators>
+                                        </download>
+                                    </downloads>
+                                    <archives>
+                                        <archive target="cli-data/${cli.data.latest.version}/cli-data.zip">
+                                            <copy-artifacts>
+                                                <copy-artifact groupId="io.helidon.archetypes"
+                                                               artifactId="helidon-archetype-catalog"
+                                                               version="${cli.data.latest.version}"
+                                                               type="xml"
+                                                               target="archetype-catalog.xml"/>
+                                                <copy-artifact groupId="io.helidon.archetypes"
+                                                               artifactId="helidon-bare-se"
+                                                               version="${cli.data.latest.version}" />
+                                                <copy-artifact groupId="io.helidon.archetypes"
+                                                               artifactId="helidon-bare-mp"
+                                                               version="${cli.data.latest.version}" />
+                                            </copy-artifacts>
+                                            <templates>
+                                                <template source="etc/templates/cli-metadata.properties.mustache"
+                                                          target="metadata.properties">
+                                                    <variables>
+                                                        <variable name="helidonVersion"
+                                                                  value="${cli.data.latest.version}"/>
+                                                        <variable name="buildtoolsVersion"
+                                                                  value="${cli.maven.plugin.version}"/>
+                                                        <variable name="cliVersion" value="${cli.latest.version}"/>
+                                                    </variables>
+                                                </template>
+                                            </templates>
+                                        </archive>
+                                    </archives>
+                                    <templates>
+                                        <template source="etc/templates/redirect.html.mustache"
+                                                  target="docs/index.html">
+                                            <variables>
+                                                <variable name="location" value="./latest/index.html"/>
+                                                <variable name="title" value="Helidon Documentation"/>
+                                                <variable name="description" value="Helidon Documentation"/>
+                                                <variable name="og-url" value="https://helidon.io/docs"/>
+                                                <variable name="og-description" value="Documentation"/>
+                                            </variables>
+                                        </template>
+                                        <template source="etc/templates/redirect.html.mustache"
+                                                  target="guides/index.html">
+                                            <variables>
+                                                <variable name="location"
+                                                          value="../docs/latest/index.html#/guides/01_overview"/>
+                                                <variable name="title" value="Helidon Guides"/>
+                                                <variable name="description" value="Helidon Guides"/>
+                                                <variable name="og-url" value="https://helidon.io/guides"/>
+                                                <variable name="og-description" value="Guides"/>
+                                            </variables>
+                                        </template>
+                                        <template source="etc/templates/redirect.html.mustache"
+                                                  target="javadocs/index.html">
+                                            <variables>
+                                                <variable name="location"
+                                                          value="../docs/latest/apidocs/index.html?overview-summary.html"/>
+                                                <variable name="title" value="Helidon Javadocs"/>
+                                                <variable name="description" value="Helidon Javadocs"/>
+                                                <variable name="og-url" value="https://helidon.io/javadocs"/>
+                                                <variable name="og-description" value="Javadocs"/>
+                                            </variables>
+                                        </template>
+                                    </templates>
+                                    <files>
+                                        <file target="CNAME">${cname}</file>
+                                        <file target="cli-data/latest">${cli.data.latest.version}</file>
+                                    </files>
+                                    <symlinks>
+                                        <symlink source="docs/${docs.latest.version}" target="docs/latest"/>
+                                        <symlink source="docs/${docs.1.version}" target="docs/v1"/>
+                                        <symlink source="docs/${docs.2.version}" target="docs/v2"/>
+                                        <symlink source="cli/${cli.latest.version}" target="cli/latest"/>
+                                    </symlinks>
+                                </directory>
+                            </directories>
                         </configuration>
                     </execution>
                 </executions>
