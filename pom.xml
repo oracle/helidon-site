@@ -98,11 +98,11 @@
     <properties>
         <!-- main version properties -->
         <docs.1.version>1.4.4</docs.1.version>
-        <docs.2.version>2.0.0-RC1</docs.2.version>
+        <docs.2.version>2.0.0-RC2</docs.2.version>
         <docs.latest.version>${docs.1.version}</docs.latest.version>
         <cli.data.latest.version>2.0.0-RC2</cli.data.latest.version>
-        <cli.maven.plugin.version>2.0.0-RC2</cli.maven.plugin.version>
-        <cli.latest.version>2.0.0-RC2</cli.latest.version>
+        <cli.maven.plugin.version>2.0.0-RC3</cli.maven.plugin.version>
+        <cli.latest.version>2.0.0-RC3</cli.latest.version>
 
         <!-- misc -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
