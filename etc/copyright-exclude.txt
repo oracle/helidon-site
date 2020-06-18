@@ -22,4 +22,5 @@
 .pdf
 .md
 .xcf
+.mustache
 CNAME
