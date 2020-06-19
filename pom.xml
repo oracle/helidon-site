@@ -263,8 +263,8 @@
                                             <iterators>
                                                 <variables>
                                                     <variable name="platform">
-                                                        <value>Darwin</value>
-                                                        <value>Linux</value>
+                                                        <value>darwin</value>
+                                                        <value>linux</value>
                                                     </variable>
                                                     <variable name="version">
                                                         <value>2.0.0-RC3</value>
