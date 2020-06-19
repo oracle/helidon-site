@@ -97,12 +97,12 @@
 
     <properties>
         <!-- main version properties -->
-        <docs.1.version>1.4.4</docs.1.version>
-        <docs.2.version>2.0.0-RC2</docs.2.version>
-        <docs.latest.version>${docs.1.version}</docs.latest.version>
-        <cli.data.latest.version>2.0.0-RC2</cli.data.latest.version>
-        <cli.maven.plugin.version>2.0.0-RC3</cli.maven.plugin.version>
-        <cli.latest.version>2.0.0-RC3</cli.latest.version>
+        <docs.1.version>1.4.5</docs.1.version>
+        <docs.2.version>2.0.0</docs.2.version>
+        <docs.latest.version>${docs.2.version}</docs.latest.version>
+        <cli.data.latest.version>2.0.0</cli.data.latest.version>
+        <cli.maven.plugin.version>2.0.0</cli.maven.plugin.version>
+        <cli.latest.version>2.0.0</cli.latest.version>
 
         <!-- misc -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -115,7 +115,7 @@
         <version.plugin.glassfish-copyright>2.3</version.plugin.glassfish-copyright>
         <version.plugin.frontend>1.9.1</version.plugin.frontend>
         <version.plugin.scm-plugin>3.0.0</version.plugin.scm-plugin>
-        <version.plugin.stager>2.0.0-RC3</version.plugin.stager>
+        <version.plugin.stager>2.0.0</version.plugin.stager>
 
         <!-- npm/node -->
         <version.nodejs>v12.16.1</version.nodejs>
@@ -221,9 +221,11 @@
                                                 <variables>
                                                     <variable name="version">
                                                         <value>${docs.1.version}</value>
+                                                        <value>1.4.4</value>
                                                         <value>1.4.3</value>
                                                         <value>1.4.2</value>
                                                         <value>1.4.1</value>
+                                                        <value>1.4.0</value>
                                                         <value>1.3.1</value>
                                                         <value>1.3.0</value>
                                                         <value>1.2.1</value>
@@ -246,6 +248,8 @@
                                             <iterators>
                                                 <variables>
                                                     <variable name="version">
+                                                        <value>2.0.0-RC1</value>
+                                                        <value>2.0.0-RC2</value>
                                                         <value>${docs.2.version}</value>
                                                     </variable>
                                                 </variables>
@@ -259,10 +263,11 @@
                                             <iterators>
                                                 <variables>
                                                     <variable name="platform">
-                                                        <value>darwin</value>
-                                                        <value>linux</value>
+                                                        <value>Darwin</value>
+                                                        <value>Linux</value>
                                                     </variable>
                                                     <variable name="version">
+                                                        <value>2.0.0-RC3</value>
                                                         <value>${cli.latest.version}</value>
                                                     </variable>
                                                 </variables>
