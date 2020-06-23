@@ -24,7 +24,7 @@
                class="toolbar-logo"
                rel="noopener"/>
         <v-btn flat
-               v-on:click="scrollTo('#new-features')"
+               v-on:click="scrollTo('#features')"
                class="hidden-sm-and-down"
                rel="noopener">Features</v-btn>
         <v-btn flat
@@ -75,8 +75,7 @@
       <mobileCover id="top">
         <heroText/>
       </mobileCover>
-     <!-- // <features id="features" /> -->
-      <newFeatures id="new-features"/>
+      <features id="features" />
       <gettingStarted id="getting-started"/>
       <technologies id="technologies"/>
       <community id="community"/>
@@ -134,8 +133,7 @@
         <heroText backgroundColor="#f8f8f8"
                   color="#3ea5fd"
                   v-bind:paddingBottom=100 />
-        <!-- <features id="features" /> -->
-        <NewFeatures id="new-features"/>
+        <features id="features" />
         <gettingStarted id="getting-started"/>
         <technologies id="technologies"/>
         <community id="community"/>
@@ -177,8 +175,7 @@
   import parallaxFallback from './ParallaxFallback'
   import mobileCover from './MobileCover'
   import heroText from './HeroText'
-   // import features from "./Features";
-  import NewFeatures from './NewFeatures'
+  import features from './Features'
   import gettingStarted from './GettingStarted'
   import technologies from './Technologies'
   import community from './Community'
@@ -193,8 +190,7 @@
       parallaxFallback,
       mobileCover,
       heroText,
-      // features,
-      NewFeatures,
+      features,
       technologies,
       gettingStarted,
       community,
