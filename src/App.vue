@@ -204,7 +204,7 @@
             url: 'docs/v1'
           },
           {
-            title: 'Helidon 2 Preview',
+            title: 'Helidon 2',
             url: 'docs/v2'
           }
         ]
