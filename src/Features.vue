@@ -8,7 +8,7 @@
         <v-carousel light delimiter-icon="stop">
           <v-carousel-item>
             <v-layout column justify-center>
-              <v-flex xs6 style="text-align: center">
+              <v-flex xs4 style="text-align: center">
                 <div class="graalvm-img"/>
                 <p class="graalvm-description">GraalVM native-image support in both Helidon SE and Helidon MP</p>
               </v-flex>
@@ -27,7 +27,7 @@
           </v-carousel-item>
           <v-carousel-item>
             <v-layout column justify-center>
-              <v-flex md6>
+              <v-flex sm8>
                 <v-layout row wrap justify-center>
                   <v-flex md2/>
                   <v-flex md4 justify-center class="features-flex">
@@ -55,7 +55,7 @@
           </v-carousel-item>
           <v-carousel-item>
             <v-layout column justify-center>
-              <v-flex md6>
+              <v-flex sm8>
                 <v-layout row wrap justify-center>
                   <v-flex md2/>
                   <v-flex md4 justify-center class="features-flex">
@@ -96,7 +96,7 @@
                     <li>Extensibility</li>
                   </ul>
                 </div>
-                <div style="text-align: center; margin-top:30px">
+                <div class ="button-fifth">
                   <v-btn box color="info" darkclass="info-button" href="./docs/v2/#/se/dbclient/01_introduction">Read more</v-btn>
                 </div>
               </v-flex>
@@ -122,6 +122,7 @@
 <style lang = "sass">
   .new-features-slide
     :min-height 700px
+    :min-width 320px
     :text-align center
     :width 100vw
     :height calc(100vh - 58px)
@@ -134,14 +135,15 @@
       :width 100%
       :height 100%
       :box-shadow none
-      :min-height 500px
+      @media screen and (max-width: 600px)
+        max-height: 600px
       .carousel-item
       .graalvm-img
         :height 220px
-        :width 400px
+        :max-width 500px
         :margin 0 auto
         :background-image url('../static/img/graalvm_logo.svg')
-        :background-position center
+        :background-position center center
         :background-size contain
       .graalvm-description
         :text-align center
@@ -166,8 +168,16 @@
         :font-size 5vmax
       .features-flex
         :text-align left
-        padding-top: 15px
-        padding-right: 20px
+        :padding-top 15px
+        :padding-right 20px
+        @media screen and (max-width: 960px)
+          :padding-top 5px
+          :padding-right 20%
+          :padding-left 20%
+        @media screen and (max-width: 600px)
+          :justify-content center
+          :padding-left 0
+          :padding-right 0
       .graphics
         :height 85%
         :background-position 0 50%
@@ -180,6 +190,9 @@
         :margin-left 5px
         :padding-left 5px
         :color #3ea5fd
+        @media screen and (max-width: 600px)
+          :font-size 1.5em
+          :margin-bottom 10px
         > i
           :margin-right 10px
           :color #3ea5fd !important
@@ -187,15 +200,19 @@
         :color #3ea5fd
         :font-size 1.25em
         :margin-left 10px
+        @media screen and (max-width: 600px)
+          :font-size 1em
     .carousel__controls
       :background transparent !important
     .dbclient-header
       :font-weight bolder
-      :font-size 5vmax
+      :font-size 4vmax
       :margin-bottom 2%
       :color #3ea5fd
       :text-align center
       :vertical-align top
+      @media screen and (max-width: 600px)
+        :margin-bottom 1%
     .fifth-slide
       :text-align center
       .ul-style
@@ -209,20 +226,29 @@
         :border-style solid
         :border-color #3ea5fd
         :border-width 3vh
-        @media screen and (max-width: 600px)
+        @media screen and (max-width: 960px)
           :background-image none
+          :width 90%
         ul
           :text-align left
           :margin-left 5%
           :margin-right 5%
-          :max-width 70%
+          :max-width 80%
+          @media screen and (max-width: 600px)
+            :width 90%
+            :margin-left 5%
+            :margin-right 5%
           li
             :font-size 1.5rem
             :color #f8f8f8
             :font-family monospace
             @media screen and (max-width: 600px)
-              :font-size 1.2rem
-
+              :font-size 1.1rem
+      .button-fifth
+        :text-align center
+        :margin-top 30px
+      @media screen and (max-width: 600px)
+        :margin-top 10px
     .simple-and-fast-graphic
       :background-image url('../static/img/helidon_feature_simple_and_fast.png')
     .microprofile-support-graphic
