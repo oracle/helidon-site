@@ -42,7 +42,7 @@
                         <v-btn light
                                large
                                class="ma-0"
-                               href="./docs/latest/#/guides/02_quickstart-se"
+                               href="./docs/latest/#/se/guides/02_quickstart"
                                target="_blank"
                                rel="noopener">Get Started</v-btn>
                       </v-flex>
@@ -88,7 +88,7 @@
                       <v-btn light
                              large
                              class="ma-0"
-                             href="./docs/latest/#/guides/03_quickstart-mp"
+                             href="./docs/latest/#/mp/guides/02_quickstart"
                              target="_blank"
                              rel="noopener">Get Started</v-btn>
                     </v-flex>
