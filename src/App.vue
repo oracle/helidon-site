@@ -1,5 +1,5 @@
 <!--
-  ~ Copyright (c) 2018, 2019 Oracle and/or its affiliates. All rights reserved.
+  ~ Copyright (c) 2018, 2020 Oracle and/or its affiliates. All rights reserved.
 -->
 <template>
   <v-app>
@@ -133,7 +133,6 @@
         <heroText backgroundColor="#f8f8f8"
                   color="#3ea5fd"
                   v-bind:paddingBottom=100 />
-
         <features id="features" />
         <gettingStarted id="getting-started"/>
         <technologies id="technologies"/>
@@ -167,6 +166,8 @@
   import '../static/img/logo-prometheus-500x500.png'
   import '../static/img/logo-zipkin-500x500.png'
   import '../static/img/unfurl_logo.png'
+  import '../static/img/graalvm_logo.svg'
+  import '../static/img/cli.png'
 
   import parallaxWrapper from './ParallaxWrapper'
   import parallaxLayer from './ParallaxLayer'
@@ -180,7 +181,7 @@
   import community from './Community'
   import zFooter from './ZFooter'
   import VueScrollTo from 'vue-scrollto'
-
+  
   export default {
     components: {
       parallaxWrapper,
