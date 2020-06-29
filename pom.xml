@@ -98,11 +98,11 @@
     <properties>
         <!-- main version properties -->
         <docs.1.version>1.4.5</docs.1.version>
-        <docs.2.version>2.0.0</docs.2.version>
+        <docs.2.version>2.0.1</docs.2.version>
         <docs.latest.version>${docs.2.version}</docs.latest.version>
-        <cli.data.latest.version>2.0.0</cli.data.latest.version>
-        <cli.maven.plugin.version>2.0.0</cli.maven.plugin.version>
-        <cli.latest.version>2.0.0</cli.latest.version>
+        <cli.data.latest.version>2.0.1</cli.data.latest.version>
+        <cli.maven.plugin.version>2.0.1</cli.maven.plugin.version>
+        <cli.latest.version>2.0.2</cli.latest.version>
 
         <!-- misc -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -115,7 +115,7 @@
         <version.plugin.glassfish-copyright>2.3</version.plugin.glassfish-copyright>
         <version.plugin.frontend>1.9.1</version.plugin.frontend>
         <version.plugin.scm-plugin>3.0.0</version.plugin.scm-plugin>
-        <version.plugin.stager>2.0.0</version.plugin.stager>
+        <version.plugin.stager>2.0.2</version.plugin.stager>
 
         <!-- npm/node -->
         <version.nodejs>v12.16.1</version.nodejs>
@@ -250,6 +250,7 @@
                                                     <variable name="version">
                                                         <value>2.0.0-RC1</value>
                                                         <value>2.0.0-RC2</value>
+                                                        <value>2.0.0</value>
                                                         <value>${docs.2.version}</value>
                                                     </variable>
                                                 </variables>
@@ -268,6 +269,7 @@
                                                     </variable>
                                                     <variable name="version">
                                                         <value>2.0.0-RC3</value>
+                                                        <value>2.0.0</value>
                                                         <value>${cli.latest.version}</value>
                                                     </variable>
                                                 </variables>
