@@ -101,7 +101,7 @@
         <docs.2.version>2.0.1</docs.2.version>
         <docs.latest.version>${docs.2.version}</docs.latest.version>
         <cli.data.latest.version>2.0.1</cli.data.latest.version>
-        <cli.maven.plugin.version>2.0.1</cli.maven.plugin.version>
+        <cli.maven.plugin.version>2.0.2</cli.maven.plugin.version>
         <cli.latest.version>2.0.2</cli.latest.version>
 
         <!-- misc -->
