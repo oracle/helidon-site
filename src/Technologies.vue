@@ -11,6 +11,12 @@
           <v-flex sm8 md10 lg8 xl8 pl-1 pr-1>
             <v-layout row wrap>
               <v-flex xs4 sm3 md2 lg2>
+                <a href="https://openjdk.java.net" target="_blank">
+                  <img src="../static/img/logo-openjdk-500x500.png" />
+                  <span>OpenJDK</span>
+                </a>
+              </v-flex>
+              <v-flex xs4 sm3 md2 lg2>
                 <a href="https://microprofile.io" target="_blank">
                   <img src="../static/img/logo-microprofile-500x500.png" />
                   <span>MicroProfile</span>
@@ -38,12 +44,6 @@
                 <a href="https://openapis.org" target="_blank">
                   <img src="../static/img/logo-openapi-500x500.png" />
                   <span>OpenAPI</span>
-                </a>
-              </v-flex>
-              <v-flex xs4 sm3 md2 lg2>
-                <a href="https://kubernetes.io" target="_blank">
-                  <img src="../static/img/logo-kubernetes-500x500.png" />
-                  <span>Kubernetes</span>
                 </a>
               </v-flex>
               <v-flex xs4 sm3 md2 lg2>
