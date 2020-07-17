@@ -2,8 +2,9 @@
   ~ Copyright (c) 2018, 2020 Oracle and/or its affiliates. All rights reserved.
 -->
 <template>
+<!--  Desktop & tablet version-->
   <v-container v-bind:id="id" text-md-center fluid fill-height light new-features-slide>
-    <v-layout column justify-center>
+    <v-layout column justify-center class="hidden-xs-only" >
       <v-flex xs12>
         <v-carousel light delimiter-icon="stop">
           <v-carousel-item>
@@ -19,9 +20,9 @@
               <v-flex xs6 class="cli-flex">
                 <h2 class="cli-description">Helidon Command Line Utility</h2>
                 <div class="cli-img"/>
-                <!--<div style="text-align: center">
+                <div style="text-align: center">
                   <v-btn box color="info" dark class="info-button">Read more</v-btn>
-                </div>-->
+                </div>
               </v-flex>
             </v-layout>
           </v-carousel-item>
@@ -105,6 +106,74 @@
         </v-carousel>
       </v-flex>
     </v-layout>
+
+    <!--Mobile screen version-->
+    <div class="hidden-sm-and-up" style="width: 100vw">
+      <h1 style="font-size: 3rem; margin-bottom: 30px; color: #f8f8f8; font-weight: normal">Features</h1>
+      <v-container jumbo>
+        <v-layout justify-center>
+          <v-flex text-xs-center xs12>
+            <div class="jumbo1-img"/>
+            <p style="color: #797979; font-size: 1.25rem">GraalVM native-image support in both Helidon SE and Helidon MP</p>
+          </v-flex>
+        </v-layout>
+      </v-container>
+      <v-container jumbo>
+        <v-layout justify-center>
+          <v-flex text-xs-center xs12>
+            <p style="font-size: 2.3rem; color: #41a8ff; margin-top: 60px">Helidon Command Line Utility</p>
+            <div style="text-align: center; margin-top: 30px">
+              <v-btn box color="info" dark class="info-button">Read more</v-btn>
+            </div>
+          </v-flex>
+        </v-layout>
+      </v-container>
+      <v-container jumbo>
+        <v-layout justify-center>
+          <v-flex text-xs-center xs12>
+            <h3 class="features-header"><v-icon>import_contacts</v-icon>Simple and fast</h3>
+            <p class="features-text">Helidon is designed to be simple to  use, with tooling and examples to get you going quickly. Since Helidon
+              is just a collection of libraries running on a fast Netty core, there is no extra overhead or bloat.</p>
+            <h3 class="features-header"><v-icon>border_clear</v-icon>MicroProfile Support</h3>
+            <p class="features-text">Helidon supports MicroProfile and provides familiar APIs like JAX-RS, CDI and JSON-P/B. Our
+              MicroProfile implementation runs on our fast Helidon Reactive WebServer</p>
+          </v-flex>
+        </v-layout>
+      </v-container>
+      <v-container jumbo>
+        <v-layout justify-center>
+          <v-flex text-xs-center xs12>
+            <h3 class="features-header"><v-icon>storage</v-icon>Reactive WebServer</h3>
+            <p class="features-text">Helidon Reactive WebServer provides a modern functional programming model and runs on top of Netty.
+              Lightweight, flexible and reactive, the Helidon WebServer provides a simple to use and fast foundation for
+              your microservices.</p>
+            <h3 class="features-header"><v-icon>repeat</v-icon>Observable and Resilient</h3>
+            <p class="features-text">With support for health checks, metrics, tracing and fault tolerance, Helidon has what you need to
+              write cloud ready applications that integrate with Prometheus, Jaeger/Zipkin and Kubernetes.</p>
+          </v-flex>
+        </v-layout>
+      </v-container>
+      <v-container jumbo>
+        <v-layout justify-center>
+          <v-flex text-xs-center xs12>
+            <h2 style="color: #3ea5fd; font-size: 2rem">Helidon SE DBClient</h2>
+            <div class="ul-style">
+              <ul>
+                <li>Reactive non-blocking database client</li>
+                <li>Supports existing blocking JDBC drivers</li>
+                <li>Relational and non-relational databases</li>
+                <li>Metrics, tracing, health checks</li>
+                <li>Portability</li>
+                <li>Extensibility</li>
+              </ul>
+            </div>
+            <div style =" padding-top: 20px">
+              <v-btn box color="info" darkclass="info-button" href="./docs/v2/#/se/dbclient/01_introduction">Read more</v-btn>
+            </div>
+          </v-flex>
+        </v-layout>
+      </v-container>
+    </div>
   </v-container>
 </template>
 
@@ -122,14 +191,13 @@
 <style lang = "sass">
   .new-features-slide
     :min-height 700px
-    :min-width 320px
+    :min-width 300px
     :text-align center
     :width 100vw
     :height calc(100vh - 58px)
-    :background-color #3ea5fd
-    .section
-      :height 100vh
-      :text-align center
+    :background-color #41a8ff
+    @media screen and (max-width: 600px)
+      :height auto
     .carousel
       :background-color #f8f8f8
       :width 100%
@@ -139,12 +207,15 @@
         max-height: 600px
       .carousel-item
       .graalvm-img
-        :height 220px
-        :max-width 500px
+        :height 210px
+        :max-width 470px
         :margin 0 auto
         :background-image url('../static/img/graalvm_logo.svg')
         :background-position center center
         :background-size contain
+        @media screen and (max-width: 600px)
+          :height 200px
+          :max-width 300px
       .graalvm-description
         :text-align center
         :vertical-align middle
@@ -201,7 +272,7 @@
         :font-size 1.25em
         :margin-left 10px
         @media screen and (max-width: 600px)
-          :font-size 1em
+          :font-size 1.3em
     .carousel__controls
       :background transparent !important
     .dbclient-header
@@ -257,4 +328,51 @@
       :background-image url('../static/img/helidon_feature_reactive_web_server.png')
     .observable-and-resilient-graphic
       :background-image url('../static/img/helidon_feature_observable_and_resilient.png')
+  .jumbo
+    :min-height 300px
+    :min-width 300px
+    :background-color #f8f8f8
+    :margin-bottom 30px
+    :justify-content center
+    :align-content center
+    .features-header
+      :font-weight bolder
+      :font-size 1.4em
+      :margin-bottom 10px
+      :color #3ea5fd
+      :text-align left
+      > i
+        :margin-right 10px
+        :color #3ea5fd !important
+    .features-text
+      :color #3ea5fd
+      :font-size 1.2em
+      :text-align left
+    p
+      :position center
+      :margin-top 20px
+    .jumbo1-img
+      :margin-top 30px
+      :background-image url('../static/img/graalvm_logo.svg')
+      :background-position center
+      :background-size contain
+      :min-width 100px
+      :min-height 100px
+    .ul-style
+      :background-color #3ea5fd
+      :position center
+      :border-style solid
+      :border-color #3ea5fd
+      :border-width 30px
+      li
+        :font-size 1.2rem
+        :color #f8f8f8
+        :font-family monospace
+        :margin-bottom 10px
+        :text-align left
+      .button-fifth
+        :text-align center
+        :margin-top 30px
+      @media screen and (max-width: 600px)
+        :margin-top 10px
 </style>
