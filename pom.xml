@@ -97,8 +97,8 @@
 
     <properties>
         <!-- main version properties -->
-        <docs.1.version>1.4.5</docs.1.version>
-        <docs.2.version>2.0.1</docs.2.version>
+        <docs.1.version>1.4.7</docs.1.version>
+        <docs.2.version>2.0.2</docs.2.version>
         <docs.latest.version>${docs.2.version}</docs.latest.version>
         <cli.data.latest.version>2.0.1</cli.data.latest.version>
         <cli.maven.plugin.version>2.0.2</cli.maven.plugin.version>
@@ -248,9 +248,8 @@
                                             <iterators>
                                                 <variables>
                                                     <variable name="version">
-                                                        <value>2.0.0-RC1</value>
-                                                        <value>2.0.0-RC2</value>
                                                         <value>2.0.0</value>
+                                                        <value>2.0.1</value>
                                                         <value>${docs.2.version}</value>
                                                     </variable>
                                                 </variables>
