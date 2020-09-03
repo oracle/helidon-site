@@ -102,7 +102,7 @@
         <docs.latest.version>${docs.2.version}</docs.latest.version>
 
         <!-- Helidon archetypes version  -->
-        <cli.data.latest.version>2.0.1</cli.data.latest.version>
+        <cli.data.latest.version>2.0.2</cli.data.latest.version>
         <!-- helidon-cli-maven-plugin version -->
         <cli.maven.plugin.version>2.1.0</cli.maven.plugin.version>
         <!-- latest Helidon CLI version -->
