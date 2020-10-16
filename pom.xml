@@ -98,29 +98,28 @@
     <properties>
         <!-- main version properties -->
         <docs.1.version>1.4.7</docs.1.version>
-        <docs.2.version>2.0.2</docs.2.version>
+        <docs.2.version>2.1.0</docs.2.version>
         <docs.latest.version>${docs.2.version}</docs.latest.version>
 
         <!-- Helidon archetypes version  -->
-        <cli.data.latest.version>2.0.2</cli.data.latest.version>
+        <cli.data.latest.version>2.1.0</cli.data.latest.version>
         <!-- helidon-cli-maven-plugin version -->
-        <cli.maven.plugin.version>2.1.0</cli.maven.plugin.version>
+        <cli.maven.plugin.version>2.1.2</cli.maven.plugin.version>
         <!-- latest Helidon CLI version -->
-        <cli.latest.version>2.1.0</cli.latest.version>
+        <cli.latest.version>2.1.2</cli.latest.version>
 
         <!-- misc -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.deploy.skip>true</maven.deploy.skip>
         <site.output.dir>${project.build.directory}/site</site.output.dir>
-        <build-tools.download.url>https://github.com/oracle/helidon-build-tools/releases/download
-        </build-tools.download.url>
+        <build-tools.download.url>https://github.com/oracle/helidon-build-tools/releases/download</build-tools.download.url>
         <cname>helidon.io</cname>
 
         <!-- maven plugin versions -->
         <version.plugin.glassfish-copyright>2.3</version.plugin.glassfish-copyright>
         <version.plugin.frontend>1.9.1</version.plugin.frontend>
         <version.plugin.scm-plugin>3.0.0</version.plugin.scm-plugin>
-        <version.plugin.stager>2.1.0</version.plugin.stager>
+        <version.plugin.stager>2.1.2</version.plugin.stager>
 
         <!-- npm/node -->
         <version.nodejs>v12.16.1</version.nodejs>
@@ -255,6 +254,7 @@
                                                     <variable name="version">
                                                         <value>2.0.0</value>
                                                         <value>2.0.1</value>
+                                                        <value>2.0.2</value>
                                                         <value>${docs.2.version}</value>
                                                     </variable>
                                                 </variables>
@@ -275,6 +275,7 @@
                                                         <value>2.0.0-RC3</value>
                                                         <value>2.0.0</value>
                                                         <value>2.0.2</value>
+                                                        <value>2.1.0</value>
                                                         <value>${cli.latest.version}</value>
                                                     </variable>
                                                 </variables>
