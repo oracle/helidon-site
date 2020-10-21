@@ -283,11 +283,11 @@
                                         </download>
                                     </downloads>
                                     <archives>
-                                        <archive target="cli-data/${cli.data.latest.version}/cli-data.zip">
+                                        <archive target="cli-data/{cli.data.version}/cli-data.zip">
                                             <unpack-artifacts>
                                                 <unpack-artifact groupId="io.helidon.archetypes"
                                                                  artifactId="helidon-archetype-catalog"
-                                                                 version="${cli.data.latest.version}"
+                                                                 version="{cli.data.version}"
                                                                  type="zip"
                                                                  target="."/>
                                             </unpack-artifacts>
@@ -301,6 +301,16 @@
                                                     </variables>
                                                 </template>
                                             </templates>
+                                            <iterators>
+                                                <variables>
+                                                    <variable name="cli.data.version">
+                                                        <value>2.0.0</value>
+                                                        <value>2.0.1</value>
+                                                        <value>2.0.2</value>
+                                                        <value>${cli.data.latest.version}</value>
+                                                    </variable>
+                                                </variables>
+                                            </iterators>
                                         </archive>
                                     </archives>
                                     <templates>
