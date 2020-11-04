@@ -21,7 +21,7 @@
                 <h2 class="cli-description">Helidon Command Line Utility</h2>
                 <div class="cli-img"/>
                 <div style="text-align: center">
-                  <v-btn box color="info" dark class="info-button">Read more</v-btn>
+                  <v-btn box color="info" dark class="info-button" href="./docs/v2/#/about/05_cli">Read more</v-btn>
                 </div>
               </v-flex>
             </v-layout>
@@ -123,7 +123,7 @@
           <v-flex text-xs-center xs12>
             <p style="font-size: 2.3rem; color: #41a8ff; margin-top: 60px">Helidon Command Line Utility</p>
             <div style="text-align: center; margin-top: 30px">
-              <v-btn box color="info" dark class="info-button">Read more</v-btn>
+              <v-btn box color="info" dark class="info-button" href="./docs/v2/#/about/05_cli">Read more</v-btn>
             </div>
           </v-flex>
         </v-layout>
