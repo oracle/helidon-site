@@ -308,6 +308,7 @@
                                                         <value>2.0.0</value>
                                                         <value>2.0.1</value>
                                                         <value>2.0.2</value>
+                                                        <value>2.1.0</value>
                                                         <value>${cli.data.latest.version}</value>
                                                     </variable>
                                                 </variables>
