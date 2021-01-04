@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-    Copyright (c) 2018, 2020 Oracle and/or its affiliates.
+    Copyright (c) 2018, 2021 Oracle and/or its affiliates.
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -308,6 +308,7 @@
                                                         <value>2.0.0</value>
                                                         <value>2.0.1</value>
                                                         <value>2.0.2</value>
+                                                        <value>2.1.0</value>
                                                         <value>${cli.data.latest.version}</value>
                                                     </variable>
                                                 </variables>
