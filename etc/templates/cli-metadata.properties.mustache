@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2020 Oracle and/or its affiliates.
+# Copyright (c) 2020, 2021 Oracle and/or its affiliates.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,8 +13,23 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+{{!
+ This property is used by older versions of the CLI to resolve the
+ version of helidon-maven-plugin that contained the internal CLI
+ Maven Mojos. These goals were moved out of that plugin and into
+ helidon-cli-maven-plugin after 2.0.2. That broke compatibility.
+
+ This property identifies the last version of the helidon-maven-plugin
+ to contain these goals and is only used by older versions of the CLI.
+ It is ignored by CLI versions > 2.0.2
+}}
+# Version of helidon-maven-plugin to use. Only used by CLI versions 2.0.2 and earlier
 build-tools.version=2.0.2
+
+# Version of helidon-cli-maven-plugin to use
 cli.latest.plugin.version={{cliPluginVersion}}
+
+# Latest CLI version. Used to detect when a new version is available
 cli.version={{cliVersion}}
 {{#cliUpdateMessages}}
 cli.{{version}}.message={{message}}
