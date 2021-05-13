@@ -97,16 +97,16 @@
 
     <properties>
         <!-- main version properties -->
-        <docs.1.version>1.4.7</docs.1.version>
-        <docs.2.version>2.2.2</docs.2.version>
+        <docs.1.version>1.4.8</docs.1.version>
+        <docs.2.version>2.3.0</docs.2.version>
         <docs.latest.version>${docs.2.version}</docs.latest.version>
 
-        <!-- Helidon archetypes version  -->
-        <cli.data.latest.version>2.2.2</cli.data.latest.version>
-        <!-- helidon-cli-maven-plugin version -->
-        <cli.maven.plugin.version>2.1.2</cli.maven.plugin.version>
-        <!-- latest Helidon CLI version -->
-        <cli.latest.version>2.1.3</cli.latest.version>
+        <!-- Helidon archetypes version. Usually latest Helidon version.  -->
+        <cli.data.latest.version>2.3.0</cli.data.latest.version>
+        <!-- helidon-cli-maven-plugin version. Usually latest build-tools version.  -->
+        <cli.maven.plugin.version>2.2.1</cli.maven.plugin.version>
+        <!-- latest Helidon CLI version. Usually latest build-tools version with a CLI build. -->
+        <cli.latest.version>2.2.0</cli.latest.version>
 
         <!-- misc -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -258,6 +258,7 @@
                                                         <value>2.1.0</value>
                                                         <value>2.2.0</value>
                                                         <value>2.2.1</value>
+                                                        <value>2.2.2</value>
                                                         <value>${docs.2.version}</value>
                                                     </variable>
                                                 </variables>
@@ -280,6 +281,7 @@
                                                         <value>2.0.2</value>
                                                         <value>2.1.0</value>
                                                         <value>2.1.2</value>
+                                                        <value>2.1.3</value>
                                                         <value>${cli.latest.version}</value>
                                                     </variable>
                                                 </variables>
