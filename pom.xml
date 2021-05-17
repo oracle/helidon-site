@@ -119,7 +119,7 @@
         <version.plugin.glassfish-copyright>2.3</version.plugin.glassfish-copyright>
         <version.plugin.frontend>1.9.1</version.plugin.frontend>
         <version.plugin.scm-plugin>3.0.0</version.plugin.scm-plugin>
-        <version.plugin.stager>2.1.2</version.plugin.stager>
+        <version.plugin.stager>2.2.0</version.plugin.stager>
 
         <!-- npm/node -->
         <version.nodejs>v12.16.1</version.nodejs>
@@ -293,6 +293,7 @@
                                             <iterators>
                                                 <variables>
                                                     <variable name="version">
+                                                        <value>2.1.3</value>
                                                         <value>${cli.latest.version}</value>
                                                     </variable>
                                                 </variables>
