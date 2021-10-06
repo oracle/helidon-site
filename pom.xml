@@ -104,9 +104,9 @@
         <!-- Helidon archetypes version. Usually latest Helidon version.  -->
         <cli.data.latest.version>2.3.3</cli.data.latest.version>
         <!-- helidon-cli-maven-plugin version. Usually latest build-tools version.  -->
-        <cli.maven.plugin.version>2.2.3</cli.maven.plugin.version>
+        <cli.maven.plugin.version>2.3.0</cli.maven.plugin.version>
         <!-- latest Helidon CLI version. Usually latest build-tools version with a CLI build. -->
-        <cli.latest.version>2.2.3</cli.latest.version>
+        <cli.latest.version>2.3.0</cli.latest.version>
 
         <!-- misc -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -119,7 +119,7 @@
         <version.plugin.glassfish-copyright>2.3</version.plugin.glassfish-copyright>
         <version.plugin.frontend>1.9.1</version.plugin.frontend>
         <version.plugin.scm-plugin>3.0.0</version.plugin.scm-plugin>
-        <version.plugin.stager>2.2.3</version.plugin.stager>
+        <version.plugin.stager>2.3.0</version.plugin.stager>
 
         <!-- npm/node -->
         <version.nodejs>v12.16.1</version.nodejs>
@@ -280,6 +280,7 @@
                                                         <value>2.1.3</value>
                                                         <value>2.2.0</value>
                                                         <value>2.2.2</value>
+                                                        <value>2.2.3</value>
                                                         <value>${cli.latest.version}</value>
                                                     </variable>
                                                 </variables>
@@ -294,6 +295,7 @@
                                                         <value>2.1.3</value>
                                                         <value>2.2.0</value>
                                                         <value>2.2.2</value>
+                                                        <value>2.2.3</value>
                                                         <value>${cli.latest.version}</value>
                                                     </variable>
                                                 </variables>
