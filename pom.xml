@@ -98,11 +98,11 @@
     <properties>
         <!-- main version properties -->
         <docs.1.version>1.4.10</docs.1.version>
-        <docs.2.version>2.3.3</docs.2.version>
+        <docs.2.version>2.3.4</docs.2.version>
         <docs.latest.version>${docs.2.version}</docs.latest.version>
 
         <!-- Helidon archetypes version. Usually latest Helidon version.  -->
-        <cli.data.latest.version>2.3.3</cli.data.latest.version>
+        <cli.data.latest.version>2.3.4</cli.data.latest.version>
         <!-- helidon-cli-maven-plugin version. Usually latest build-tools version.  -->
         <cli.maven.plugin.version>2.3.0</cli.maven.plugin.version>
         <!-- latest Helidon CLI version. Usually latest build-tools version with a CLI build. -->
@@ -334,6 +334,7 @@
                                                         <value>2.3.0</value>
                                                         <value>2.3.1</value>
                                                         <value>2.3.2</value>
+                                                        <value>2.3.3</value>
                                                         <value>${cli.data.latest.version}</value>
                                                     </variable>
                                                 </variables>
