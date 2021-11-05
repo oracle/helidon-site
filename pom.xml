@@ -119,7 +119,7 @@
         <version.plugin.glassfish-copyright>2.3</version.plugin.glassfish-copyright>
         <version.plugin.frontend>1.9.1</version.plugin.frontend>
         <version.plugin.scm-plugin>3.0.0</version.plugin.scm-plugin>
-        <version.plugin.stager>2.3.0</version.plugin.stager>
+        <version.plugin.stager>2.3.1</version.plugin.stager>
 
         <!-- npm/node -->
         <version.nodejs>v12.16.1</version.nodejs>
@@ -212,6 +212,7 @@
                             <goal>stage</goal>
                         </goals>
                         <configuration>
+                            <readTimeout>60000</readTimeout>
                             <directories>
                                 <directory target="${site.output.dir}">
                                     <unpack-artifacts>
@@ -377,7 +378,7 @@
                                         </template>
                                     </templates>
                                     <files>
-                                        <file target="CNAME">${cname}</file>
+                                        <!-- <file target="CNAME">${cname}</file> -->
                                         <file target="cli-data/latest">${cli.data.latest.version}</file>
                                     </files>
                                     <symlinks>
